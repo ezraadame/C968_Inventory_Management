@@ -20,14 +20,15 @@ namespace C968_Inventory_Management.Main.Products
 
         public void AddAssociatedPart(Part part)
         {
-            AssociatedParts.Add(part);
+            AssociatedParts?.Add(part);
         }
 
         public bool RemoveAssociatedPart() => true;
 
-        public Part LookupAssociatedPart(int partID)
+
+        public Part LookupAssociatedPart(int partID, Part? part)
         {
-            return AssociatedParts.FirstOrDefault(part => part.PartID == partID);
+            return part;
         }
     }
 
