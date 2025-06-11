@@ -23,7 +23,7 @@ namespace C968_Inventory_Management.Main.Inventory
             return true;
         }
 
-        public Products LookupProduct(int productID)
+        public Product LookupProduct(int productID)
         {
             return Products.FirstOrDefault();
         }
