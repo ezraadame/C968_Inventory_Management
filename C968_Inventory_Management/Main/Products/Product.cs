@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace C968_Inventory_Management.Main.Products
 {
-    public class Product : Part
+    public class Product
     {
-        public int ProductID { get; set; }
-        public string? Name { get; set; }
-        public decimal Price { get; set; }
-        public int InStock { get; set; }
-        public int Min { get; set; }
-        public int Max { get; set; }
+        public int ProductID;
+        public string? Name;
+        public decimal Price;
+        public int InStock;
+        public int Min;
+        public int Max;
 
         public List<Part> AssociatedParts = new List<Part>();
 
