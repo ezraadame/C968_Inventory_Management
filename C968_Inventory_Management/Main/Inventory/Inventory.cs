@@ -4,6 +4,7 @@ using C968_Inventory_Management.Main.Parts;
 using C968_Inventory_Management.Main.Products;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,10 @@ namespace C968_Inventory_Management.Main.Inventory
 {
     public class Inventory
     {
-        public List<Product> Products = new List<Product>();
-        public List<Part> AllParts = new List<Part>();
+        public BindingList<Product> Products = new BindingList<Product>();
+        public BindingList<Part> AllParts = new BindingList<Part>();
+
+
 
 
         public void PopulateDummyLists()

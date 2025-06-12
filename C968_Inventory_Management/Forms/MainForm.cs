@@ -1,5 +1,6 @@
 using System.Windows.Forms;
 
+
 namespace C968_Inventory_Management
 {
     public partial class MainForm : Form
@@ -7,6 +8,7 @@ namespace C968_Inventory_Management
         public MainForm()
         {
             InitializeComponent();
+            
         }
 
         private void SearchProductButton_Click(object sender, EventArgs e)
@@ -20,6 +22,7 @@ namespace C968_Inventory_Management
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //PartsTable.DataSource = Inventory.AllParts;
 
         }
 
