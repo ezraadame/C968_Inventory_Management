@@ -36,19 +36,7 @@
             PartsLabel = new Label();
             ProdcutsLabel = new Label();
             PartsTable = new DataGridView();
-            PartID = new DataGridViewTextBoxColumn();
-            NameOfParts = new DataGridViewTextBoxColumn();
-            InStock = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Min = new DataGridViewTextBoxColumn();
-            Max = new DataGridViewTextBoxColumn();
             ProductsTable = new DataGridView();
-            ProductID = new DataGridViewTextBoxColumn();
-            NameOfProduct = new DataGridViewTextBoxColumn();
-            ProductInventory = new DataGridViewTextBoxColumn();
-            PriceOfProducts = new DataGridViewTextBoxColumn();
-            MinimumProducts = new DataGridViewTextBoxColumn();
-            MaximumProducts = new DataGridViewTextBoxColumn();
             AddPartsButton = new Button();
             ModifyPartsButton = new Button();
             DeletePartsButton = new Button();
@@ -76,6 +64,7 @@
             SearchBoxParts.Name = "SearchBoxParts";
             SearchBoxParts.Size = new Size(160, 23);
             SearchBoxParts.TabIndex = 1;
+            SearchBoxParts.TextChanged += SearchBoxParts_TextChanged;
             // 
             // SearchBoxProducts
             // 
@@ -127,7 +116,6 @@
             // PartsTable
             // 
             PartsTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            PartsTable.Columns.AddRange(new DataGridViewColumn[] { PartID, NameOfParts, InStock, Price, Min, Max });
             PartsTable.Location = new Point(49, 127);
             PartsTable.Name = "PartsTable";
             PartsTable.RowHeadersVisible = false;
@@ -135,75 +123,15 @@
             PartsTable.TabIndex = 7;
             PartsTable.CellContentClick += PartsTable_CellContentClick;
             // 
-            // PartID
-            // 
-            PartID.HeaderText = "Part ID";
-            PartID.Name = "PartID";
-            // 
-            // NameOfParts
-            // 
-            NameOfParts.HeaderText = "Name";
-            NameOfParts.Name = "NameOfParts";
-            // 
-            // InStock
-            // 
-            InStock.HeaderText = "Inventory";
-            InStock.Name = "InStock";
-            // 
-            // Price
-            // 
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            // 
-            // Min
-            // 
-            Min.HeaderText = "Minimum";
-            Min.Name = "Min";
-            // 
-            // Max
-            // 
-            Max.HeaderText = "Maximum";
-            Max.Name = "Max";
-            // 
             // ProductsTable
             // 
             ProductsTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsTable.Columns.AddRange(new DataGridViewColumn[] { ProductID, NameOfProduct, ProductInventory, PriceOfProducts, MinimumProducts, MaximumProducts });
             ProductsTable.Location = new Point(700, 127);
             ProductsTable.Name = "ProductsTable";
             ProductsTable.RowHeadersVisible = false;
             ProductsTable.Size = new Size(603, 302);
             ProductsTable.TabIndex = 8;
-            // 
-            // ProductID
-            // 
-            ProductID.HeaderText = "Product ID";
-            ProductID.Name = "ProductID";
-            // 
-            // NameOfProduct
-            // 
-            NameOfProduct.HeaderText = "Name";
-            NameOfProduct.Name = "NameOfProduct";
-            // 
-            // ProductInventory
-            // 
-            ProductInventory.HeaderText = "Inventory";
-            ProductInventory.Name = "ProductInventory";
-            // 
-            // PriceOfProducts
-            // 
-            PriceOfProducts.HeaderText = "Price";
-            PriceOfProducts.Name = "PriceOfProducts";
-            // 
-            // MinimumProducts
-            // 
-            MinimumProducts.HeaderText = "Minimum";
-            MinimumProducts.Name = "MinimumProducts";
-            // 
-            // MaximumProducts
-            // 
-            MaximumProducts.HeaderText = "Maximum";
-            MaximumProducts.Name = "MaximumProducts";
+            ProductsTable.CellContentClick += ProductsTable_CellContentClick;
             // 
             // AddPartsButton
             // 
@@ -296,7 +224,7 @@
             Controls.Add(titleInventoryManagementSystems);
             Name = "MainForm";
             Text = "Inventory Management System";
-            Load += Form1_Load;
+            Load += MainFormLoad;
             ((System.ComponentModel.ISupportInitialize)PartsTable).EndInit();
             ((System.ComponentModel.ISupportInitialize)ProductsTable).EndInit();
             ResumeLayout(false);
@@ -321,17 +249,5 @@
         private Button ModifyProductsButton;
         private Button DeleteProductsButton;
         private Button ExitButton;
-        private DataGridViewTextBoxColumn ProductID;
-        private DataGridViewTextBoxColumn NameOfProduct;
-        private DataGridViewTextBoxColumn ProductInventory;
-        private DataGridViewTextBoxColumn PriceOfProducts;
-        private DataGridViewTextBoxColumn MinimumProducts;
-        private DataGridViewTextBoxColumn MaximumProducts;
-        private DataGridViewTextBoxColumn PartID;
-        private DataGridViewTextBoxColumn NameOfParts;
-        private DataGridViewTextBoxColumn InStock;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Min;
-        private DataGridViewTextBoxColumn Max;
     }
 }

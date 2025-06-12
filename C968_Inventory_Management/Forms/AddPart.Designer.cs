@@ -37,7 +37,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            button1 = new Button();
+            CancelInHousePart = new Button();
             textBox7 = new TextBox();
             textBox6 = new TextBox();
             textBox5 = new TextBox();
@@ -57,7 +57,7 @@
             label13 = new Label();
             label14 = new Label();
             label15 = new Label();
-            button4 = new Button();
+            CancelOutSourced = new Button();
             textBox8 = new TextBox();
             textBox9 = new TextBox();
             textBox10 = new TextBox();
@@ -82,7 +82,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(CancelInHousePart);
             panel1.Controls.Add(textBox7);
             panel1.Controls.Add(textBox6);
             panel1.Controls.Add(textBox5);
@@ -182,16 +182,17 @@
             label2.TabIndex = 11;
             label2.Text = "ID";
             // 
-            // button1
+            // CancelInHousePart
             // 
-            button1.BackColor = SystemColors.ControlDark;
-            button1.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(290, 381);
-            button1.Name = "button1";
-            button1.Size = new Size(74, 34);
-            button1.TabIndex = 10;
-            button1.Text = "Cancel";
-            button1.UseVisualStyleBackColor = false;
+            CancelInHousePart.BackColor = SystemColors.ControlDark;
+            CancelInHousePart.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CancelInHousePart.Location = new Point(290, 381);
+            CancelInHousePart.Name = "CancelInHousePart";
+            CancelInHousePart.Size = new Size(74, 34);
+            CancelInHousePart.TabIndex = 10;
+            CancelInHousePart.Text = "Cancel";
+            CancelInHousePart.UseVisualStyleBackColor = false;
+            CancelInHousePart.Click += CancelInHouse_Click;
             // 
             // textBox7
             // 
@@ -289,7 +290,7 @@
             panel2.Controls.Add(label13);
             panel2.Controls.Add(label14);
             panel2.Controls.Add(label15);
-            panel2.Controls.Add(button4);
+            panel2.Controls.Add(CancelOutSourced);
             panel2.Controls.Add(textBox8);
             panel2.Controls.Add(textBox9);
             panel2.Controls.Add(textBox10);
@@ -387,16 +388,17 @@
             label15.TabIndex = 30;
             label15.Text = "ID";
             // 
-            // button4
+            // CancelOutSourced
             // 
-            button4.BackColor = SystemColors.ControlDark;
-            button4.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(301, 381);
-            button4.Name = "button4";
-            button4.Size = new Size(74, 34);
-            button4.TabIndex = 29;
-            button4.Text = "Cancel";
-            button4.UseVisualStyleBackColor = false;
+            CancelOutSourced.BackColor = SystemColors.ControlDark;
+            CancelOutSourced.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CancelOutSourced.Location = new Point(301, 381);
+            CancelOutSourced.Name = "CancelOutSourced";
+            CancelOutSourced.Size = new Size(74, 34);
+            CancelOutSourced.TabIndex = 29;
+            CancelOutSourced.Text = "Cancel";
+            CancelOutSourced.UseVisualStyleBackColor = false;
+            CancelOutSourced.Click += CancelOutSourced_Click;
             // 
             // textBox8
             // 
@@ -519,7 +521,7 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button button1;
+        private Button CancelInHousePart;
         private Button button2;
         private Panel panel2;
         private Button button3;
@@ -530,7 +532,7 @@
         private Label label13;
         private Label label14;
         private Label label15;
-        private Button button4;
+        private Button CancelOutSourced;
         private TextBox textBox8;
         private TextBox textBox9;
         private TextBox textBox10;

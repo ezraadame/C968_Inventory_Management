@@ -41,5 +41,19 @@ namespace C968_Inventory_Management
         {
 
         }
+
+        private void CancelInHouse_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            main.Show();
+            this.Hide();
+        }
+
+        private void CancelOutSourced_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            main.Show();
+            this.Hide();
+        }
     }
 }

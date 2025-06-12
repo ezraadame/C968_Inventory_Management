@@ -13,13 +13,11 @@ namespace C968_Inventory_Management.Main.Inventory
 {
     public class Inventory
     {
-        public BindingList<Product> Products = new BindingList<Product>();
-        public BindingList<Part> AllParts = new BindingList<Part>();
+        public static BindingList<Product> Products = new BindingList<Product>();
 
+        public static BindingList<Part> AllParts = new BindingList<Part>();
 
-
-
-        public void PopulateDummyLists()
+        public static void PopulateDummyLists()
         {
             Product dummyProd1 = new Product(1, "Product 1", 10, 12, 20, 5);
             Product dummyProd2 = new Product(2, "Product 2", 10, 8, 25, 5);
@@ -66,41 +64,41 @@ namespace C968_Inventory_Management.Main.Inventory
             Products.Add(product);
         }
 
-        public bool RemoveProduct(int productID)
-        {
-            return true;
-        }
+        //public bool RemoveProduct(int productID)
+        //{
+        //    return true;
+        //}
 
-        public Product LookupProduct(int productID)
-        {
-            return Products.FirstOrDefault();
-        }
+        //public Product LookupProduct(int productID)
+        //{
+        //    return Products.FirstOrDefault();
+        //}
 
-        public void UpdateProduct(int productID, Product product)
-        {
-            Console.WriteLine("HI");
-        }
+        //public void UpdateProduct(int productID, Product product)
+        //{
+        //    Console.WriteLine("HI");
+        //}
 
-        ///
+        /////
 
-        public void AddPart(Part part)
-        {
-            AllParts.Add(part);
-        }
+        //public void AddPart(Part part)
+        //{
+        //    AllParts.Add(part);
+        //}
 
-        public bool DeletePart(Part part)
-        {
-            return true;
-        }
+        //public bool DeletePart(Part part)
+        //{
+        //    return true;
+        //}
 
-        public Part LookupPart(int partID)
-        {
-            return AllParts.FirstOrDefault();
-        }
+        //public Part LookupPart(int partID)
+        //{
+        //    return AllParts.FirstOrDefault();
+        //}
 
-        public void UpdateParts(int partID, Part part)
-        {
-            Console.WriteLine("Temporary");
-        }
+        //public void UpdateParts(int partID, Part part)
+        //{
+        //    Console.WriteLine("Temporary");
+        //}
     }
 }

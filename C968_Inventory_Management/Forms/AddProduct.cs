@@ -17,17 +17,24 @@ namespace C968_Inventory_Management
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void CancelAddProduct_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            main.Show();
+            this.Hide();
+        }
+
+        private void AddCandidateParts_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void SavePartsAssociated_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DeletePartsAssociated_Click(object sender, EventArgs e)
         {
 
         }

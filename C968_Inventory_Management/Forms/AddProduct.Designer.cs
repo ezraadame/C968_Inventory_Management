@@ -59,10 +59,10 @@
             textBox2 = new TextBox();
             textBox7 = new TextBox();
             label8 = new Label();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            AddCandidateParts = new Button();
+            SavePartsAssociated = new Button();
+            DeletePartsAssociated = new Button();
+            CancelAddProduct = new Button();
             ((System.ComponentModel.ISupportInitialize)PartsTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -142,7 +142,6 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.Size = new Size(603, 230);
             dataGridView1.TabIndex = 15;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -296,57 +295,59 @@
             label8.TabIndex = 30;
             label8.Text = "Add Product";
             // 
-            // button2
+            // AddCandidateParts
             // 
-            button2.Font = new Font("Gadugi", 9F);
-            button2.Location = new Point(455, 159);
-            button2.Name = "button2";
-            button2.Size = new Size(61, 39);
-            button2.TabIndex = 31;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            AddCandidateParts.Font = new Font("Gadugi", 9F);
+            AddCandidateParts.Location = new Point(455, 159);
+            AddCandidateParts.Name = "AddCandidateParts";
+            AddCandidateParts.Size = new Size(61, 39);
+            AddCandidateParts.TabIndex = 31;
+            AddCandidateParts.Text = "Add";
+            AddCandidateParts.UseVisualStyleBackColor = true;
+            AddCandidateParts.Click += AddCandidateParts_Click;
             // 
-            // button3
+            // SavePartsAssociated
             // 
-            button3.Font = new Font("Gadugi", 9F);
-            button3.Location = new Point(455, 471);
-            button3.Name = "button3";
-            button3.Size = new Size(61, 39);
-            button3.TabIndex = 32;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            SavePartsAssociated.Font = new Font("Gadugi", 9F);
+            SavePartsAssociated.Location = new Point(455, 471);
+            SavePartsAssociated.Name = "SavePartsAssociated";
+            SavePartsAssociated.Size = new Size(61, 39);
+            SavePartsAssociated.TabIndex = 32;
+            SavePartsAssociated.Text = "Save";
+            SavePartsAssociated.UseVisualStyleBackColor = true;
+            SavePartsAssociated.Click += SavePartsAssociated_Click;
             // 
-            // button4
+            // DeletePartsAssociated
             // 
-            button4.Font = new Font("Gadugi", 9F);
-            button4.Location = new Point(455, 530);
-            button4.Name = "button4";
-            button4.Size = new Size(61, 39);
-            button4.TabIndex = 33;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            DeletePartsAssociated.Font = new Font("Gadugi", 9F);
+            DeletePartsAssociated.Location = new Point(455, 530);
+            DeletePartsAssociated.Name = "DeletePartsAssociated";
+            DeletePartsAssociated.Size = new Size(61, 39);
+            DeletePartsAssociated.TabIndex = 33;
+            DeletePartsAssociated.Text = "Delete";
+            DeletePartsAssociated.UseVisualStyleBackColor = true;
+            DeletePartsAssociated.Click += DeletePartsAssociated_Click;
             // 
-            // button5
+            // CancelAddProduct
             // 
-            button5.Font = new Font("Gadugi", 9F);
-            button5.Location = new Point(1090, 661);
-            button5.Name = "button5";
-            button5.Size = new Size(61, 39);
-            button5.TabIndex = 34;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
+            CancelAddProduct.Font = new Font("Gadugi", 9F);
+            CancelAddProduct.Location = new Point(1090, 661);
+            CancelAddProduct.Name = "CancelAddProduct";
+            CancelAddProduct.Size = new Size(61, 39);
+            CancelAddProduct.TabIndex = 34;
+            CancelAddProduct.Text = "Cancel";
+            CancelAddProduct.UseVisualStyleBackColor = true;
+            CancelAddProduct.Click += CancelAddProduct_Click;
             // 
             // AddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1191, 731);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(CancelAddProduct);
+            Controls.Add(DeletePartsAssociated);
+            Controls.Add(SavePartsAssociated);
+            Controls.Add(AddCandidateParts);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -408,9 +409,9 @@
         private TextBox textBox2;
         private TextBox textBox7;
         private Label label8;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button AddCandidateParts;
+        private Button SavePartsAssociated;
+        private Button DeletePartsAssociated;
+        private Button CancelAddProduct;
     }
 }

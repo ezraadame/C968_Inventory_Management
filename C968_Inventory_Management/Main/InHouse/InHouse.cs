@@ -19,13 +19,7 @@ namespace C968_Inventory_Management.Main.InHouse
 
         public int MachineID;
 
-        public InHousePart(int partID,
-                       string? name,
-                       decimal price,
-                       int inStock,
-                       int min,
-                       int max,
-                       int machineID) : base(partID, name, price, inStock, min, max)
+        public InHousePart(int partID, string? name, decimal price, int inStock, int min, int max, int machineID) : base(partID, name, price, inStock, min, max)
         {
             PartID = partID;
             Name = name;

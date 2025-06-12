@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            CancelInModifyProduct = new Button();
+            DeleteInModifyProduct = new Button();
+            SaveInModifyProduct = new Button();
+            AddButtoninModifyProduct = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -67,45 +67,49 @@
             ((System.ComponentModel.ISupportInitialize)PartsTable).BeginInit();
             SuspendLayout();
             // 
-            // button5
+            // CancelInModifyProduct
             // 
-            button5.Font = new Font("Gadugi", 9F);
-            button5.Location = new Point(1099, 633);
-            button5.Name = "button5";
-            button5.Size = new Size(61, 39);
-            button5.TabIndex = 59;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
+            CancelInModifyProduct.Font = new Font("Gadugi", 9F);
+            CancelInModifyProduct.Location = new Point(1099, 633);
+            CancelInModifyProduct.Name = "CancelInModifyProduct";
+            CancelInModifyProduct.Size = new Size(61, 39);
+            CancelInModifyProduct.TabIndex = 59;
+            CancelInModifyProduct.Text = "Cancel";
+            CancelInModifyProduct.UseVisualStyleBackColor = true;
+            CancelInModifyProduct.Click += CancelInModifyProduct_Click;
             // 
-            // button4
+            // DeleteInModifyProduct
             // 
-            button4.Font = new Font("Gadugi", 9F);
-            button4.Location = new Point(464, 511);
-            button4.Name = "button4";
-            button4.Size = new Size(61, 39);
-            button4.TabIndex = 58;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            DeleteInModifyProduct.Font = new Font("Gadugi", 9F);
+            DeleteInModifyProduct.Location = new Point(464, 511);
+            DeleteInModifyProduct.Name = "DeleteInModifyProduct";
+            DeleteInModifyProduct.Size = new Size(61, 39);
+            DeleteInModifyProduct.TabIndex = 58;
+            DeleteInModifyProduct.Text = "Delete";
+            DeleteInModifyProduct.UseVisualStyleBackColor = true;
+            DeleteInModifyProduct.Click += DeleteInModifyProduct_Click;
             // 
-            // button3
+            // SaveInModifyProduct
             // 
-            button3.Font = new Font("Gadugi", 9F);
-            button3.Location = new Point(464, 452);
-            button3.Name = "button3";
-            button3.Size = new Size(61, 39);
-            button3.TabIndex = 57;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            SaveInModifyProduct.Font = new Font("Gadugi", 9F);
+            SaveInModifyProduct.Location = new Point(464, 452);
+            SaveInModifyProduct.Name = "SaveInModifyProduct";
+            SaveInModifyProduct.Size = new Size(61, 39);
+            SaveInModifyProduct.TabIndex = 57;
+            SaveInModifyProduct.Text = "Save";
+            SaveInModifyProduct.UseVisualStyleBackColor = true;
+            SaveInModifyProduct.Click += SaveInModifyProduct_Click;
             // 
-            // button2
+            // AddButtoninModifyProduct
             // 
-            button2.Font = new Font("Gadugi", 9F);
-            button2.Location = new Point(464, 157);
-            button2.Name = "button2";
-            button2.Size = new Size(61, 39);
-            button2.TabIndex = 56;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            AddButtoninModifyProduct.Font = new Font("Gadugi", 9F);
+            AddButtoninModifyProduct.Location = new Point(464, 157);
+            AddButtoninModifyProduct.Name = "AddButtoninModifyProduct";
+            AddButtoninModifyProduct.Size = new Size(61, 39);
+            AddButtoninModifyProduct.TabIndex = 56;
+            AddButtoninModifyProduct.Text = "Add";
+            AddButtoninModifyProduct.UseVisualStyleBackColor = true;
+            AddButtoninModifyProduct.Click += AddButtoninModifyProduct_Click;
             // 
             // label8
             // 
@@ -340,10 +344,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1196, 697);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(CancelInModifyProduct);
+            Controls.Add(DeleteInModifyProduct);
+            Controls.Add(SaveInModifyProduct);
+            Controls.Add(AddButtoninModifyProduct);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -373,10 +377,10 @@
 
         #endregion
 
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button CancelInModifyProduct;
+        private Button DeleteInModifyProduct;
+        private Button SaveInModifyProduct;
+        private Button AddButtoninModifyProduct;
         private Label label8;
         private Label label7;
         private Label label6;

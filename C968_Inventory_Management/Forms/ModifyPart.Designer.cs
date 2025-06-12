@@ -37,7 +37,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            button1 = new Button();
+            CancelModifyInHouse = new Button();
             textBox7 = new TextBox();
             textBox6 = new TextBox();
             textBox5 = new TextBox();
@@ -82,7 +82,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(CancelModifyInHouse);
             panel1.Controls.Add(textBox7);
             panel1.Controls.Add(textBox6);
             panel1.Controls.Add(textBox5);
@@ -180,16 +180,17 @@
             label2.TabIndex = 11;
             label2.Text = "ID";
             // 
-            // button1
+            // CancelModifyInHouse
             // 
-            button1.BackColor = SystemColors.ControlDark;
-            button1.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(290, 381);
-            button1.Name = "button1";
-            button1.Size = new Size(74, 34);
-            button1.TabIndex = 10;
-            button1.Text = "Cancel";
-            button1.UseVisualStyleBackColor = false;
+            CancelModifyInHouse.BackColor = SystemColors.ControlDark;
+            CancelModifyInHouse.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CancelModifyInHouse.Location = new Point(290, 381);
+            CancelModifyInHouse.Name = "CancelModifyInHouse";
+            CancelModifyInHouse.Size = new Size(74, 34);
+            CancelModifyInHouse.TabIndex = 10;
+            CancelModifyInHouse.Text = "Cancel";
+            CancelModifyInHouse.UseVisualStyleBackColor = false;
+            CancelModifyInHouse.Click += CancelModifyInHouse_Click;
             // 
             // textBox7
             // 
@@ -394,6 +395,7 @@
             button4.TabIndex = 10;
             button4.Text = "Cancel";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += CancelModifyOutsourced_Click;
             // 
             // textBox8
             // 
@@ -506,7 +508,7 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button button1;
+        private Button CancelModifyInHouse;
         private TextBox textBox7;
         private TextBox textBox6;
         private TextBox textBox5;

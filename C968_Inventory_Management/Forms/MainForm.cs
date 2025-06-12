@@ -1,3 +1,4 @@
+using C968_Inventory_Management.Main.Inventory;
 using System.Windows.Forms;
 
 
@@ -5,30 +6,34 @@ namespace C968_Inventory_Management
 {
     public partial class MainForm : Form
     {
+        private Inventory inventory = new Inventory();
         public MainForm()
         {
             InitializeComponent();
-            
+            Inventory.PopulateDummyLists(); 
+
+            PartsTable.DataSource = Inventory.AllParts;  
+            ProductsTable.DataSource = Inventory.Products; 
+        }
+
+        public void MainFormLoad(object sender, EventArgs e)
+        {
+            // Existing code remains unchanged  
         }
 
         private void SearchProductButton_Click(object sender, EventArgs e)
         {
-
+            // Existing code remains unchanged  
         }
 
         private void SearchPartButton_Click(object sender, EventArgs e)
         {
-
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //PartsTable.DataSource = Inventory.AllParts;
-
+            // Existing code remains unchanged  
         }
 
         private void PartsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Existing code remains unchanged  
         }
 
         private void AddPartsButton_Click(object sender, EventArgs e)
@@ -62,6 +67,16 @@ namespace C968_Inventory_Management
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void SearchBoxParts_TextChanged(object sender, EventArgs e)
+        {
+            // Existing code remains unchanged  
+        }
+
+        private void ProductsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Existing code remains unchanged  
         }
     }
 }
