@@ -36,6 +36,12 @@
             PartsLabel = new Label();
             ProdcutsLabel = new Label();
             PartsTable = new DataGridView();
+            PartID = new DataGridViewTextBoxColumn();
+            NameOfParts = new DataGridViewTextBoxColumn();
+            InStock = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            Min = new DataGridViewTextBoxColumn();
+            Max = new DataGridViewTextBoxColumn();
             ProductsTable = new DataGridView();
             ProductID = new DataGridViewTextBoxColumn();
             NameOfProduct = new DataGridViewTextBoxColumn();
@@ -50,12 +56,6 @@
             ModifyProductsButton = new Button();
             DeleteProductsButton = new Button();
             ExitButton = new Button();
-            PartID = new DataGridViewTextBoxColumn();
-            NameOfParts = new DataGridViewTextBoxColumn();
-            InStock = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Min = new DataGridViewTextBoxColumn();
-            Max = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)PartsTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ProductsTable).BeginInit();
             SuspendLayout();
@@ -135,6 +135,36 @@
             PartsTable.TabIndex = 7;
             PartsTable.CellContentClick += PartsTable_CellContentClick;
             // 
+            // PartID
+            // 
+            PartID.HeaderText = "Part ID";
+            PartID.Name = "PartID";
+            // 
+            // NameOfParts
+            // 
+            NameOfParts.HeaderText = "Name";
+            NameOfParts.Name = "NameOfParts";
+            // 
+            // InStock
+            // 
+            InStock.HeaderText = "Inventory";
+            InStock.Name = "InStock";
+            // 
+            // Price
+            // 
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
+            // 
+            // Min
+            // 
+            Min.HeaderText = "Minimum";
+            Min.Name = "Min";
+            // 
+            // Max
+            // 
+            Max.HeaderText = "Maximum";
+            Max.Name = "Max";
+            // 
             // ProductsTable
             // 
             ProductsTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -183,6 +213,7 @@
             AddPartsButton.TabIndex = 9;
             AddPartsButton.Text = "Add";
             AddPartsButton.UseVisualStyleBackColor = true;
+            AddPartsButton.Click += AddPartsButton_Click;
             // 
             // ModifyPartsButton
             // 
@@ -192,6 +223,7 @@
             ModifyPartsButton.TabIndex = 10;
             ModifyPartsButton.Text = "Modify";
             ModifyPartsButton.UseVisualStyleBackColor = true;
+            ModifyPartsButton.Click += ModifyPartsButton_Click;
             // 
             // DeletePartsButton
             // 
@@ -210,6 +242,7 @@
             AddProductsButton.TabIndex = 12;
             AddProductsButton.Text = "Add";
             AddProductsButton.UseVisualStyleBackColor = true;
+            AddProductsButton.Click += AddProductsButton_Click;
             // 
             // ModifyProductsButton
             // 
@@ -219,6 +252,7 @@
             ModifyProductsButton.TabIndex = 13;
             ModifyProductsButton.Text = "Modify";
             ModifyProductsButton.UseVisualStyleBackColor = true;
+            ModifyProductsButton.Click += ModifyProductsButton_Click;
             // 
             // DeleteProductsButton
             // 
@@ -237,38 +271,9 @@
             ExitButton.TabIndex = 15;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
-            // PartID
-            // 
-            PartID.HeaderText = "Part ID";
-            PartID.Name = "PartID";
-            // 
-            // Name
-            // 
-            NameOfParts.HeaderText = "Name";
-            NameOfParts.Name = "Name";
-            // 
-            // InStock
-            // 
-            InStock.HeaderText = "Inventory";
-            InStock.Name = "InStock";
-            // 
-            // Price
-            // 
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            // 
-            // Min
-            // 
-            Min.HeaderText = "Minimum";
-            Min.Name = "Min";
-            // 
-            // Max
-            // 
-            Max.HeaderText = "Maximum";
-            Max.Name = "Max";
-            // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -289,7 +294,7 @@
             Controls.Add(SearchBoxProducts);
             Controls.Add(SearchBoxParts);
             Controls.Add(titleInventoryManagementSystems);
-            Name = "Name";
+            Name = "MainForm";
             Text = "Inventory Management System";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)PartsTable).EndInit();

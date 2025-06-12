@@ -7,8 +7,33 @@ using System.Threading.Tasks;
 
 namespace C968_Inventory_Management.Main.Outsourced
 {
-    public class Outsourced : Part
+    internal class OutsourcedPart : Part
     {
-        public string CompanyName { get; set; }
+        public int PartID;
+        public string? Name;
+        public decimal Price;
+        public int InStock;
+        public int Min;
+        public int Max;
+
+        public string CompanyName;
+
+        public OutsourcedPart(int partID,
+                          string? name,
+                          decimal price,
+                          int inStock,
+                          int min,
+                          int max,
+                          string? companyName) : base(partID, name, price, inStock, min, max)
+        {
+            PartID = partID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+            CompanyName = companyName;
+        }
     }
+
 }

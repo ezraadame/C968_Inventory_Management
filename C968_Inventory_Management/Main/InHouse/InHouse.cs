@@ -7,8 +7,33 @@ using System.Threading.Tasks;
 
 namespace C968_Inventory_Management.Main.InHouse
 {
-    public class InHouse : Part
+
+    internal class InHousePart : Part
     {
-        public int MachineID { get; set; }
+        public int PartID;
+        public string? Name;
+        public decimal Price;
+        public int InStock;
+        public int Min;
+        public int Max;
+
+        public int MachineID;
+
+        public InHousePart(int partID,
+                       string? name,
+                       decimal price,
+                       int inStock,
+                       int min,
+                       int max,
+                       int machineID) : base(partID, name, price, inStock, min, max)
+        {
+            PartID = partID;
+            Name = name;
+            Price = price;
+            InStock = inStock;
+            Min = min;
+            Max = max;
+            MachineID = machineID;
+        }
     }
 }
