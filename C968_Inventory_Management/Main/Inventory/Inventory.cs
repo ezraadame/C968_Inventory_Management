@@ -59,10 +59,7 @@ namespace C968_Inventory_Management.Main.Inventory
             dummyProd4.AssociatedParts.Add(dummyPart4B);
         }
 
-        public void AddProduct(Product product)
-        {
-            Products.Add(product);
-        }
+        public void AddProduct(Product product) => Products.Add(product);
 
         public bool RemoveProduct(int productID)
         {
@@ -85,10 +82,10 @@ namespace C968_Inventory_Management.Main.Inventory
             return success;
         }
 
-        //public Product LookupProduct(int productID)
-        //{
-        //    return Products.FirstOrDefault();
-        //}
+        public Product? LookupProduct(int productID)
+        {
+            return Products.FirstOrDefault(product => product.ProductID == productID);
+        }
 
         //public void UpdateProduct(int productID, Product product)
         //{
@@ -97,16 +94,27 @@ namespace C968_Inventory_Management.Main.Inventory
 
         /////
 
-        //public void AddPart(Part part)
-        //{
-        //    AllParts.Add(part);
-        //}
-        
+        public void AddPart(Part part) => AllParts.Add(part);
 
-        //public Part LookupPart(int partID)
-        //{
-        //    return AllParts.FirstOrDefault();
-        //}
+        public static bool DeletePart(int part)
+        {
+            Part partToDelete = LookupPart(part);
+
+            if (partToDelete == null)
+            {
+                return false;
+            }
+            else
+            {
+                AllParts.Remove(partToDelete);
+                return true;
+            }
+        }
+
+        public static Part? LookupPart(int partID)
+        {
+            return AllParts.FirstOrDefault(part => part.PartID == partID);
+        }
 
         //public void UpdateParts(int partID, Part part)
         //{

@@ -11,6 +11,7 @@ namespace C968_Inventory_Management.Main.Products
 {
     public class Product 
     {
+        public BindingList<Part> AssociatedParts { get; set; } = new BindingList<Part>();
         public int ProductID { get; set; }
         public string? Name { get; set; }
         public int InStock {  get; set; }
@@ -31,19 +32,33 @@ namespace C968_Inventory_Management.Main.Products
 
         }
 
-        public BindingList<Part> AssociatedParts { get; set; } = new BindingList<Part>();
+        public void AddAssociatedPart(Part part) => AssociatedParts?.Add(part);
 
-        public void AddAssociatedPart(Part part)
+        public bool RemoveAssociatedPart(int partID)
         {
-            AssociatedParts?.Add(part);
+            bool success = false;
+            foreach (Part part in AssociatedParts)
+            {
+                if (part.PartID == partID)
+                {
+                    AssociatedParts.Remove(part);
+                    return success = true;
+                }
+            }
+            MessageBox.Show("Removal failure.");
+            return false;
         }
 
-        public bool RemoveAssociatedPart() => true;
-
-
-        public Part LookupAssociatedPart(int partID, Part? part)
+        public Part? LookupAssociatedPart(int partID)
         {
-            return part;
+            foreach (Part part in AssociatedParts)
+            {
+                if (part.PartID == partID)
+                {
+                    return part;
+                }
+            }
+            return null;
         }
     }
 

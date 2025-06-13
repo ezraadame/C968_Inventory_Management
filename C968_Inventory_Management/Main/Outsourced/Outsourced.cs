@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,16 +16,9 @@ namespace C968_Inventory_Management.Main.Outsourced
         public int InStock;
         public int Min;
         public int Max;
+        public string? CompanyName;
 
-        public string CompanyName;
-
-        public OutsourcedPart(int partID,
-                          string? name,
-                          decimal price,
-                          int inStock,
-                          int min,
-                          int max,
-                          string? companyName) : base(partID, name, price, inStock, min, max)
+        public OutsourcedPart(int partID, string? name, decimal price, int inStock, int min, int max, string? companyName) : base(partID, name, price, inStock, min, max)
         {
             PartID = partID;
             Name = name;
@@ -34,6 +28,7 @@ namespace C968_Inventory_Management.Main.Outsourced
             Max = max;
             CompanyName = companyName;
         }
-    }
 
+        
+    }
 }
