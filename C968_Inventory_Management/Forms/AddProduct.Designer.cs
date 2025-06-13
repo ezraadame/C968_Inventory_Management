@@ -28,23 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            PartsTable = new DataGridView();
-            PartID = new DataGridViewTextBoxColumn();
-            NameOfParts = new DataGridViewTextBoxColumn();
-            PartsInventory = new DataGridViewTextBoxColumn();
-            PriceOfParts = new DataGridViewTextBoxColumn();
-            MininumParts = new DataGridViewTextBoxColumn();
-            MaximumParts = new DataGridViewTextBoxColumn();
+            dvgAllCandidateParts = new DataGridView();
             PartsLabel = new Label();
-            SearchPartButton = new Button();
-            SearchBoxParts = new TextBox();
-            dataGridView1 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            btnSearchAllCandidateParts = new Button();
+            txtSearchAllCandidateParts = new TextBox();
+            dvgPartsAssociatedWithProduct = new DataGridView();
             label1 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -58,54 +46,36 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox7 = new TextBox();
-            label8 = new Label();
-            AddCandidateParts = new Button();
-            SavePartsAssociated = new Button();
-            DeletePartsAssociated = new Button();
+            lblAddProduct = new Label();
+            btnAddCandidatePart = new Button();
+            btnSavePartAssociatedWithProduct = new Button();
+            btnDeletePartAssociatedWithProduct = new Button();
             CancelAddProduct = new Button();
-            ((System.ComponentModel.ISupportInitialize)PartsTable).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            clmAllCandidatePartsPartID = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsName = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsInventory = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsPrice = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsMin = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsMax = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedPartID = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedName = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedInventory = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedPrice = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedMin = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedMax = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dvgAllCandidateParts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dvgPartsAssociatedWithProduct).BeginInit();
             SuspendLayout();
             // 
-            // PartsTable
+            // dvgAllCandidateParts
             // 
-            PartsTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            PartsTable.Columns.AddRange(new DataGridViewColumn[] { PartID, NameOfParts, PartsInventory, PriceOfParts, MininumParts, MaximumParts });
-            PartsTable.Location = new Point(548, 68);
-            PartsTable.Name = "PartsTable";
-            PartsTable.RowHeadersVisible = false;
-            PartsTable.Size = new Size(603, 220);
-            PartsTable.TabIndex = 11;
-            // 
-            // PartID
-            // 
-            PartID.HeaderText = "Part ID";
-            PartID.Name = "PartID";
-            // 
-            // NameOfParts
-            // 
-            NameOfParts.HeaderText = "Name";
-            NameOfParts.Name = "NameOfParts";
-            // 
-            // PartsInventory
-            // 
-            PartsInventory.HeaderText = "Inventory";
-            PartsInventory.Name = "PartsInventory";
-            // 
-            // PriceOfParts
-            // 
-            PriceOfParts.HeaderText = "Price";
-            PriceOfParts.Name = "PriceOfParts";
-            // 
-            // MininumParts
-            // 
-            MininumParts.HeaderText = "Minimum";
-            MininumParts.Name = "MininumParts";
-            // 
-            // MaximumParts
-            // 
-            MaximumParts.HeaderText = "Maximum";
-            MaximumParts.Name = "MaximumParts";
+            dvgAllCandidateParts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgAllCandidateParts.Columns.AddRange(new DataGridViewColumn[] { clmAllCandidatePartsPartID, clmAllCandidatePartsName, clmAllCandidatePartsInventory, clmAllCandidatePartsPrice, clmAllCandidatePartsMin, clmAllCandidatePartsMax });
+            dvgAllCandidateParts.Location = new Point(548, 68);
+            dvgAllCandidateParts.Name = "dvgAllCandidateParts";
+            dvgAllCandidateParts.RowHeadersVisible = false;
+            dvgAllCandidateParts.Size = new Size(603, 220);
+            dvgAllCandidateParts.TabIndex = 11;
             // 
             // PartsLabel
             // 
@@ -117,61 +87,31 @@
             PartsLabel.TabIndex = 10;
             PartsLabel.Text = "All Candidate Parts";
             // 
-            // SearchPartButton
+            // btnSearchAllCandidateParts
             // 
-            SearchPartButton.Location = new Point(911, 32);
-            SearchPartButton.Name = "SearchPartButton";
-            SearchPartButton.Size = new Size(74, 25);
-            SearchPartButton.TabIndex = 9;
-            SearchPartButton.Text = "Search";
-            SearchPartButton.UseVisualStyleBackColor = true;
+            btnSearchAllCandidateParts.Location = new Point(911, 32);
+            btnSearchAllCandidateParts.Name = "btnSearchAllCandidateParts";
+            btnSearchAllCandidateParts.Size = new Size(74, 25);
+            btnSearchAllCandidateParts.TabIndex = 9;
+            btnSearchAllCandidateParts.Text = "Search";
+            btnSearchAllCandidateParts.UseVisualStyleBackColor = true;
             // 
-            // SearchBoxParts
+            // txtSearchAllCandidateParts
             // 
-            SearchBoxParts.Location = new Point(991, 33);
-            SearchBoxParts.Name = "SearchBoxParts";
-            SearchBoxParts.Size = new Size(160, 23);
-            SearchBoxParts.TabIndex = 8;
+            txtSearchAllCandidateParts.Location = new Point(991, 33);
+            txtSearchAllCandidateParts.Name = "txtSearchAllCandidateParts";
+            txtSearchAllCandidateParts.Size = new Size(160, 23);
+            txtSearchAllCandidateParts.TabIndex = 8;
             // 
-            // dataGridView1
+            // dvgPartsAssociatedWithProduct
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
-            dataGridView1.Location = new Point(548, 398);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.Size = new Size(603, 230);
-            dataGridView1.TabIndex = 15;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Part ID";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Name";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.HeaderText = "Inventory";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.HeaderText = "Price";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.HeaderText = "Minimum";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewTextBoxColumn6.HeaderText = "Maximum";
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dvgPartsAssociatedWithProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgPartsAssociatedWithProduct.Columns.AddRange(new DataGridViewColumn[] { clmPartsAssociatedPartID, clmPartsAssociatedName, clmPartsAssociatedInventory, clmPartsAssociatedPrice, clmPartsAssociatedMin, clmPartsAssociatedMax });
+            dvgPartsAssociatedWithProduct.Location = new Point(548, 398);
+            dvgPartsAssociatedWithProduct.Name = "dvgPartsAssociatedWithProduct";
+            dvgPartsAssociatedWithProduct.RowHeadersVisible = false;
+            dvgPartsAssociatedWithProduct.Size = new Size(603, 230);
+            dvgPartsAssociatedWithProduct.TabIndex = 15;
             // 
             // label1
             // 
@@ -285,48 +225,48 @@
             textBox7.Size = new Size(155, 23);
             textBox7.TabIndex = 18;
             // 
-            // label8
+            // lblAddProduct
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(27, 29);
-            label8.Name = "label8";
-            label8.Size = new Size(188, 35);
-            label8.TabIndex = 30;
-            label8.Text = "Add Product";
+            lblAddProduct.AutoSize = true;
+            lblAddProduct.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAddProduct.Location = new Point(27, 29);
+            lblAddProduct.Name = "lblAddProduct";
+            lblAddProduct.Size = new Size(188, 35);
+            lblAddProduct.TabIndex = 30;
+            lblAddProduct.Text = "Add Product";
             // 
-            // AddCandidateParts
+            // btnAddCandidatePart
             // 
-            AddCandidateParts.Font = new Font("Gadugi", 9F);
-            AddCandidateParts.Location = new Point(455, 159);
-            AddCandidateParts.Name = "AddCandidateParts";
-            AddCandidateParts.Size = new Size(61, 39);
-            AddCandidateParts.TabIndex = 31;
-            AddCandidateParts.Text = "Add";
-            AddCandidateParts.UseVisualStyleBackColor = true;
-            AddCandidateParts.Click += AddCandidateParts_Click;
+            btnAddCandidatePart.Font = new Font("Gadugi", 9F);
+            btnAddCandidatePart.Location = new Point(455, 159);
+            btnAddCandidatePart.Name = "btnAddCandidatePart";
+            btnAddCandidatePart.Size = new Size(61, 39);
+            btnAddCandidatePart.TabIndex = 31;
+            btnAddCandidatePart.Text = "Add";
+            btnAddCandidatePart.UseVisualStyleBackColor = true;
+            btnAddCandidatePart.Click += AddCandidateParts_Click;
             // 
-            // SavePartsAssociated
+            // btnSavePartAssociatedWithProduct
             // 
-            SavePartsAssociated.Font = new Font("Gadugi", 9F);
-            SavePartsAssociated.Location = new Point(455, 471);
-            SavePartsAssociated.Name = "SavePartsAssociated";
-            SavePartsAssociated.Size = new Size(61, 39);
-            SavePartsAssociated.TabIndex = 32;
-            SavePartsAssociated.Text = "Save";
-            SavePartsAssociated.UseVisualStyleBackColor = true;
-            SavePartsAssociated.Click += SavePartsAssociated_Click;
+            btnSavePartAssociatedWithProduct.Font = new Font("Gadugi", 9F);
+            btnSavePartAssociatedWithProduct.Location = new Point(455, 471);
+            btnSavePartAssociatedWithProduct.Name = "btnSavePartAssociatedWithProduct";
+            btnSavePartAssociatedWithProduct.Size = new Size(61, 39);
+            btnSavePartAssociatedWithProduct.TabIndex = 32;
+            btnSavePartAssociatedWithProduct.Text = "Save";
+            btnSavePartAssociatedWithProduct.UseVisualStyleBackColor = true;
+            btnSavePartAssociatedWithProduct.Click += SavePartsAssociated_Click;
             // 
-            // DeletePartsAssociated
+            // btnDeletePartAssociatedWithProduct
             // 
-            DeletePartsAssociated.Font = new Font("Gadugi", 9F);
-            DeletePartsAssociated.Location = new Point(455, 530);
-            DeletePartsAssociated.Name = "DeletePartsAssociated";
-            DeletePartsAssociated.Size = new Size(61, 39);
-            DeletePartsAssociated.TabIndex = 33;
-            DeletePartsAssociated.Text = "Delete";
-            DeletePartsAssociated.UseVisualStyleBackColor = true;
-            DeletePartsAssociated.Click += DeletePartsAssociated_Click;
+            btnDeletePartAssociatedWithProduct.Font = new Font("Gadugi", 9F);
+            btnDeletePartAssociatedWithProduct.Location = new Point(455, 530);
+            btnDeletePartAssociatedWithProduct.Name = "btnDeletePartAssociatedWithProduct";
+            btnDeletePartAssociatedWithProduct.Size = new Size(61, 39);
+            btnDeletePartAssociatedWithProduct.TabIndex = 33;
+            btnDeletePartAssociatedWithProduct.Text = "Delete";
+            btnDeletePartAssociatedWithProduct.UseVisualStyleBackColor = true;
+            btnDeletePartAssociatedWithProduct.Click += DeletePartsAssociated_Click;
             // 
             // CancelAddProduct
             // 
@@ -339,16 +279,76 @@
             CancelAddProduct.UseVisualStyleBackColor = true;
             CancelAddProduct.Click += CancelAddProduct_Click;
             // 
+            // clmAllCandidatePartsPartID
+            // 
+            clmAllCandidatePartsPartID.HeaderText = "Part ID";
+            clmAllCandidatePartsPartID.Name = "clmAllCandidatePartsPartID";
+            // 
+            // clmAllCandidatePartsName
+            // 
+            clmAllCandidatePartsName.HeaderText = "Name";
+            clmAllCandidatePartsName.Name = "clmAllCandidatePartsName";
+            // 
+            // clmAllCandidatePartsInventory
+            // 
+            clmAllCandidatePartsInventory.HeaderText = "Inventory";
+            clmAllCandidatePartsInventory.Name = "clmAllCandidatePartsInventory";
+            // 
+            // clmAllCandidatePartsPrice
+            // 
+            clmAllCandidatePartsPrice.HeaderText = "Price";
+            clmAllCandidatePartsPrice.Name = "clmAllCandidatePartsPrice";
+            // 
+            // clmAllCandidatePartsMin
+            // 
+            clmAllCandidatePartsMin.HeaderText = "Minimum";
+            clmAllCandidatePartsMin.Name = "clmAllCandidatePartsMin";
+            // 
+            // clmAllCandidatePartsMax
+            // 
+            clmAllCandidatePartsMax.HeaderText = "Maximum";
+            clmAllCandidatePartsMax.Name = "clmAllCandidatePartsMax";
+            // 
+            // clmPartsAssociatedPartID
+            // 
+            clmPartsAssociatedPartID.HeaderText = "Part ID";
+            clmPartsAssociatedPartID.Name = "clmPartsAssociatedPartID";
+            // 
+            // clmPartsAssociatedName
+            // 
+            clmPartsAssociatedName.HeaderText = "Name";
+            clmPartsAssociatedName.Name = "clmPartsAssociatedName";
+            // 
+            // clmPartsAssociatedInventory
+            // 
+            clmPartsAssociatedInventory.HeaderText = "Inventory";
+            clmPartsAssociatedInventory.Name = "clmPartsAssociatedInventory";
+            // 
+            // clmPartsAssociatedPrice
+            // 
+            clmPartsAssociatedPrice.HeaderText = "Price";
+            clmPartsAssociatedPrice.Name = "clmPartsAssociatedPrice";
+            // 
+            // clmPartsAssociatedMin
+            // 
+            clmPartsAssociatedMin.HeaderText = "Minimum";
+            clmPartsAssociatedMin.Name = "clmPartsAssociatedMin";
+            // 
+            // clmPartsAssociatedMax
+            // 
+            clmPartsAssociatedMax.HeaderText = "Maximum";
+            clmPartsAssociatedMax.Name = "clmPartsAssociatedMax";
+            // 
             // AddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1191, 731);
             Controls.Add(CancelAddProduct);
-            Controls.Add(DeletePartsAssociated);
-            Controls.Add(SavePartsAssociated);
-            Controls.Add(AddCandidateParts);
-            Controls.Add(label8);
+            Controls.Add(btnDeletePartAssociatedWithProduct);
+            Controls.Add(btnSavePartAssociatedWithProduct);
+            Controls.Add(btnAddCandidatePart);
+            Controls.Add(lblAddProduct);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -361,40 +361,28 @@
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox7);
-            Controls.Add(dataGridView1);
+            Controls.Add(dvgPartsAssociatedWithProduct);
             Controls.Add(label1);
-            Controls.Add(PartsTable);
+            Controls.Add(dvgAllCandidateParts);
             Controls.Add(PartsLabel);
-            Controls.Add(SearchPartButton);
-            Controls.Add(SearchBoxParts);
+            Controls.Add(btnSearchAllCandidateParts);
+            Controls.Add(txtSearchAllCandidateParts);
             Font = new Font("Gadugi", 9F);
             Name = "AddProduct";
             Text = "AddProduct";
-            ((System.ComponentModel.ISupportInitialize)PartsTable).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dvgAllCandidateParts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dvgPartsAssociatedWithProduct).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView PartsTable;
-        private DataGridViewTextBoxColumn PartID;
-        private DataGridViewTextBoxColumn NameOfParts;
-        private DataGridViewTextBoxColumn PartsInventory;
-        private DataGridViewTextBoxColumn PriceOfParts;
-        private DataGridViewTextBoxColumn MininumParts;
-        private DataGridViewTextBoxColumn MaximumParts;
+        private DataGridView dvgAllCandidateParts;
         private Label PartsLabel;
-        private Button SearchPartButton;
-        private TextBox SearchBoxParts;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private Button btnSearchAllCandidateParts;
+        private TextBox txtSearchAllCandidateParts;
+        private DataGridView dvgPartsAssociatedWithProduct;
         private Label label1;
         private Label label7;
         private Label label6;
@@ -408,10 +396,22 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox7;
-        private Label label8;
-        private Button AddCandidateParts;
-        private Button SavePartsAssociated;
-        private Button DeletePartsAssociated;
+        private Label lblAddProduct;
+        private Button btnAddCandidatePart;
+        private Button btnSavePartAssociatedWithProduct;
+        private Button btnDeletePartAssociatedWithProduct;
         private Button CancelAddProduct;
+        private DataGridViewTextBoxColumn clmAllCandidatePartsPartID;
+        private DataGridViewTextBoxColumn clmAllCandidatePartsName;
+        private DataGridViewTextBoxColumn clmAllCandidatePartsInventory;
+        private DataGridViewTextBoxColumn clmAllCandidatePartsPrice;
+        private DataGridViewTextBoxColumn clmAllCandidatePartsMin;
+        private DataGridViewTextBoxColumn clmAllCandidatePartsMax;
+        private DataGridViewTextBoxColumn clmPartsAssociatedPartID;
+        private DataGridViewTextBoxColumn clmPartsAssociatedName;
+        private DataGridViewTextBoxColumn clmPartsAssociatedInventory;
+        private DataGridViewTextBoxColumn clmPartsAssociatedPrice;
+        private DataGridViewTextBoxColumn clmPartsAssociatedMin;
+        private DataGridViewTextBoxColumn clmPartsAssociatedMax;
     }
 }

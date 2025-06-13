@@ -1,4 +1,5 @@
 using C968_Inventory_Management.Main.Inventory;
+using C968_Inventory_Management.Main.Products;
 using System.Windows.Forms;
 
 
@@ -10,10 +11,10 @@ namespace C968_Inventory_Management
         public MainForm()
         {
             InitializeComponent();
-            Inventory.PopulateDummyLists(); 
+            Inventory.PopulateDummyLists();
 
-            PartsTable.DataSource = Inventory.AllParts;  
-            ProductsTable.DataSource = Inventory.Products; 
+            dvgParts.DataSource = Inventory.AllParts;
+            dvgProducts.DataSource = Inventory.Products;
         }
 
         public void MainFormLoad(object sender, EventArgs e)
@@ -77,6 +78,16 @@ namespace C968_Inventory_Management
         private void ProductsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Existing code remains unchanged  
+        }
+
+        private void DeletePartsButton_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void DeleteProductsButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

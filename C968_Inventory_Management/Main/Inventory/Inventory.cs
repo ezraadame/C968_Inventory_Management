@@ -64,10 +64,26 @@ namespace C968_Inventory_Management.Main.Inventory
             Products.Add(product);
         }
 
-        //public bool RemoveProduct(int productID)
-        //{
-        //    return true;
-        //}
+        public bool RemoveProduct(int productID)
+        {
+            bool success = false;
+            foreach (Product product in Products)
+            {
+                if (product.ProductID == productID)
+                {
+                    Products.Remove(product);
+                    return success = true;
+                }
+                else
+                {
+                    MessageBox.Show("Removal failure.");
+                    return false;
+
+                }
+                
+            }
+            return success;
+        }
 
         //public Product LookupProduct(int productID)
         //{
@@ -85,11 +101,7 @@ namespace C968_Inventory_Management.Main.Inventory
         //{
         //    AllParts.Add(part);
         //}
-
-        //public bool DeletePart(Part part)
-        //{
-        //    return true;
-        //}
+        
 
         //public Part LookupPart(int partID)
         //{

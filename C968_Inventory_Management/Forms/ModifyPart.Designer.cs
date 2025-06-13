@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button2 = new Button();
+            btnSaveInHouse = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -37,7 +37,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            CancelModifyInHouse = new Button();
+            btnInHouseCancel = new Button();
             textBox7 = new TextBox();
             textBox6 = new TextBox();
             textBox5 = new TextBox();
@@ -45,11 +45,11 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            label1 = new Label();
+            rdbtnOutsourced = new RadioButton();
+            rdbtnInHouse = new RadioButton();
+            lblModifyPartInHouse = new Label();
             panel2 = new Panel();
-            button3 = new Button();
+            btnSaveOutsourced = new Button();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
@@ -57,7 +57,7 @@
             label13 = new Label();
             label14 = new Label();
             label15 = new Label();
-            button4 = new Button();
+            btnOutsourcedCancel = new Button();
             textBox8 = new TextBox();
             textBox9 = new TextBox();
             textBox10 = new TextBox();
@@ -65,16 +65,16 @@
             textBox12 = new TextBox();
             textBox13 = new TextBox();
             textBox14 = new TextBox();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
-            label16 = new Label();
+            rdbtnOutsourced2 = new RadioButton();
+            rdbtnInHouse2 = new RadioButton();
+            lblModifyPartOutsourced = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnSaveInHouse);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
@@ -82,7 +82,7 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(CancelModifyInHouse);
+            panel1.Controls.Add(btnInHouseCancel);
             panel1.Controls.Add(textBox7);
             panel1.Controls.Add(textBox6);
             panel1.Controls.Add(textBox5);
@@ -90,25 +90,25 @@
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(radioButton2);
-            panel1.Controls.Add(radioButton1);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(rdbtnOutsourced);
+            panel1.Controls.Add(rdbtnInHouse);
+            panel1.Controls.Add(lblModifyPartInHouse);
             panel1.Font = new Font("Gadugi", 9.75F);
             panel1.Location = new Point(26, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(388, 433);
             panel1.TabIndex = 1;
             // 
-            // button2
+            // btnSaveInHouse
             // 
-            button2.BackColor = SystemColors.ActiveCaption;
-            button2.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(222, 381);
-            button2.Name = "button2";
-            button2.Size = new Size(62, 34);
-            button2.TabIndex = 18;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = false;
+            btnSaveInHouse.BackColor = SystemColors.ActiveCaption;
+            btnSaveInHouse.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSaveInHouse.Location = new Point(222, 381);
+            btnSaveInHouse.Name = "btnSaveInHouse";
+            btnSaveInHouse.Size = new Size(62, 34);
+            btnSaveInHouse.TabIndex = 18;
+            btnSaveInHouse.Text = "Save";
+            btnSaveInHouse.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -180,17 +180,17 @@
             label2.TabIndex = 11;
             label2.Text = "ID";
             // 
-            // CancelModifyInHouse
+            // btnInHouseCancel
             // 
-            CancelModifyInHouse.BackColor = SystemColors.ControlDark;
-            CancelModifyInHouse.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CancelModifyInHouse.Location = new Point(290, 381);
-            CancelModifyInHouse.Name = "CancelModifyInHouse";
-            CancelModifyInHouse.Size = new Size(74, 34);
-            CancelModifyInHouse.TabIndex = 10;
-            CancelModifyInHouse.Text = "Cancel";
-            CancelModifyInHouse.UseVisualStyleBackColor = false;
-            CancelModifyInHouse.Click += CancelModifyInHouse_Click;
+            btnInHouseCancel.BackColor = SystemColors.ControlDark;
+            btnInHouseCancel.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInHouseCancel.Location = new Point(290, 381);
+            btnInHouseCancel.Name = "btnInHouseCancel";
+            btnInHouseCancel.Size = new Size(74, 34);
+            btnInHouseCancel.TabIndex = 10;
+            btnInHouseCancel.Text = "Cancel";
+            btnInHouseCancel.UseVisualStyleBackColor = false;
+            btnInHouseCancel.Click += CancelModifyInHouse_Click;
             // 
             // textBox7
             // 
@@ -241,44 +241,44 @@
             textBox1.Size = new Size(155, 25);
             textBox1.TabIndex = 3;
             // 
-            // radioButton2
+            // rdbtnOutsourced
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.BackColor = SystemColors.Control;
-            radioButton2.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton2.Location = new Point(250, 48);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(114, 23);
-            radioButton2.TabIndex = 2;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Out Sourced";
-            radioButton2.UseVisualStyleBackColor = false;
+            rdbtnOutsourced.AutoSize = true;
+            rdbtnOutsourced.BackColor = SystemColors.Control;
+            rdbtnOutsourced.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rdbtnOutsourced.Location = new Point(250, 48);
+            rdbtnOutsourced.Name = "rdbtnOutsourced";
+            rdbtnOutsourced.Size = new Size(114, 23);
+            rdbtnOutsourced.TabIndex = 2;
+            rdbtnOutsourced.TabStop = true;
+            rdbtnOutsourced.Text = "Out Sourced";
+            rdbtnOutsourced.UseVisualStyleBackColor = false;
             // 
-            // radioButton1
+            // rdbtnInHouse
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton1.Location = new Point(250, 21);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(90, 23);
-            radioButton1.TabIndex = 1;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "In-House";
-            radioButton1.UseVisualStyleBackColor = true;
+            rdbtnInHouse.AutoSize = true;
+            rdbtnInHouse.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rdbtnInHouse.Location = new Point(250, 21);
+            rdbtnInHouse.Name = "rdbtnInHouse";
+            rdbtnInHouse.Size = new Size(90, 23);
+            rdbtnInHouse.TabIndex = 1;
+            rdbtnInHouse.TabStop = true;
+            rdbtnInHouse.Text = "In-House";
+            rdbtnInHouse.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblModifyPartInHouse
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(179, 35);
-            label1.TabIndex = 0;
-            label1.Text = "Modify Part";
+            lblModifyPartInHouse.AutoSize = true;
+            lblModifyPartInHouse.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblModifyPartInHouse.Location = new Point(12, 9);
+            lblModifyPartInHouse.Name = "lblModifyPartInHouse";
+            lblModifyPartInHouse.Size = new Size(179, 35);
+            lblModifyPartInHouse.TabIndex = 0;
+            lblModifyPartInHouse.Text = "Modify Part";
             // 
             // panel2
             // 
-            panel2.Controls.Add(button3);
+            panel2.Controls.Add(btnSaveOutsourced);
             panel2.Controls.Add(label9);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(label11);
@@ -286,7 +286,7 @@
             panel2.Controls.Add(label13);
             panel2.Controls.Add(label14);
             panel2.Controls.Add(label15);
-            panel2.Controls.Add(button4);
+            panel2.Controls.Add(btnOutsourcedCancel);
             panel2.Controls.Add(textBox8);
             panel2.Controls.Add(textBox9);
             panel2.Controls.Add(textBox10);
@@ -294,25 +294,25 @@
             panel2.Controls.Add(textBox12);
             panel2.Controls.Add(textBox13);
             panel2.Controls.Add(textBox14);
-            panel2.Controls.Add(radioButton3);
-            panel2.Controls.Add(radioButton4);
-            panel2.Controls.Add(label16);
+            panel2.Controls.Add(rdbtnOutsourced2);
+            panel2.Controls.Add(rdbtnInHouse2);
+            panel2.Controls.Add(lblModifyPartOutsourced);
             panel2.Font = new Font("Gadugi", 9.75F);
             panel2.Location = new Point(490, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(388, 433);
             panel2.TabIndex = 2;
             // 
-            // button3
+            // btnSaveOutsourced
             // 
-            button3.BackColor = SystemColors.ActiveCaption;
-            button3.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(222, 381);
-            button3.Name = "button3";
-            button3.Size = new Size(62, 34);
-            button3.TabIndex = 18;
-            button3.Text = "Save";
-            button3.UseVisualStyleBackColor = false;
+            btnSaveOutsourced.BackColor = SystemColors.ActiveCaption;
+            btnSaveOutsourced.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSaveOutsourced.Location = new Point(222, 381);
+            btnSaveOutsourced.Name = "btnSaveOutsourced";
+            btnSaveOutsourced.Size = new Size(62, 34);
+            btnSaveOutsourced.TabIndex = 18;
+            btnSaveOutsourced.Text = "Save";
+            btnSaveOutsourced.UseVisualStyleBackColor = false;
             // 
             // label9
             // 
@@ -385,17 +385,17 @@
             label15.TabIndex = 11;
             label15.Text = "ID";
             // 
-            // button4
+            // btnOutsourcedCancel
             // 
-            button4.BackColor = SystemColors.ControlDark;
-            button4.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(290, 381);
-            button4.Name = "button4";
-            button4.Size = new Size(74, 34);
-            button4.TabIndex = 10;
-            button4.Text = "Cancel";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += CancelModifyOutsourced_Click;
+            btnOutsourcedCancel.BackColor = SystemColors.ControlDark;
+            btnOutsourcedCancel.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnOutsourcedCancel.Location = new Point(290, 381);
+            btnOutsourcedCancel.Name = "btnOutsourcedCancel";
+            btnOutsourcedCancel.Size = new Size(74, 34);
+            btnOutsourcedCancel.TabIndex = 10;
+            btnOutsourcedCancel.Text = "Cancel";
+            btnOutsourcedCancel.UseVisualStyleBackColor = false;
+            btnOutsourcedCancel.Click += CancelModifyOutsourced_Click;
             // 
             // textBox8
             // 
@@ -446,40 +446,40 @@
             textBox14.Size = new Size(155, 25);
             textBox14.TabIndex = 3;
             // 
-            // radioButton3
+            // rdbtnOutsourced2
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.BackColor = SystemColors.Control;
-            radioButton3.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton3.Location = new Point(250, 48);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(114, 23);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Out Sourced";
-            radioButton3.UseVisualStyleBackColor = false;
+            rdbtnOutsourced2.AutoSize = true;
+            rdbtnOutsourced2.BackColor = SystemColors.Control;
+            rdbtnOutsourced2.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rdbtnOutsourced2.Location = new Point(250, 48);
+            rdbtnOutsourced2.Name = "rdbtnOutsourced2";
+            rdbtnOutsourced2.Size = new Size(114, 23);
+            rdbtnOutsourced2.TabIndex = 2;
+            rdbtnOutsourced2.TabStop = true;
+            rdbtnOutsourced2.Text = "Out Sourced";
+            rdbtnOutsourced2.UseVisualStyleBackColor = false;
             // 
-            // radioButton4
+            // rdbtnInHouse2
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton4.Location = new Point(250, 21);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(90, 23);
-            radioButton4.TabIndex = 1;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "In-House";
-            radioButton4.UseVisualStyleBackColor = true;
+            rdbtnInHouse2.AutoSize = true;
+            rdbtnInHouse2.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rdbtnInHouse2.Location = new Point(250, 21);
+            rdbtnInHouse2.Name = "rdbtnInHouse2";
+            rdbtnInHouse2.Size = new Size(90, 23);
+            rdbtnInHouse2.TabIndex = 1;
+            rdbtnInHouse2.TabStop = true;
+            rdbtnInHouse2.Text = "In-House";
+            rdbtnInHouse2.UseVisualStyleBackColor = true;
             // 
-            // label16
+            // lblModifyPartOutsourced
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(12, 9);
-            label16.Name = "label16";
-            label16.Size = new Size(179, 35);
-            label16.TabIndex = 0;
-            label16.Text = "Modify Part";
+            lblModifyPartOutsourced.AutoSize = true;
+            lblModifyPartOutsourced.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblModifyPartOutsourced.Location = new Point(12, 9);
+            lblModifyPartOutsourced.Name = "lblModifyPartOutsourced";
+            lblModifyPartOutsourced.Size = new Size(179, 35);
+            lblModifyPartOutsourced.TabIndex = 0;
+            lblModifyPartOutsourced.Text = "Modify Part";
             // 
             // ModifyPart
             // 
@@ -500,7 +500,7 @@
         #endregion
 
         private Panel panel1;
-        private Button button2;
+        private Button btnSaveInHouse;
         private Label label8;
         private Label label7;
         private Label label6;
@@ -508,7 +508,7 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button CancelModifyInHouse;
+        private Button btnInHouseCancel;
         private TextBox textBox7;
         private TextBox textBox6;
         private TextBox textBox5;
@@ -516,11 +516,11 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private Label label1;
+        private RadioButton rdbtnOutsourced;
+        private RadioButton rdbtnInHouse;
+        private Label lblModifyPartInHouse;
         private Panel panel2;
-        private Button button3;
+        private Button btnSaveOutsourced;
         private Label label9;
         private Label label10;
         private Label label11;
@@ -528,7 +528,7 @@
         private Label label13;
         private Label label14;
         private Label label15;
-        private Button button4;
+        private Button btnOutsourcedCancel;
         private TextBox textBox8;
         private TextBox textBox9;
         private TextBox textBox10;
@@ -536,8 +536,8 @@
         private TextBox textBox12;
         private TextBox textBox13;
         private TextBox textBox14;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
-        private Label label16;
+        private RadioButton rdbtnOutsourced2;
+        private RadioButton rdbtnInHouse2;
+        private Label lblModifyPartOutsourced;
     }
 }
