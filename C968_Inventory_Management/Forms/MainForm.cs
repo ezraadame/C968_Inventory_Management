@@ -12,6 +12,8 @@ namespace C968_Inventory_Management
         public MainForm()
         {
             InitializeComponent();
+            txtSearchParts.Text += txtSearchParts_TextChanged;
+
             Inventory.PopulateDummyLists();
 
             dvgParts.DataSource = Inventory.AllParts;
@@ -39,7 +41,12 @@ namespace C968_Inventory_Management
 
         private void SearchPartButton_Click(object sender, EventArgs e)
         {
-            // Existing code remains unchanged  
+            string searchParts = txtSearchParts.Text.ToLower();
+
+            var filteredItem = Inventory.AllParts
+                .Where(item => item.Name != null && item.Name.ToLower().Contains(searchParts))
+                .ToList();
+            dvgParts.DataSource = filteredItem;
         }
 
         private void AddPartsButton_Click(object sender, EventArgs e)
@@ -101,15 +108,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtSearchProducts_TextChanged(object sender, EventArgs e)
-        {
-            //We need to be able to enter in letters and then click the search button to select the item that corresponds
-        }
 
-        private void txtSearchParts_TextChanged(object sender, EventArgs e)
-        {
-            //We need to be able to enter in letters and then click the search button to select the item that corresponds
-        }
 
         private void dvgParts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -119,6 +118,12 @@ namespace C968_Inventory_Management
         private void dvgProducts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dvgProducts.ClearSelection();
+        }
+
+        private void txtSearchParts_TextChanged(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

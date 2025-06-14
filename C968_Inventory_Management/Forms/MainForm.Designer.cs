@@ -72,7 +72,6 @@
             txtSearchProducts.Name = "txtSearchProducts";
             txtSearchProducts.Size = new Size(160, 23);
             txtSearchProducts.TabIndex = 2;
-            txtSearchProducts.TextChanged += txtSearchProducts_TextChanged;
             // 
             // btnSearchParts
             // 
