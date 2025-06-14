@@ -1,4 +1,5 @@
 using C968_Inventory_Management.Main.Inventory;
+using C968_Inventory_Management.Main.Parts;
 using C968_Inventory_Management.Main.Products;
 using System.Windows.Forms;
 
@@ -14,7 +15,16 @@ namespace C968_Inventory_Management
             Inventory.PopulateDummyLists();
 
             dvgParts.DataSource = Inventory.AllParts;
+            dvgParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dvgParts.ReadOnly = true;
+            dvgParts.MultiSelect = false;
+            dvgParts.AllowUserToAddRows = false;
+
             dvgProducts.DataSource = Inventory.Products;
+            dvgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dvgProducts.ReadOnly = true;
+            dvgProducts.MultiSelect = false;
+            dvgProducts.AllowUserToAddRows = false;
         }
 
         public void MainFormLoad(object sender, EventArgs e)
@@ -82,12 +92,26 @@ namespace C968_Inventory_Management
 
         private void DeletePartsButton_Click(object sender, EventArgs e)
         {
-          
+            if (dvgParts.CurrentRow?.DataBoundItem is Part selectedPart)
+            {
+                Inventory.AllParts.Remove(selectedPart);
+            }
+            else
+            {
+                MessageBox.Show("Invalid selection.");
+            }
         }
 
         private void DeleteProductsButton_Click(object sender, EventArgs e)
         {
-            
+            if (dvgProducts.CurrentRow?.DataBoundItem is Product selectedProduct)
+            {
+                Inventory.Products.Remove(selectedProduct);
+            }
+            else
+            {
+                MessageBox.Show("Invalid selection.");
+            }
         }
     }
 }
