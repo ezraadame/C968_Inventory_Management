@@ -45,12 +45,13 @@ namespace C968_Inventory_Management.Main.Inventory
             return Products.FirstOrDefault(product => product.ProductID == productID);
         }
 
-        //public void UpdateProduct(int productID, Product product)
-        //{
-        //    Console.WriteLine("HI");
-        //}
+        public void UpdateProduct(int productID, Product product)
+        {
+            RemoveProduct(productID);
+            AddProduct(product);
+        }
 
-        /////
+
 
         public void AddPart(Part part) => AllParts.Add(part);
 
@@ -74,13 +75,20 @@ namespace C968_Inventory_Management.Main.Inventory
             return AllParts.FirstOrDefault(part => part.PartID == partID);
         }
 
-        //public void UpdateParts(int partID, Part part)
-        //{
-        //    Console.WriteLine("Temporary");
-        //}
+        public void UpdateParts(int partID, Part part)
+        {
+            DeletePart(partID);
+            AddPart(part);
+        }
 
+
+
+        private static bool _isPopulated = false;
         public static void PopulateDummyLists()
         {
+            if (_isPopulated) return; 
+            _isPopulated = true;
+
             Product dummyProd1 = new Product(1, "Product 1", 10, 12, 20, 5);
             Product dummyProd2 = new Product(2, "Product 2", 10, 8, 25, 5);
             Product dummyProd3 = new Product(3, "Product 3", 10, 5, 25, 5);
@@ -119,6 +127,17 @@ namespace C968_Inventory_Management.Main.Inventory
             dummyProd3.AssociatedParts.Add(dummyPart3B);
             dummyProd4.AssociatedParts.Add(dummyPart4A);
             dummyProd4.AssociatedParts.Add(dummyPart4B);
+
+        //    public static int createPartID()
+        //{
+        //    int highestID = 0;
+        //    foreach (Part p in allParts)
+        //    {
+        //        if (p.getPartID() > highestID)
+        //            highestID = p.getPartID();
+        //    }
+        //    return highestID + 1;
+        //}
 
         }
     }

@@ -64,7 +64,6 @@
             txtSearchParts.Name = "txtSearchParts";
             txtSearchParts.Size = new Size(160, 23);
             txtSearchParts.TabIndex = 1;
-            txtSearchParts.TextChanged += txtSearchParts_TextChanged;
             // 
             // txtSearchProducts
             // 
@@ -161,7 +160,7 @@
             btnDeleteParts.TabIndex = 11;
             btnDeleteParts.Text = "Delete";
             btnDeleteParts.UseVisualStyleBackColor = true;
-            btnDeleteParts.Click += DeletePartsButton_Click;
+            btnDeleteParts.Click += btnDeleteParts_Click;
             // 
             // btnAddProducts
             // 
@@ -191,7 +190,7 @@
             btnDeleteProducts.TabIndex = 14;
             btnDeleteProducts.Text = "Delete";
             btnDeleteProducts.UseVisualStyleBackColor = true;
-            btnDeleteProducts.Click += DeleteProductsButton_Click;
+            btnDeleteProducts.Click += btnDeleteProducts_Click;
             // 
             // btnExit
             // 

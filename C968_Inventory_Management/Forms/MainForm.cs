@@ -8,13 +8,12 @@ namespace C968_Inventory_Management
 {
     public partial class MainForm : Form
     {
-        private Inventory inventory = new Inventory();
+
         public MainForm()
         {
             InitializeComponent();
-            txtSearchParts.Text += txtSearchParts_TextChanged;
-
             Inventory.PopulateDummyLists();
+
 
             dvgParts.DataSource = Inventory.AllParts;
             dvgParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -31,22 +30,32 @@ namespace C968_Inventory_Management
 
         public void MainFormLoad(object sender, EventArgs e)
         {
-            // Existing code remains unchanged  
+
         }
 
-        private void SearchProductButton_Click(object sender, EventArgs e)
-        {
-            // Existing code remains unchanged  
-        }
 
         private void SearchPartButton_Click(object sender, EventArgs e)
         {
-            string searchParts = txtSearchParts.Text.ToLower();
+            dvgParts.ClearSelection();
+            bool found = false;
+            if (txtSearchParts.Text != "")
+            {
+                for (int i = 0; i < Inventory.AllParts.Count; i++)
+                {
+                    if (Inventory.AllParts[i].Name.ToLower().Contains(txtSearchParts.Text.ToLower()))
+                    {
+                        dvgParts.Rows[i].Selected = true;
+                        found = true;
+                    }
+                }
+            }
+            if (!found)
+            {
+                MessageBox.Show("Nothing found.");
+            }
+            
 
-            var filteredItem = Inventory.AllParts
-                .Where(item => item.Name != null && item.Name.ToLower().Contains(searchParts))
-                .ToList();
-            dvgParts.DataSource = filteredItem;
+
         }
 
         private void AddPartsButton_Click(object sender, EventArgs e)
@@ -56,6 +65,26 @@ namespace C968_Inventory_Management
             this.Hide();
         }
 
+        private void btnDeleteParts_Click(object sender, EventArgs e)
+        {
+            if (dvgParts.CurrentRow == null || !dvgParts.CurrentRow.Selected)
+            {
+                MessageBox.Show("Nothing selected, please select something!");
+                return;
+            }
+
+            // Correctly cast the selected item to Part instead of Inventory
+            Part selectedPart = dvgParts.CurrentRow.DataBoundItem as Part;
+            if (selectedPart != null)
+            {
+                Inventory.AllParts.Remove(selectedPart);
+            }
+            else
+            {
+                MessageBox.Show("Unable to delete the selected part.");
+            }
+        }
+
         private void ModifyPartsButton_Click(object sender, EventArgs e)
         {
             ModifyPart modifyPart = new ModifyPart();
@@ -63,11 +92,54 @@ namespace C968_Inventory_Management
             this.Hide();
         }
 
+
+        private void SearchProductButton_Click(object sender, EventArgs e)
+        {
+            dvgParts.ClearSelection();
+            bool found = false;
+            if (txtSearchProducts.Text != "")
+            {
+                for (int i = 0; i < Inventory.Products.Count; i++)
+                {
+                    if (Inventory.Products[i].Name.ToLower().Contains(txtSearchProducts.Text.ToLower()))
+                    {
+                        dvgProducts.Rows[i].Selected = true;
+                        found = true;
+                    }
+                }
+            }
+            if (!found)
+            {
+                MessageBox.Show("Nothing found.");
+            }
+        }
+
         private void AddProductsButton_Click(object sender, EventArgs e)
         {
             AddProduct addProduct = new AddProduct();
             addProduct.Show();
             this.Hide();
+        }
+
+        private void btnDeleteProducts_Click(object sender, EventArgs e)
+        {
+            if (dvgProducts.CurrentRow == null || !dvgProducts.CurrentRow.Selected)
+            {
+                MessageBox.Show("Nothing selected, please select something!");
+                return;
+            }
+
+            // Correctly cast the selected item to Part instead of Inventory
+            Product selectedProduct = dvgProducts.CurrentRow.DataBoundItem as Product;
+            if (selectedProduct != null)
+            {
+                Inventory.Products.Remove(selectedProduct);
+            }
+            else
+            {
+                MessageBox.Show("Unable to delete the selected part.");
+            }
+
         }
 
         private void ModifyProductsButton_Click(object sender, EventArgs e)
@@ -83,33 +155,6 @@ namespace C968_Inventory_Management
         }
 
 
-
-        private void DeletePartsButton_Click(object sender, EventArgs e)
-        {
-            if (dvgParts.CurrentRow?.DataBoundItem is Part selectedPart)
-            {
-                Inventory.AllParts.Remove(selectedPart);
-            }
-            else
-            {
-                MessageBox.Show("Invalid selection.");
-            }
-        }
-
-        private void DeleteProductsButton_Click(object sender, EventArgs e)
-        {
-            if (dvgProducts.CurrentRow?.DataBoundItem is Product selectedProduct)
-            {
-                Inventory.Products.Remove(selectedProduct);
-            }
-            else
-            {
-                MessageBox.Show("Invalid selection.");
-            }
-        }
-
-
-
         private void dvgParts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dvgParts.ClearSelection();
@@ -120,10 +165,6 @@ namespace C968_Inventory_Management
             dvgProducts.ClearSelection();
         }
 
-        private void txtSearchParts_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
+        
     }
 }
