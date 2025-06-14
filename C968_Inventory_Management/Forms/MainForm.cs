@@ -42,11 +42,6 @@ namespace C968_Inventory_Management
             // Existing code remains unchanged  
         }
 
-        private void PartsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Existing code remains unchanged  
-        }
-
         private void AddPartsButton_Click(object sender, EventArgs e)
         {
             AddPart addPart = new AddPart();
@@ -80,15 +75,7 @@ namespace C968_Inventory_Management
             Application.Exit();
         }
 
-        private void SearchBoxParts_TextChanged(object sender, EventArgs e)
-        {
-            // Existing code remains unchanged  
-        }
 
-        private void ProductsTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Existing code remains unchanged  
-        }
 
         private void DeletePartsButton_Click(object sender, EventArgs e)
         {
@@ -112,6 +99,26 @@ namespace C968_Inventory_Management
             {
                 MessageBox.Show("Invalid selection.");
             }
+        }
+
+        private void txtSearchProducts_TextChanged(object sender, EventArgs e)
+        {
+            //We need to be able to enter in letters and then click the search button to select the item that corresponds
+        }
+
+        private void txtSearchParts_TextChanged(object sender, EventArgs e)
+        {
+            //We need to be able to enter in letters and then click the search button to select the item that corresponds
+        }
+
+        private void dvgParts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dvgParts.ClearSelection();
+        }
+
+        private void dvgProducts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dvgProducts.ClearSelection();
         }
     }
 }

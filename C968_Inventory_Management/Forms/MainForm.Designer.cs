@@ -64,7 +64,7 @@
             txtSearchParts.Name = "txtSearchParts";
             txtSearchParts.Size = new Size(160, 23);
             txtSearchParts.TabIndex = 1;
-            txtSearchParts.TextChanged += SearchBoxParts_TextChanged;
+            txtSearchParts.TextChanged += txtSearchParts_TextChanged;
             // 
             // txtSearchProducts
             // 
@@ -72,6 +72,7 @@
             txtSearchProducts.Name = "txtSearchProducts";
             txtSearchProducts.Size = new Size(160, 23);
             txtSearchProducts.TabIndex = 2;
+            txtSearchProducts.TextChanged += txtSearchProducts_TextChanged;
             // 
             // btnSearchParts
             // 
@@ -121,7 +122,7 @@
             dvgParts.RowHeadersVisible = false;
             dvgParts.Size = new Size(603, 302);
             dvgParts.TabIndex = 7;
-            dvgParts.CellContentClick += PartsTable_CellContentClick;
+            dvgParts.DataBindingComplete += dvgParts_DataBindingComplete;
             // 
             // dvgProducts
             // 
@@ -131,7 +132,7 @@
             dvgProducts.RowHeadersVisible = false;
             dvgProducts.Size = new Size(603, 302);
             dvgProducts.TabIndex = 8;
-            dvgProducts.CellContentClick += ProductsTable_CellContentClick;
+            dvgProducts.DataBindingComplete += dvgProducts_DataBindingComplete;
             // 
             // btnAddParts
             // 
