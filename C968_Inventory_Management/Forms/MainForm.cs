@@ -67,22 +67,32 @@ namespace C968_Inventory_Management
 
         private void btnDeleteParts_Click(object sender, EventArgs e)
         {
+
+
             if (dvgParts.CurrentRow == null || !dvgParts.CurrentRow.Selected)
             {
                 MessageBox.Show("Nothing selected, please select something!");
                 return;
             }
 
-            // Correctly cast the selected item to Part instead of Inventory
-            Part selectedPart = dvgParts.CurrentRow.DataBoundItem as Part;
-            if (selectedPart != null)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this item forever?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                Inventory.AllParts.Remove(selectedPart);
+                Part selectedPart = dvgParts.CurrentRow.DataBoundItem as Part;
+                if (selectedPart != null)
+                {
+                    Inventory.AllParts.Remove(selectedPart);
+                }
+                else
+                {
+                    MessageBox.Show("Unable to delete the selected part.");
+                }
             }
             else
             {
-                MessageBox.Show("Unable to delete the selected part.");
+                return;
             }
+            
         }
 
         private void ModifyPartsButton_Click(object sender, EventArgs e)
@@ -129,16 +139,20 @@ namespace C968_Inventory_Management
                 return;
             }
 
-            // Correctly cast the selected item to Part instead of Inventory
-            Product selectedProduct = dvgProducts.CurrentRow.DataBoundItem as Product;
-            if (selectedProduct != null)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this item forever?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                Inventory.Products.Remove(selectedProduct);
+                Product selectedProduct = dvgProducts.CurrentRow.DataBoundItem as Product;
+                if (selectedProduct != null)
+                {
+                    Inventory.Products.Remove(selectedProduct);
+                }
+                else
+                {
+                    MessageBox.Show("Unable to delete the selected part.");
+                }
             }
-            else
-            {
-                MessageBox.Show("Unable to delete the selected part.");
-            }
+            else return;
 
         }
 
