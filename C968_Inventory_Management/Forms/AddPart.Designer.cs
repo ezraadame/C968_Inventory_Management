@@ -174,48 +174,61 @@
             // 
             // txtBox8
             // 
+            txtBox8.BackColor = Color.Salmon;
             txtBox8.Location = new Point(147, 330);
             txtBox8.Name = "txtBox8";
             txtBox8.Size = new Size(155, 25);
             txtBox8.TabIndex = 9;
+            txtBox8.TextChanged += txtBox8_TextChanged;
             // 
             // txtMax
             // 
+            txtMax.BackColor = Color.Salmon;
             txtMax.Location = new Point(250, 273);
             txtMax.Name = "txtMax";
             txtMax.Size = new Size(102, 25);
             txtMax.TabIndex = 8;
+            txtMax.TextChanged += txtMax_TextChanged;
             // 
             // txtMin
             // 
+            txtMin.BackColor = Color.Salmon;
             txtMin.Location = new Point(79, 273);
             txtMin.Name = "txtMin";
             txtMin.Size = new Size(102, 25);
             txtMin.TabIndex = 7;
+            txtMin.TextChanged += txtMin_TextChanged;
             // 
             // txtAddPartInventory
             // 
+            txtAddPartInventory.BackColor = Color.Salmon;
             txtAddPartInventory.Location = new Point(147, 177);
             txtAddPartInventory.Name = "txtAddPartInventory";
             txtAddPartInventory.Size = new Size(155, 25);
             txtAddPartInventory.TabIndex = 6;
+            txtAddPartInventory.TextChanged += txtAddPartInventory_TextChanged;
             // 
             // txtAddPartPriceOrCost
             // 
+            txtAddPartPriceOrCost.BackColor = Color.Salmon;
             txtAddPartPriceOrCost.Location = new Point(147, 221);
             txtAddPartPriceOrCost.Name = "txtAddPartPriceOrCost";
             txtAddPartPriceOrCost.Size = new Size(155, 25);
             txtAddPartPriceOrCost.TabIndex = 5;
+            txtAddPartPriceOrCost.TextChanged += txtAddPartPriceOrCost_TextChanged;
             // 
             // txtAddPartName
             // 
+            txtAddPartName.BackColor = Color.Salmon;
             txtAddPartName.Location = new Point(147, 135);
             txtAddPartName.Name = "txtAddPartName";
             txtAddPartName.Size = new Size(155, 25);
             txtAddPartName.TabIndex = 4;
+            txtAddPartName.TextChanged += txtAddPartName_TextChanged;
             // 
             // txtAddPartID
             // 
+            txtAddPartID.BackColor = SystemColors.InactiveCaption;
             txtAddPartID.Location = new Point(147, 93);
             txtAddPartID.Name = "txtAddPartID";
             txtAddPartID.Size = new Size(155, 25);

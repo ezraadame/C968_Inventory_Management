@@ -39,13 +39,13 @@ namespace C968_Inventory_Management
         private void rdbtnInHouse_CheckedChanged(object sender, EventArgs e)
         {
             label8.Text = "Machine ID";
-            
+
         }
 
         private void rdbtnOutsourced_CheckedChanged(object sender, EventArgs e)
         {
             label8.Text = "Company Name";
-            
+
         }
 
         private void btnSaveInHousePart_Click(object sender, EventArgs e)
@@ -56,14 +56,29 @@ namespace C968_Inventory_Management
             int inventoryStock;
             decimal price;
 
-            minStock = int.Parse(txtMin.Text);
-            maxStock = int.Parse(txtMax.Text);
-            inventoryStock = int.Parse(txtAddPartInventory.Text);
-            price = decimal.Parse(txtAddPartPriceOrCost.Text);
+            try
+            {
+                minStock = int.Parse(txtMin.Text);
+                maxStock = int.Parse(txtMax.Text);
+                inventoryStock = int.Parse(txtAddPartInventory.Text);
+                price = decimal.Parse(txtAddPartPriceOrCost.Text);
+
+            }
+            catch
+            {
+                MessageBox.Show("Error: Must be numeric values!");
+                return;
+
+            }
+
             string name = txtAddPartName.Text;
 
 
-
+            if (maxStock < minStock)
+            {
+                MessageBox.Show("Minimum cannot exceed Maximum!");
+                return;
+            }
 
             if (rdbtnInHouse.Checked)
             {
@@ -76,7 +91,7 @@ namespace C968_Inventory_Management
                 main.Show();
                 this.Hide();
             }
-            else
+            else if (rdbtnOutsourced.Checked)
             {
                 OutsourcedPart outsourced = new OutsourcedPart(
                     (Inventory.AllParts.Count + 1), name, inventoryStock, price, minStock, maxStock, txtBox8.Text);
@@ -87,6 +102,78 @@ namespace C968_Inventory_Management
                 this.Hide();
             }
 
+        }
+
+        private void txtAddPartName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAddPartName.Text.Length > 0)
+            {
+                txtAddPartName.BackColor = Color.White;
+            }
+            else
+            {
+                txtAddPartName.BackColor = Color.Salmon;
+            }
+        }
+
+        private void txtAddPartInventory_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAddPartInventory.Text.Length > 0)
+            {
+                txtAddPartInventory.BackColor = Color.White;
+            }
+            else
+            {
+                txtAddPartInventory.BackColor = Color.Salmon;
+            }
+        }
+
+        private void txtAddPartPriceOrCost_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAddPartPriceOrCost.Text.Length > 0)
+            {
+                txtAddPartPriceOrCost.BackColor = Color.White;
+            }
+            else
+            {
+                txtAddPartPriceOrCost.BackColor = Color.Salmon;
+            }
+        }
+
+        private void txtMin_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMin.Text.Length > 0)
+            {
+                txtMin.BackColor = Color.White;
+            }
+            else
+            {
+                txtMin.BackColor = Color.Salmon;
+            }
+        }
+
+        private void txtMax_TextChanged(object sender, EventArgs e)
+        {
+            if (txtMax.Text.Length > 0)
+            {
+                txtMax.BackColor = Color.White;
+            }
+            else
+            {
+                txtMax.BackColor = Color.Salmon;
+            }
+        }
+
+        private void txtBox8_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAddPartName.Text.Length > 0)
+            {
+                txtBox8.BackColor = Color.White;
+            }
+            else
+            {
+                txtBox8.BackColor = Color.Salmon;
+            }
         }
     }
 }
