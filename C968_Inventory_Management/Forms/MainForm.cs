@@ -109,9 +109,13 @@ namespace C968_Inventory_Management
             Form modifyPartForm = null;
 
             if (part is InHousePart inHousePart)
+            {
                 modifyPartForm = new ModifyPart(inHousePart);
+            }
             else if (part is OutsourcedPart outsourcedPart)
+            {
                 modifyPartForm = new ModifyPart(outsourcedPart);
+            }
 
             if (modifyPartForm != null)
             {
