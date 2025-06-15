@@ -28,97 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            btnSaveInHouse = new Button();
-            label8 = new Label();
+            pnlModifyPart = new Panel();
+            btnModifyPartsSave = new Button();
+            lblMachOrComp = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            btnInHouseCancel = new Button();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            btnModifyPartCancel = new Button();
+            txtModifyMachOrComp = new TextBox();
+            txtModifyMax = new TextBox();
+            txtModifyMin = new TextBox();
+            txtModifyInventory = new TextBox();
+            txtModifyPriceOrCost = new TextBox();
+            txtModifyName = new TextBox();
+            txtModifyID = new TextBox();
             rdbtnOutsourced = new RadioButton();
             rdbtnInHouse = new RadioButton();
             lblModifyPartInHouse = new Label();
-            panel2 = new Panel();
-            btnSaveOutsourced = new Button();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            btnOutsourcedCancel = new Button();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
-            rdbtnOutsourced2 = new RadioButton();
-            rdbtnInHouse2 = new RadioButton();
-            lblModifyPartOutsourced = new Label();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            pnlModifyPart.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pnlModifyPart
             // 
-            panel1.Controls.Add(btnSaveInHouse);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(btnInHouseCancel);
-            panel1.Controls.Add(textBox7);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(rdbtnOutsourced);
-            panel1.Controls.Add(rdbtnInHouse);
-            panel1.Controls.Add(lblModifyPartInHouse);
-            panel1.Font = new Font("Gadugi", 9.75F);
-            panel1.Location = new Point(26, 12);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(388, 433);
-            panel1.TabIndex = 1;
+            pnlModifyPart.Controls.Add(btnModifyPartsSave);
+            pnlModifyPart.Controls.Add(lblMachOrComp);
+            pnlModifyPart.Controls.Add(label7);
+            pnlModifyPart.Controls.Add(label6);
+            pnlModifyPart.Controls.Add(label5);
+            pnlModifyPart.Controls.Add(label4);
+            pnlModifyPart.Controls.Add(label3);
+            pnlModifyPart.Controls.Add(label2);
+            pnlModifyPart.Controls.Add(btnModifyPartCancel);
+            pnlModifyPart.Controls.Add(txtModifyMachOrComp);
+            pnlModifyPart.Controls.Add(txtModifyMax);
+            pnlModifyPart.Controls.Add(txtModifyMin);
+            pnlModifyPart.Controls.Add(txtModifyInventory);
+            pnlModifyPart.Controls.Add(txtModifyPriceOrCost);
+            pnlModifyPart.Controls.Add(txtModifyName);
+            pnlModifyPart.Controls.Add(txtModifyID);
+            pnlModifyPart.Controls.Add(rdbtnOutsourced);
+            pnlModifyPart.Controls.Add(rdbtnInHouse);
+            pnlModifyPart.Controls.Add(lblModifyPartInHouse);
+            pnlModifyPart.Font = new Font("Gadugi", 9.75F);
+            pnlModifyPart.Location = new Point(26, 12);
+            pnlModifyPart.Name = "pnlModifyPart";
+            pnlModifyPart.Size = new Size(388, 433);
+            pnlModifyPart.TabIndex = 1;
             // 
-            // btnSaveInHouse
+            // btnModifyPartsSave
             // 
-            btnSaveInHouse.BackColor = SystemColors.ActiveCaption;
-            btnSaveInHouse.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSaveInHouse.Location = new Point(222, 381);
-            btnSaveInHouse.Name = "btnSaveInHouse";
-            btnSaveInHouse.Size = new Size(62, 34);
-            btnSaveInHouse.TabIndex = 18;
-            btnSaveInHouse.Text = "Save";
-            btnSaveInHouse.UseVisualStyleBackColor = false;
+            btnModifyPartsSave.BackColor = SystemColors.GradientInactiveCaption;
+            btnModifyPartsSave.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnModifyPartsSave.Location = new Point(222, 381);
+            btnModifyPartsSave.Name = "btnModifyPartsSave";
+            btnModifyPartsSave.Size = new Size(62, 34);
+            btnModifyPartsSave.TabIndex = 18;
+            btnModifyPartsSave.Text = "Save";
+            btnModifyPartsSave.UseVisualStyleBackColor = false;
+            btnModifyPartsSave.Click += btnModifyPartsSave_Click;
             // 
-            // label8
+            // lblMachOrComp
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Gadugi", 9.75F);
-            label8.Location = new Point(69, 333);
-            label8.Name = "label8";
-            label8.Size = new Size(72, 16);
-            label8.TabIndex = 17;
-            label8.Text = "Machine ID";
+            lblMachOrComp.AutoSize = true;
+            lblMachOrComp.Font = new Font("Gadugi", 9.75F);
+            lblMachOrComp.Location = new Point(44, 333);
+            lblMachOrComp.Name = "lblMachOrComp";
+            lblMachOrComp.Size = new Size(72, 16);
+            lblMachOrComp.TabIndex = 17;
+            lblMachOrComp.Text = "Machine ID";
             // 
             // label7
             // 
@@ -180,66 +160,80 @@
             label2.TabIndex = 11;
             label2.Text = "ID";
             // 
-            // btnInHouseCancel
+            // btnModifyPartCancel
             // 
-            btnInHouseCancel.BackColor = SystemColors.ControlDark;
-            btnInHouseCancel.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInHouseCancel.Location = new Point(290, 381);
-            btnInHouseCancel.Name = "btnInHouseCancel";
-            btnInHouseCancel.Size = new Size(74, 34);
-            btnInHouseCancel.TabIndex = 10;
-            btnInHouseCancel.Text = "Cancel";
-            btnInHouseCancel.UseVisualStyleBackColor = false;
-            btnInHouseCancel.Click += CancelModifyInHouse_Click;
+            btnModifyPartCancel.BackColor = SystemColors.ControlDark;
+            btnModifyPartCancel.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnModifyPartCancel.Location = new Point(290, 381);
+            btnModifyPartCancel.Name = "btnModifyPartCancel";
+            btnModifyPartCancel.Size = new Size(74, 34);
+            btnModifyPartCancel.TabIndex = 10;
+            btnModifyPartCancel.Text = "Cancel";
+            btnModifyPartCancel.UseVisualStyleBackColor = false;
+            btnModifyPartCancel.Click += btnModifyPartCancel_Click;
             // 
-            // textBox7
+            // txtModifyMachOrComp
             // 
-            textBox7.Location = new Point(147, 330);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(155, 25);
-            textBox7.TabIndex = 9;
+            txtModifyMachOrComp.BackColor = Color.Salmon;
+            txtModifyMachOrComp.Location = new Point(147, 330);
+            txtModifyMachOrComp.Name = "txtModifyMachOrComp";
+            txtModifyMachOrComp.Size = new Size(155, 25);
+            txtModifyMachOrComp.TabIndex = 9;
+            txtModifyMachOrComp.TextChanged += txtModifyMachOrComp_TextChanged;
             // 
-            // textBox6
+            // txtModifyMax
             // 
-            textBox6.Location = new Point(250, 273);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(102, 25);
-            textBox6.TabIndex = 8;
+            txtModifyMax.BackColor = Color.Salmon;
+            txtModifyMax.Location = new Point(250, 273);
+            txtModifyMax.Name = "txtModifyMax";
+            txtModifyMax.Size = new Size(102, 25);
+            txtModifyMax.TabIndex = 8;
+            txtModifyMax.TextChanged += txtModifyMax_TextChanged;
             // 
-            // textBox5
+            // txtModifyMin
             // 
-            textBox5.Location = new Point(79, 273);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(102, 25);
-            textBox5.TabIndex = 7;
+            txtModifyMin.BackColor = Color.Salmon;
+            txtModifyMin.Location = new Point(79, 273);
+            txtModifyMin.Name = "txtModifyMin";
+            txtModifyMin.Size = new Size(102, 25);
+            txtModifyMin.TabIndex = 7;
+            txtModifyMin.TextChanged += txtModifyMin_TextChanged;
             // 
-            // textBox4
+            // txtModifyInventory
             // 
-            textBox4.Location = new Point(147, 177);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(155, 25);
-            textBox4.TabIndex = 6;
+            txtModifyInventory.BackColor = Color.Salmon;
+            txtModifyInventory.Location = new Point(147, 177);
+            txtModifyInventory.Name = "txtModifyInventory";
+            txtModifyInventory.Size = new Size(155, 25);
+            txtModifyInventory.TabIndex = 6;
+            txtModifyInventory.TextChanged += txtModifyInventory_TextChanged;
             // 
-            // textBox3
+            // txtModifyPriceOrCost
             // 
-            textBox3.Location = new Point(147, 221);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(155, 25);
-            textBox3.TabIndex = 5;
+            txtModifyPriceOrCost.BackColor = Color.Salmon;
+            txtModifyPriceOrCost.Location = new Point(147, 221);
+            txtModifyPriceOrCost.Name = "txtModifyPriceOrCost";
+            txtModifyPriceOrCost.Size = new Size(155, 25);
+            txtModifyPriceOrCost.TabIndex = 5;
+            txtModifyPriceOrCost.TextChanged += txtModifyPriceOrCost_TextChanged;
             // 
-            // textBox2
+            // txtModifyName
             // 
-            textBox2.Location = new Point(147, 135);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(155, 25);
-            textBox2.TabIndex = 4;
+            txtModifyName.BackColor = Color.Salmon;
+            txtModifyName.Location = new Point(147, 135);
+            txtModifyName.Name = "txtModifyName";
+            txtModifyName.Size = new Size(155, 25);
+            txtModifyName.TabIndex = 4;
+            txtModifyName.TextChanged += txtModifyName_TextChanged;
             // 
-            // textBox1
+            // txtModifyID
             // 
-            textBox1.Location = new Point(147, 93);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(155, 25);
-            textBox1.TabIndex = 3;
+            txtModifyID.BackColor = SystemColors.InactiveCaption;
+            txtModifyID.Location = new Point(147, 93);
+            txtModifyID.Name = "txtModifyID";
+            txtModifyID.ReadOnly = true;
+            txtModifyID.Size = new Size(155, 25);
+            txtModifyID.TabIndex = 3;
             // 
             // rdbtnOutsourced
             // 
@@ -253,6 +247,7 @@
             rdbtnOutsourced.TabStop = true;
             rdbtnOutsourced.Text = "Out Sourced";
             rdbtnOutsourced.UseVisualStyleBackColor = false;
+            rdbtnOutsourced.CheckedChanged += rdbtnOutsourced_CheckedChanged;
             // 
             // rdbtnInHouse
             // 
@@ -265,6 +260,7 @@
             rdbtnInHouse.TabStop = true;
             rdbtnInHouse.Text = "In-House";
             rdbtnInHouse.UseVisualStyleBackColor = true;
+            rdbtnInHouse.CheckedChanged += rdbtnInHouse_CheckedChanged;
             // 
             // lblModifyPartInHouse
             // 
@@ -276,268 +272,40 @@
             lblModifyPartInHouse.TabIndex = 0;
             lblModifyPartInHouse.Text = "Modify Part";
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnSaveOutsourced);
-            panel2.Controls.Add(label9);
-            panel2.Controls.Add(label10);
-            panel2.Controls.Add(label11);
-            panel2.Controls.Add(label12);
-            panel2.Controls.Add(label13);
-            panel2.Controls.Add(label14);
-            panel2.Controls.Add(label15);
-            panel2.Controls.Add(btnOutsourcedCancel);
-            panel2.Controls.Add(textBox8);
-            panel2.Controls.Add(textBox9);
-            panel2.Controls.Add(textBox10);
-            panel2.Controls.Add(textBox11);
-            panel2.Controls.Add(textBox12);
-            panel2.Controls.Add(textBox13);
-            panel2.Controls.Add(textBox14);
-            panel2.Controls.Add(rdbtnOutsourced2);
-            panel2.Controls.Add(rdbtnInHouse2);
-            panel2.Controls.Add(lblModifyPartOutsourced);
-            panel2.Font = new Font("Gadugi", 9.75F);
-            panel2.Location = new Point(490, 12);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(388, 433);
-            panel2.TabIndex = 2;
-            // 
-            // btnSaveOutsourced
-            // 
-            btnSaveOutsourced.BackColor = SystemColors.ActiveCaption;
-            btnSaveOutsourced.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSaveOutsourced.Location = new Point(222, 381);
-            btnSaveOutsourced.Name = "btnSaveOutsourced";
-            btnSaveOutsourced.Size = new Size(62, 34);
-            btnSaveOutsourced.TabIndex = 18;
-            btnSaveOutsourced.Text = "Save";
-            btnSaveOutsourced.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Gadugi", 9.75F);
-            label9.Location = new Point(63, 333);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 16);
-            label9.TabIndex = 17;
-            label9.Text = "Company ID";
-            label9.Click += label9_Click;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Gadugi", 9.75F);
-            label10.Location = new Point(212, 276);
-            label10.Name = "label10";
-            label10.Size = new Size(32, 16);
-            label10.TabIndex = 16;
-            label10.Text = "Max";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Gadugi", 9.75F);
-            label11.Location = new Point(44, 276);
-            label11.Name = "label11";
-            label11.Size = new Size(29, 16);
-            label11.TabIndex = 15;
-            label11.Text = "Min";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Gadugi", 9.75F);
-            label12.Location = new Point(75, 224);
-            label12.Name = "label12";
-            label12.Size = new Size(66, 16);
-            label12.TabIndex = 14;
-            label12.Text = "Price/Cost";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Gadugi", 9.75F);
-            label13.Location = new Point(81, 180);
-            label13.Name = "label13";
-            label13.Size = new Size(60, 16);
-            label13.TabIndex = 13;
-            label13.Text = "Inventory";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Gadugi", 9.75F);
-            label14.Location = new Point(99, 138);
-            label14.Name = "label14";
-            label14.Size = new Size(42, 16);
-            label14.TabIndex = 12;
-            label14.Text = "Name";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Gadugi", 9.75F);
-            label15.Location = new Point(122, 96);
-            label15.Name = "label15";
-            label15.Size = new Size(19, 16);
-            label15.TabIndex = 11;
-            label15.Text = "ID";
-            // 
-            // btnOutsourcedCancel
-            // 
-            btnOutsourcedCancel.BackColor = SystemColors.ControlDark;
-            btnOutsourcedCancel.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOutsourcedCancel.Location = new Point(290, 381);
-            btnOutsourcedCancel.Name = "btnOutsourcedCancel";
-            btnOutsourcedCancel.Size = new Size(74, 34);
-            btnOutsourcedCancel.TabIndex = 10;
-            btnOutsourcedCancel.Text = "Cancel";
-            btnOutsourcedCancel.UseVisualStyleBackColor = false;
-            btnOutsourcedCancel.Click += CancelModifyOutsourced_Click;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(147, 330);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(155, 25);
-            textBox8.TabIndex = 9;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(250, 273);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(102, 25);
-            textBox9.TabIndex = 8;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(79, 273);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(102, 25);
-            textBox10.TabIndex = 7;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(147, 177);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(155, 25);
-            textBox11.TabIndex = 6;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(147, 221);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(155, 25);
-            textBox12.TabIndex = 5;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(147, 135);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(155, 25);
-            textBox13.TabIndex = 4;
-            // 
-            // textBox14
-            // 
-            textBox14.Location = new Point(147, 93);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(155, 25);
-            textBox14.TabIndex = 3;
-            // 
-            // rdbtnOutsourced2
-            // 
-            rdbtnOutsourced2.AutoSize = true;
-            rdbtnOutsourced2.BackColor = SystemColors.Control;
-            rdbtnOutsourced2.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdbtnOutsourced2.Location = new Point(250, 48);
-            rdbtnOutsourced2.Name = "rdbtnOutsourced2";
-            rdbtnOutsourced2.Size = new Size(114, 23);
-            rdbtnOutsourced2.TabIndex = 2;
-            rdbtnOutsourced2.TabStop = true;
-            rdbtnOutsourced2.Text = "Out Sourced";
-            rdbtnOutsourced2.UseVisualStyleBackColor = false;
-            // 
-            // rdbtnInHouse2
-            // 
-            rdbtnInHouse2.AutoSize = true;
-            rdbtnInHouse2.Font = new Font("Gadugi", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rdbtnInHouse2.Location = new Point(250, 21);
-            rdbtnInHouse2.Name = "rdbtnInHouse2";
-            rdbtnInHouse2.Size = new Size(90, 23);
-            rdbtnInHouse2.TabIndex = 1;
-            rdbtnInHouse2.TabStop = true;
-            rdbtnInHouse2.Text = "In-House";
-            rdbtnInHouse2.UseVisualStyleBackColor = true;
-            // 
-            // lblModifyPartOutsourced
-            // 
-            lblModifyPartOutsourced.AutoSize = true;
-            lblModifyPartOutsourced.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblModifyPartOutsourced.Location = new Point(12, 9);
-            lblModifyPartOutsourced.Name = "lblModifyPartOutsourced";
-            lblModifyPartOutsourced.Size = new Size(179, 35);
-            lblModifyPartOutsourced.TabIndex = 0;
-            lblModifyPartOutsourced.Text = "Modify Part";
-            // 
             // ModifyPart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(905, 479);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            ClientSize = new Size(446, 479);
+            Controls.Add(pnlModifyPart);
             Name = "ModifyPart";
             Text = "ModifyPart";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            pnlModifyPart.ResumeLayout(false);
+            pnlModifyPart.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Button btnSaveInHouse;
-        private Label label8;
+        private Panel pnlModifyPart;
+        private Button btnModifyPartsSave;
+        private Label lblMachOrComp;
         private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button btnInHouseCancel;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button btnModifyPartCancel;
+        private TextBox txtModifyMachOrComp;
+        private TextBox txtModifyMax;
+        private TextBox txtModifyMin;
+        private TextBox txtModifyInventory;
+        private TextBox txtModifyPriceOrCost;
+        private TextBox txtModifyName;
+        private TextBox txtModifyID;
         private RadioButton rdbtnOutsourced;
         private RadioButton rdbtnInHouse;
         private Label lblModifyPartInHouse;
-        private Panel panel2;
-        private Button btnSaveOutsourced;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Button btnOutsourcedCancel;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private RadioButton rdbtnOutsourced2;
-        private RadioButton rdbtnInHouse2;
-        private Label lblModifyPartOutsourced;
     }
 }

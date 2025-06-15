@@ -1,4 +1,6 @@
+using C968_Inventory_Management.Main.InHouse;
 using C968_Inventory_Management.Main.Inventory;
+using C968_Inventory_Management.Main.Outsourced;
 using C968_Inventory_Management.Main.Parts;
 using C968_Inventory_Management.Main.Products;
 using System.Windows.Forms;
@@ -68,7 +70,6 @@ namespace C968_Inventory_Management
         private void btnDeleteParts_Click(object sender, EventArgs e)
         {
 
-
             if (dvgParts.CurrentRow == null || !dvgParts.CurrentRow.Selected)
             {
                 MessageBox.Show("Nothing selected, please select something!");
@@ -97,9 +98,27 @@ namespace C968_Inventory_Management
 
         private void ModifyPartsButton_Click(object sender, EventArgs e)
         {
-            ModifyPart modifyPart = new ModifyPart();
-            modifyPart.Show();
-            this.Hide();
+
+            if (dvgParts.CurrentRow == null || !dvgParts.CurrentRow.Selected)
+            {
+                MessageBox.Show("Nothing selected, please select something!");
+                return;
+            }
+
+            var part = dvgParts.CurrentRow.DataBoundItem;
+            Form modifyPartForm = null;
+
+            if (part is InHousePart inHousePart)
+                modifyPartForm = new ModifyPart(inHousePart);
+            else if (part is OutsourcedPart outsourcedPart)
+                modifyPartForm = new ModifyPart(outsourcedPart);
+
+            if (modifyPartForm != null)
+            {
+                this.Hide();
+                modifyPartForm.ShowDialog();
+                this.Show();
+            }
         }
 
 
@@ -158,6 +177,13 @@ namespace C968_Inventory_Management
 
         private void ModifyProductsButton_Click(object sender, EventArgs e)
         {
+            if (dvgProducts.CurrentRow == null || !dvgProducts.CurrentRow.Selected)
+            {
+                MessageBox.Show("Nothing selected, please select something!");
+                return;
+            }
+
+
             ModifyProduct modifyProduct = new ModifyProduct();
             modifyProduct.Show();
             this.Hide();

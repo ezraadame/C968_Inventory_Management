@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace C968_Inventory_Management.Main.Outsourced
 {
-    internal class OutsourcedPart : Part
+    public class OutsourcedPart : Part
     {
         private string companyName;
 

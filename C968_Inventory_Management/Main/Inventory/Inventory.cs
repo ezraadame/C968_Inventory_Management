@@ -53,7 +53,7 @@ namespace C968_Inventory_Management.Main.Inventory
 
 
 
-        public void AddPart(Part part) => AllParts.Add(part);
+        public static void AddPart(Part part) => AllParts.Add(part);
 
         public static bool DeletePart(int part)
         {
@@ -75,7 +75,7 @@ namespace C968_Inventory_Management.Main.Inventory
             return AllParts.FirstOrDefault(part => part.PartID == partID);
         }
 
-        public void UpdateParts(int partID, Part part)
+        public static void UpdateParts(int partID, Part part)
         {
             DeletePart(partID);
             AddPart(part);

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace C968_Inventory_Management.Main.InHouse
 {
 
-    internal class InHousePart : Part
+    public class InHousePart : Part
     {
         private int machineID;
         public int MachineID { get; set; }
