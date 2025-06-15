@@ -80,7 +80,7 @@
             // 
             // btnSaveInHousePart
             // 
-            btnSaveInHousePart.BackColor = SystemColors.ActiveCaption;
+            btnSaveInHousePart.BackColor = SystemColors.GradientInactiveCaption;
             btnSaveInHousePart.Font = new Font("Gadugi", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSaveInHousePart.Location = new Point(222, 381);
             btnSaveInHousePart.Name = "btnSaveInHousePart";
@@ -231,6 +231,7 @@
             txtAddPartID.BackColor = SystemColors.InactiveCaption;
             txtAddPartID.Location = new Point(147, 93);
             txtAddPartID.Name = "txtAddPartID";
+            txtAddPartID.ReadOnly = true;
             txtAddPartID.Size = new Size(155, 25);
             txtAddPartID.TabIndex = 3;
             // 

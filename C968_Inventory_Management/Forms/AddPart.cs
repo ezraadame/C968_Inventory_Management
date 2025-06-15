@@ -21,7 +21,6 @@ namespace C968_Inventory_Management
             InitializeComponent();
         }
 
-
         private void CancelInHouse_Click(object sender, EventArgs e)
         {
             MainForm main = new MainForm();
@@ -55,6 +54,7 @@ namespace C968_Inventory_Management
             int maxStock;
             int inventoryStock;
             decimal price;
+            string name = txtAddPartName.Text;
 
             try
             {
@@ -71,8 +71,19 @@ namespace C968_Inventory_Management
 
             }
 
-            string name = txtAddPartName.Text;
 
+            if (label8.Text == "Machine ID")
+            {
+                try
+                {
+                    int.Parse(txtBox8.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Machine ID must be an integer.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
             if (maxStock < minStock)
             {
@@ -102,8 +113,12 @@ namespace C968_Inventory_Management
                 this.Hide();
             }
 
+
         }
 
+
+
+        //Color change handling
         private void txtAddPartName_TextChanged(object sender, EventArgs e)
         {
             if (txtAddPartName.Text.Length > 0)
@@ -166,7 +181,7 @@ namespace C968_Inventory_Management
 
         private void txtBox8_TextChanged(object sender, EventArgs e)
         {
-            if (txtAddPartName.Text.Length > 0)
+            if (txtBox8.Text.Length > 0)
             {
                 txtBox8.BackColor = Color.White;
             }
