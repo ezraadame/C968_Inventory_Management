@@ -29,10 +29,22 @@
         private void InitializeComponent()
         {
             dvgAllCandidateParts = new DataGridView();
-            PartsLabel = new Label();
+            clmAllCandidatePartsPartID = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsName = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsInventory = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsPrice = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsMin = new DataGridViewTextBoxColumn();
+            clmAllCandidatePartsMax = new DataGridViewTextBoxColumn();
+            lbl = new Label();
             btnSearchAllCandidateParts = new Button();
             txtSearchAllCandidateParts = new TextBox();
             dvgPartsAssociatedWithProduct = new DataGridView();
+            clmPartsAssociatedPartID = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedName = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedInventory = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedPrice = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedMin = new DataGridViewTextBoxColumn();
+            clmPartsAssociatedMax = new DataGridViewTextBoxColumn();
             label1 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -51,18 +63,6 @@
             btnSavePartAssociatedWithProduct = new Button();
             btnDeletePartAssociatedWithProduct = new Button();
             CancelAddProduct = new Button();
-            clmAllCandidatePartsPartID = new DataGridViewTextBoxColumn();
-            clmAllCandidatePartsName = new DataGridViewTextBoxColumn();
-            clmAllCandidatePartsInventory = new DataGridViewTextBoxColumn();
-            clmAllCandidatePartsPrice = new DataGridViewTextBoxColumn();
-            clmAllCandidatePartsMin = new DataGridViewTextBoxColumn();
-            clmAllCandidatePartsMax = new DataGridViewTextBoxColumn();
-            clmPartsAssociatedPartID = new DataGridViewTextBoxColumn();
-            clmPartsAssociatedName = new DataGridViewTextBoxColumn();
-            clmPartsAssociatedInventory = new DataGridViewTextBoxColumn();
-            clmPartsAssociatedPrice = new DataGridViewTextBoxColumn();
-            clmPartsAssociatedMin = new DataGridViewTextBoxColumn();
-            clmPartsAssociatedMax = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dvgAllCandidateParts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dvgPartsAssociatedWithProduct).BeginInit();
             SuspendLayout();
@@ -76,208 +76,6 @@
             dvgAllCandidateParts.RowHeadersVisible = false;
             dvgAllCandidateParts.Size = new Size(603, 220);
             dvgAllCandidateParts.TabIndex = 11;
-            // 
-            // PartsLabel
-            // 
-            PartsLabel.AutoSize = true;
-            PartsLabel.Font = new Font("Gadugi", 13.75F);
-            PartsLabel.Location = new Point(548, 32);
-            PartsLabel.Name = "PartsLabel";
-            PartsLabel.Size = new Size(170, 22);
-            PartsLabel.TabIndex = 10;
-            PartsLabel.Text = "All Candidate Parts";
-            // 
-            // btnSearchAllCandidateParts
-            // 
-            btnSearchAllCandidateParts.Location = new Point(911, 32);
-            btnSearchAllCandidateParts.Name = "btnSearchAllCandidateParts";
-            btnSearchAllCandidateParts.Size = new Size(74, 25);
-            btnSearchAllCandidateParts.TabIndex = 9;
-            btnSearchAllCandidateParts.Text = "Search";
-            btnSearchAllCandidateParts.UseVisualStyleBackColor = true;
-            // 
-            // txtSearchAllCandidateParts
-            // 
-            txtSearchAllCandidateParts.Location = new Point(991, 33);
-            txtSearchAllCandidateParts.Name = "txtSearchAllCandidateParts";
-            txtSearchAllCandidateParts.Size = new Size(160, 23);
-            txtSearchAllCandidateParts.TabIndex = 8;
-            // 
-            // dvgPartsAssociatedWithProduct
-            // 
-            dvgPartsAssociatedWithProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgPartsAssociatedWithProduct.Columns.AddRange(new DataGridViewColumn[] { clmPartsAssociatedPartID, clmPartsAssociatedName, clmPartsAssociatedInventory, clmPartsAssociatedPrice, clmPartsAssociatedMin, clmPartsAssociatedMax });
-            dvgPartsAssociatedWithProduct.Location = new Point(548, 398);
-            dvgPartsAssociatedWithProduct.Name = "dvgPartsAssociatedWithProduct";
-            dvgPartsAssociatedWithProduct.RowHeadersVisible = false;
-            dvgPartsAssociatedWithProduct.Size = new Size(603, 230);
-            dvgPartsAssociatedWithProduct.TabIndex = 15;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Gadugi", 13.75F);
-            label1.Location = new Point(548, 362);
-            label1.Name = "label1";
-            label1.Size = new Size(263, 22);
-            label1.TabIndex = 14;
-            label1.Text = "Parts Associated With Product";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Gadugi", 9.75F);
-            label7.Location = new Point(228, 433);
-            label7.Name = "label7";
-            label7.Size = new Size(32, 16);
-            label7.TabIndex = 29;
-            label7.Text = "Max";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Gadugi", 9.75F);
-            label6.Location = new Point(73, 433);
-            label6.Name = "label6";
-            label6.Size = new Size(29, 16);
-            label6.TabIndex = 28;
-            label6.Text = "Min";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Gadugi", 9.75F);
-            label5.Location = new Point(73, 381);
-            label5.Name = "label5";
-            label5.Size = new Size(66, 16);
-            label5.TabIndex = 27;
-            label5.Text = "Price/Cost";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Gadugi", 9.75F);
-            label4.Location = new Point(73, 330);
-            label4.Name = "label4";
-            label4.Size = new Size(60, 16);
-            label4.TabIndex = 26;
-            label4.Text = "Inventory";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Gadugi", 9.75F);
-            label3.Location = new Point(73, 285);
-            label3.Name = "label3";
-            label3.Size = new Size(42, 16);
-            label3.TabIndex = 25;
-            label3.Text = "Name";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Gadugi", 9.75F);
-            label2.Location = new Point(73, 240);
-            label2.Name = "label2";
-            label2.Size = new Size(19, 16);
-            label2.TabIndex = 24;
-            label2.Text = "ID";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(266, 430);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(102, 23);
-            textBox6.TabIndex = 23;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(108, 430);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(102, 23);
-            textBox5.TabIndex = 22;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(156, 327);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(155, 23);
-            textBox4.TabIndex = 21;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(156, 374);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(155, 23);
-            textBox3.TabIndex = 20;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(156, 283);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(155, 23);
-            textBox2.TabIndex = 19;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(156, 238);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(155, 23);
-            textBox7.TabIndex = 18;
-            // 
-            // lblAddProduct
-            // 
-            lblAddProduct.AutoSize = true;
-            lblAddProduct.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAddProduct.Location = new Point(27, 29);
-            lblAddProduct.Name = "lblAddProduct";
-            lblAddProduct.Size = new Size(188, 35);
-            lblAddProduct.TabIndex = 30;
-            lblAddProduct.Text = "Add Product";
-            // 
-            // btnAddCandidatePart
-            // 
-            btnAddCandidatePart.Font = new Font("Gadugi", 9F);
-            btnAddCandidatePart.Location = new Point(455, 159);
-            btnAddCandidatePart.Name = "btnAddCandidatePart";
-            btnAddCandidatePart.Size = new Size(61, 39);
-            btnAddCandidatePart.TabIndex = 31;
-            btnAddCandidatePart.Text = "Add";
-            btnAddCandidatePart.UseVisualStyleBackColor = true;
-            btnAddCandidatePart.Click += AddCandidateParts_Click;
-            // 
-            // btnSavePartAssociatedWithProduct
-            // 
-            btnSavePartAssociatedWithProduct.Font = new Font("Gadugi", 9F);
-            btnSavePartAssociatedWithProduct.Location = new Point(455, 471);
-            btnSavePartAssociatedWithProduct.Name = "btnSavePartAssociatedWithProduct";
-            btnSavePartAssociatedWithProduct.Size = new Size(61, 39);
-            btnSavePartAssociatedWithProduct.TabIndex = 32;
-            btnSavePartAssociatedWithProduct.Text = "Save";
-            btnSavePartAssociatedWithProduct.UseVisualStyleBackColor = true;
-            btnSavePartAssociatedWithProduct.Click += SavePartsAssociated_Click;
-            // 
-            // btnDeletePartAssociatedWithProduct
-            // 
-            btnDeletePartAssociatedWithProduct.Font = new Font("Gadugi", 9F);
-            btnDeletePartAssociatedWithProduct.Location = new Point(455, 530);
-            btnDeletePartAssociatedWithProduct.Name = "btnDeletePartAssociatedWithProduct";
-            btnDeletePartAssociatedWithProduct.Size = new Size(61, 39);
-            btnDeletePartAssociatedWithProduct.TabIndex = 33;
-            btnDeletePartAssociatedWithProduct.Text = "Delete";
-            btnDeletePartAssociatedWithProduct.UseVisualStyleBackColor = true;
-            btnDeletePartAssociatedWithProduct.Click += DeletePartsAssociated_Click;
-            // 
-            // CancelAddProduct
-            // 
-            CancelAddProduct.Font = new Font("Gadugi", 9F);
-            CancelAddProduct.Location = new Point(1090, 661);
-            CancelAddProduct.Name = "CancelAddProduct";
-            CancelAddProduct.Size = new Size(61, 39);
-            CancelAddProduct.TabIndex = 34;
-            CancelAddProduct.Text = "Cancel";
-            CancelAddProduct.UseVisualStyleBackColor = true;
-            CancelAddProduct.Click += CancelAddProduct_Click;
             // 
             // clmAllCandidatePartsPartID
             // 
@@ -309,6 +107,42 @@
             clmAllCandidatePartsMax.HeaderText = "Maximum";
             clmAllCandidatePartsMax.Name = "clmAllCandidatePartsMax";
             // 
+            // lbl
+            // 
+            lbl.AutoSize = true;
+            lbl.Font = new Font("Gadugi", 13.75F);
+            lbl.Location = new Point(548, 32);
+            lbl.Name = "lbl";
+            lbl.Size = new Size(170, 22);
+            lbl.TabIndex = 10;
+            lbl.Text = "All Candidate Parts";
+            // 
+            // btnSearchAllCandidateParts
+            // 
+            btnSearchAllCandidateParts.Location = new Point(911, 32);
+            btnSearchAllCandidateParts.Name = "btnSearchAllCandidateParts";
+            btnSearchAllCandidateParts.Size = new Size(74, 25);
+            btnSearchAllCandidateParts.TabIndex = 9;
+            btnSearchAllCandidateParts.Text = "Search";
+            btnSearchAllCandidateParts.UseVisualStyleBackColor = true;
+            // 
+            // txtSearchAllCandidateParts
+            // 
+            txtSearchAllCandidateParts.Location = new Point(991, 33);
+            txtSearchAllCandidateParts.Name = "txtSearchAllCandidateParts";
+            txtSearchAllCandidateParts.Size = new Size(160, 23);
+            txtSearchAllCandidateParts.TabIndex = 8;
+            // 
+            // dvgPartsAssociatedWithProduct
+            // 
+            dvgPartsAssociatedWithProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgPartsAssociatedWithProduct.Columns.AddRange(new DataGridViewColumn[] { clmPartsAssociatedPartID, clmPartsAssociatedName, clmPartsAssociatedInventory, clmPartsAssociatedPrice, clmPartsAssociatedMin, clmPartsAssociatedMax });
+            dvgPartsAssociatedWithProduct.Location = new Point(548, 354);
+            dvgPartsAssociatedWithProduct.Name = "dvgPartsAssociatedWithProduct";
+            dvgPartsAssociatedWithProduct.RowHeadersVisible = false;
+            dvgPartsAssociatedWithProduct.Size = new Size(603, 230);
+            dvgPartsAssociatedWithProduct.TabIndex = 15;
+            // 
             // clmPartsAssociatedPartID
             // 
             clmPartsAssociatedPartID.HeaderText = "Part ID";
@@ -339,11 +173,177 @@
             clmPartsAssociatedMax.HeaderText = "Maximum";
             clmPartsAssociatedMax.Name = "clmPartsAssociatedMax";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Gadugi", 13.75F);
+            label1.Location = new Point(548, 318);
+            label1.Name = "label1";
+            label1.Size = new Size(263, 22);
+            label1.TabIndex = 14;
+            label1.Text = "Parts Associated With Product";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Gadugi", 9.75F);
+            label7.Location = new Point(251, 402);
+            label7.Name = "label7";
+            label7.Size = new Size(32, 16);
+            label7.TabIndex = 29;
+            label7.Text = "Max";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Gadugi", 9.75F);
+            label6.Location = new Point(96, 402);
+            label6.Name = "label6";
+            label6.Size = new Size(29, 16);
+            label6.TabIndex = 28;
+            label6.Text = "Min";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Gadugi", 9.75F);
+            label5.Location = new Point(96, 350);
+            label5.Name = "label5";
+            label5.Size = new Size(66, 16);
+            label5.TabIndex = 27;
+            label5.Text = "Price/Cost";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Gadugi", 9.75F);
+            label4.Location = new Point(96, 299);
+            label4.Name = "label4";
+            label4.Size = new Size(60, 16);
+            label4.TabIndex = 26;
+            label4.Text = "Inventory";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Gadugi", 9.75F);
+            label3.Location = new Point(96, 254);
+            label3.Name = "label3";
+            label3.Size = new Size(42, 16);
+            label3.TabIndex = 25;
+            label3.Text = "Name";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Gadugi", 9.75F);
+            label2.Location = new Point(96, 209);
+            label2.Name = "label2";
+            label2.Size = new Size(19, 16);
+            label2.TabIndex = 24;
+            label2.Text = "ID";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(289, 399);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(102, 23);
+            textBox6.TabIndex = 23;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(131, 399);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(102, 23);
+            textBox5.TabIndex = 22;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(179, 296);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(155, 23);
+            textBox4.TabIndex = 21;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(179, 343);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(155, 23);
+            textBox3.TabIndex = 20;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(179, 252);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(155, 23);
+            textBox2.TabIndex = 19;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(179, 207);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(155, 23);
+            textBox7.TabIndex = 18;
+            // 
+            // lblAddProduct
+            // 
+            lblAddProduct.AutoSize = true;
+            lblAddProduct.Font = new Font("Gadugi", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAddProduct.Location = new Point(27, 29);
+            lblAddProduct.Name = "lblAddProduct";
+            lblAddProduct.Size = new Size(188, 35);
+            lblAddProduct.TabIndex = 30;
+            lblAddProduct.Text = "Add Product";
+            // 
+            // btnAddCandidatePart
+            // 
+            btnAddCandidatePart.Font = new Font("Gadugi", 9F);
+            btnAddCandidatePart.Location = new Point(455, 159);
+            btnAddCandidatePart.Name = "btnAddCandidatePart";
+            btnAddCandidatePart.Size = new Size(61, 39);
+            btnAddCandidatePart.TabIndex = 31;
+            btnAddCandidatePart.Text = "Add";
+            btnAddCandidatePart.UseVisualStyleBackColor = true;
+            btnAddCandidatePart.Click += AddCandidateParts_Click;
+            // 
+            // btnSavePartAssociatedWithProduct
+            // 
+            btnSavePartAssociatedWithProduct.Font = new Font("Gadugi", 9F);
+            btnSavePartAssociatedWithProduct.Location = new Point(455, 427);
+            btnSavePartAssociatedWithProduct.Name = "btnSavePartAssociatedWithProduct";
+            btnSavePartAssociatedWithProduct.Size = new Size(61, 39);
+            btnSavePartAssociatedWithProduct.TabIndex = 32;
+            btnSavePartAssociatedWithProduct.Text = "Save";
+            btnSavePartAssociatedWithProduct.UseVisualStyleBackColor = true;
+            btnSavePartAssociatedWithProduct.Click += SavePartsAssociated_Click;
+            // 
+            // btnDeletePartAssociatedWithProduct
+            // 
+            btnDeletePartAssociatedWithProduct.Font = new Font("Gadugi", 9F);
+            btnDeletePartAssociatedWithProduct.Location = new Point(455, 486);
+            btnDeletePartAssociatedWithProduct.Name = "btnDeletePartAssociatedWithProduct";
+            btnDeletePartAssociatedWithProduct.Size = new Size(61, 39);
+            btnDeletePartAssociatedWithProduct.TabIndex = 33;
+            btnDeletePartAssociatedWithProduct.Text = "Delete";
+            btnDeletePartAssociatedWithProduct.UseVisualStyleBackColor = true;
+            btnDeletePartAssociatedWithProduct.Click += DeletePartsAssociated_Click;
+            // 
+            // CancelAddProduct
+            // 
+            CancelAddProduct.Font = new Font("Gadugi", 9F);
+            CancelAddProduct.Location = new Point(1090, 617);
+            CancelAddProduct.Name = "CancelAddProduct";
+            CancelAddProduct.Size = new Size(61, 39);
+            CancelAddProduct.TabIndex = 34;
+            CancelAddProduct.Text = "Cancel";
+            CancelAddProduct.UseVisualStyleBackColor = true;
+            CancelAddProduct.Click += CancelAddProduct_Click;
+            // 
             // AddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1191, 731);
+            ClientSize = new Size(1191, 682);
             Controls.Add(CancelAddProduct);
             Controls.Add(btnDeletePartAssociatedWithProduct);
             Controls.Add(btnSavePartAssociatedWithProduct);
@@ -364,7 +364,7 @@
             Controls.Add(dvgPartsAssociatedWithProduct);
             Controls.Add(label1);
             Controls.Add(dvgAllCandidateParts);
-            Controls.Add(PartsLabel);
+            Controls.Add(lbl);
             Controls.Add(btnSearchAllCandidateParts);
             Controls.Add(txtSearchAllCandidateParts);
             Font = new Font("Gadugi", 9F);
@@ -379,7 +379,7 @@
         #endregion
 
         private DataGridView dvgAllCandidateParts;
-        private Label PartsLabel;
+        private Label lbl;
         private Button btnSearchAllCandidateParts;
         private TextBox txtSearchAllCandidateParts;
         private DataGridView dvgPartsAssociatedWithProduct;
