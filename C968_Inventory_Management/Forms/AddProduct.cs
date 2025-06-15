@@ -1,4 +1,7 @@
-﻿using System;
+﻿using C968_Inventory_Management.Main.Inventory;
+using C968_Inventory_Management.Main.Parts;
+using C968_Inventory_Management.Main.Products;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,31 +15,183 @@ namespace C968_Inventory_Management
 {
     public partial class AddProduct : Form
     {
+
+        private BindingList<Part> AssociatedPartsQue = new BindingList<Part>();
         public AddProduct()
         {
             InitializeComponent();
+
+            dvgAllCandidateParts.DataSource = Inventory.AllParts;
+            dvgAllCandidateParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dvgAllCandidateParts.ReadOnly = true;
+            dvgAllCandidateParts.MultiSelect = false;
+            dvgAllCandidateParts.AllowUserToAddRows = false;
+
+            dvgPartsAssociatedWithProduct.DataSource = AssociatedPartsQue;
+            dvgPartsAssociatedWithProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dvgPartsAssociatedWithProduct.ReadOnly = true;
+            dvgPartsAssociatedWithProduct.MultiSelect = false;
+            dvgPartsAssociatedWithProduct.AllowUserToAddRows = false;
+
         }
 
-        private void CancelAddProduct_Click(object sender, EventArgs e)
+        private void btnCancelAddProduct_Click(object sender, EventArgs e)
         {
-            MainForm main = new MainForm();
-            main.Show();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
             this.Hide();
         }
 
-        private void AddCandidateParts_Click(object sender, EventArgs e)
+        private void dvgAllCandidateParts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            dvgAllCandidateParts.ClearSelection();
+        }
+
+        private void btnAddCandidatePart_Click(object sender, EventArgs e)
+        {
+            if (dvgAllCandidateParts.CurrentRow == null || dvgAllCandidateParts.CurrentRow.DataBoundItem == null)
+            {
+                MessageBox.Show("No part selected. Please select a part to add.");
+                return;
+            }
+
+            Part partAssociatedWithProduct = (Part)dvgAllCandidateParts.CurrentRow.DataBoundItem;
+            AssociatedPartsQue.Add(partAssociatedWithProduct);
+        }
+
+        private void btnDeletePartAssociatedWithProduct_Click(object sender, EventArgs e)
+        {
+            if (dvgPartsAssociatedWithProduct.CurrentRow == null || !dvgPartsAssociatedWithProduct.CurrentRow.Selected)
+            {
+                MessageBox.Show("Nothing selected, please select something!");
+                return;
+            }
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete the association of this part to the product?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Part? selectedPart = dvgPartsAssociatedWithProduct.CurrentRow.DataBoundItem as Part;
+                if (selectedPart != null)
+                {
+                    Product.AssociatedParts.Remove(selectedPart);
+                }
+                else
+                {
+                    MessageBox.Show("Unable to delete the selected part.");
+                }
+            }
+            else return;
+        }
+
+        private void btnSavePartAssociatedWithProduct_Click(object sender, EventArgs e)
+        {
+            int minStock;
+            int maxStock;
+            int inventoryStock;
+            decimal price;
+            string name = txtProductName.Text;
+
+            try
+            {
+                minStock = int.Parse(txtProductMin.Text);
+                maxStock = int.Parse(txtProductMax.Text);
+                inventoryStock = int.Parse(txtProductInventory.Text);
+                price = decimal.Parse(txtProductPriceOrCost.Text);
+
+            }
+            catch
+            {
+                MessageBox.Show("Error: Inventory, Price, Min, and Max must ALL be numeric values.");
+                return;
+
+            }
+
+            if (maxStock < minStock)
+            {
+                MessageBox.Show("Minimum cannot exceed Maximum!");
+                return;
+            }
+
+
+            Product productToAdd = new Product(
+                (Inventory.Products.Count + 1), name, inventoryStock, price, minStock, maxStock);
+
+            Inventory.AddProduct(productToAdd);
+
+            foreach(Part part in AssociatedPartsQue)
+            {
+                productToAdd.AddAssociatedPart(part);
+            }
+
+            MainForm main = new MainForm();
+            main.Show();
+            this.Hide();
 
         }
 
-        private void SavePartsAssociated_Click(object sender, EventArgs e)
-        {
 
+
+
+
+        private void txtProductName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtProductName.Text.Length > 0)
+            {
+                txtProductName.BackColor = Color.White;
+            }
+            else
+            {
+                txtProductName.BackColor = Color.Salmon;
+            }
         }
 
-        private void DeletePartsAssociated_Click(object sender, EventArgs e)
+        private void txtProductInventory_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtProductInventory.Text.Length > 0)
+            {
+                txtProductInventory.BackColor = Color.White;
+            }
+            else
+            {
+                txtProductInventory.BackColor = Color.Salmon;
+            }
         }
+
+        private void txtProductPriceOrCost_TextChanged(object sender, EventArgs e)
+        {
+            if (txtProductPriceOrCost.Text.Length > 0)
+            {
+                txtProductPriceOrCost.BackColor = Color.White;
+            }
+            else
+            {
+                txtProductPriceOrCost.BackColor = Color.Salmon;
+            }
+        }
+
+        private void txtProductMin_TextChanged(object sender, EventArgs e)
+        {
+            if (txtProductMin.Text.Length > 0)
+            {
+                txtProductMin.BackColor = Color.White;
+            }
+            else
+            {
+                txtProductMin.BackColor = Color.Salmon;
+            }
+        }
+
+        private void txtProductMax_TextChanged(object sender, EventArgs e)
+        {
+            if (txtProductMax.Text.Length > 0)
+            {
+                txtProductMax.BackColor = Color.White;
+            }
+            else
+            {
+                txtProductMax.BackColor = Color.Salmon;
+            }
+        }
+
+
     }
 }

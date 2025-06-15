@@ -11,7 +11,7 @@ namespace C968_Inventory_Management.Main.Products
 {
     public class Product 
     {
-        public BindingList<Part> AssociatedParts { get; set; } = new BindingList<Part>();
+        public static BindingList<Part> AssociatedParts = new BindingList<Part>();
         public int ProductID { get; set; }
         public string? Name { get; set; }
         public int InStock {  get; set; }
@@ -21,18 +21,18 @@ namespace C968_Inventory_Management.Main.Products
 
         
 
-        public Product(int productID, string? name, int price, int inStock, int min, int max)
+        public Product(int productID, string? name, int inStock, decimal price, int min, int max)
         {
             ProductID = productID;
             Name = name;
-            Price = price;
             InStock = inStock;
+            Price = price;
             Min = min;
             Max = max;
 
         }
 
-        public void AddAssociatedPart(Part part) => AssociatedParts?.Add(part);
+        public void AddAssociatedPart(Part part) => AssociatedParts.Add(part);
 
         public bool RemoveAssociatedPart(int partID)
         {

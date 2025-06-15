@@ -17,7 +17,7 @@ namespace C968_Inventory_Management.Main.Inventory
 
         public static BindingList<Part> AllParts = new BindingList<Part>();
 
-        public void AddProduct(Product product) => Products.Add(product);
+        public static void AddProduct(Product product) => Products.Add(product);
 
         public bool RemoveProduct(int productID)
         {
@@ -118,26 +118,34 @@ namespace C968_Inventory_Management.Main.Inventory
             AllParts.Add(dummyPart4A);
             AllParts.Add(dummyPart4B);
 
-            // Add parts to respective Products
-            dummyProd1.AssociatedParts.Add(dummyPart1A);
-            dummyProd1.AssociatedParts.Add(dummyPart1B);
-            dummyProd2.AssociatedParts.Add(dummyPart2A);
-            dummyProd2.AssociatedParts.Add(dummyPart2B);
-            dummyProd3.AssociatedParts.Add(dummyPart3A);
-            dummyProd3.AssociatedParts.Add(dummyPart3B);
-            dummyProd4.AssociatedParts.Add(dummyPart4A);
-            dummyProd4.AssociatedParts.Add(dummyPart4B);
+            //Add parts to respective Products
+            
+            // Fix for CS0176: Member 'Product.AddAssociatedPart(Part)' cannot be accessed with an instance reference; qualify it with a type name instead
 
-        //    public static int createPartID()
-        //{
-        //    int highestID = 0;
-        //    foreach (Part p in allParts)
-        //    {
-        //        if (p.getPartID() > highestID)
-        //            highestID = p.getPartID();
-        //    }
-        //    return highestID + 1;
-        //}
+            // The issue arises because `AddAssociatedPart` is defined as a static method in the `Product` class.
+            // Static methods should be called using the class name, not an instance reference.
+            // Update the code to use the class name `Product` instead of the instance reference `dummyProd1`.
+
+            //Product.AssociatedParts.Add(dummyPart1A);
+            //Product.AssociatedParts.Add(dummyPart1B);
+            //Product.AssociatedParts.Add(dummyPart2A);
+            //Product.AssociatedParts.Add(dummyPart2B);
+            //Product.AssociatedParts.Add(dummyPart3A);
+            //Product.AssociatedParts.Add(dummyPart3B);
+            //Product.AssociatedParts.Add(dummyPart4A);
+            //Product.AssociatedParts.Add(dummyPart4B);
+            
+
+            //    public static int createPartID()
+            //{
+            //    int highestID = 0;
+            //    foreach (Part p in allParts)
+            //    {
+            //        if (p.getPartID() > highestID)
+            //            highestID = p.getPartID();
+            //    }
+            //    return highestID + 1;
+            //}
 
         }
     }
