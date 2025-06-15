@@ -66,7 +66,7 @@ namespace C968_Inventory_Management
             }
             catch
             {
-                MessageBox.Show("Error: Must be numeric values!");
+                MessageBox.Show("Error: Inventory, Price, Min, and Max must ALL be numeric values.");
                 return;
 
             }
