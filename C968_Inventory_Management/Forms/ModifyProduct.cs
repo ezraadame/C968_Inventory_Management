@@ -17,7 +17,7 @@ namespace C968_Inventory_Management
     public partial class ModifyProduct : Form
     {
 
-        private BindingList<Part> AssociatedPartsQue = new BindingList<Part>();
+        private readonly BindingList<Part> AssociatedPartsQue = [];
         public ModifyProduct(Product product)
         {
             InitializeComponent();
@@ -29,14 +29,10 @@ namespace C968_Inventory_Management
             dvgAllCandidateParts.MultiSelect = false;
             dvgAllCandidateParts.AllowUserToAddRows = false;
 
-
-
             foreach (Part part in product.AssociatedParts)
             {
                 AssociatedPartsQue.Add(part);
             }
-
-
 
             dvgPartsAssociatedWithProduct.DataSource = AssociatedPartsQue;
             dvgPartsAssociatedWithProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -54,7 +50,7 @@ namespace C968_Inventory_Management
         }
 
 
-        private void btnSearchAllCandidateParts_Click(object sender, EventArgs e)
+        private void BtnSearchAllCandidateParts_Click(object sender, EventArgs e)
         {
             dvgAllCandidateParts.ClearSelection();
             bool found = false;
@@ -62,7 +58,7 @@ namespace C968_Inventory_Management
             {
                 for (int i = 0; i < Inventory.AllParts.Count; i++)
                 {
-                    if (Inventory.AllParts[i].Name.ToLower().Contains(txtAllCandidateParts.Text.ToLower()))
+                    if (Inventory.AllParts[i].Name?.ToLower().Contains(txtAllCandidateParts.Text.ToLower()) ?? false)
                     {
                         dvgAllCandidateParts.Rows[i].Selected = true;
                         found = true;
@@ -75,7 +71,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void btnAddCandidateParts_Click(object sender, EventArgs e)
+        private void BtnAddCandidateParts_Click(object sender, EventArgs e)
         {
             if (dvgAllCandidateParts.CurrentRow == null || !dvgAllCandidateParts.CurrentRow.Selected)
             {
@@ -83,11 +79,17 @@ namespace C968_Inventory_Management
                 return;
             }
 
-            Part partAssociatedWithProduct = (Part)dvgAllCandidateParts.CurrentRow.DataBoundItem;
-            AssociatedPartsQue.Add(partAssociatedWithProduct);
+            if (dvgAllCandidateParts.CurrentRow.DataBoundItem is Part partAssociatedWithProduct)
+            {
+                AssociatedPartsQue.Add(partAssociatedWithProduct);
+            }
+            else
+            {
+                MessageBox.Show("Unable to add the selected part.");
+            }
         }
 
-        private void btnSavePartAssociatedWithProduct_Click(object sender, EventArgs e)
+        private void BtnSavePartAssociatedWithProduct_Click(object sender, EventArgs e)
         {
             int minStock;
             int maxStock;
@@ -129,7 +131,7 @@ namespace C968_Inventory_Management
                 return;
             }
 
-            Product updatedProduct = new Product(productID, name, inventoryStock, price, minStock, maxStock);
+            Product updatedProduct = new(productID, name, inventoryStock, price, minStock, maxStock);
             foreach (Part newPart in AssociatedPartsQue)
             {
                 updatedProduct.AddAssociatedPart(newPart);
@@ -140,7 +142,7 @@ namespace C968_Inventory_Management
 
         }
 
-        private void btnDeletePartAssociatedWithProduct_Click(object sender, EventArgs e)
+        private void BtnDeletePartAssociatedWithProduct_Click(object sender, EventArgs e)
         {
             if (dvgPartsAssociatedWithProduct.CurrentRow == null || !dvgPartsAssociatedWithProduct.CurrentRow.Selected)
             {
@@ -150,8 +152,7 @@ namespace C968_Inventory_Management
             DialogResult result = MessageBox.Show($"Are you sure you want to delete the association of this part to the product?", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                Part? selectedPart = dvgPartsAssociatedWithProduct.CurrentRow.DataBoundItem as Part;
-                if (selectedPart != null)
+                if (dvgPartsAssociatedWithProduct.CurrentRow.DataBoundItem is Part selectedPart)
                 {
                     AssociatedPartsQue.Remove(selectedPart);
                 }
@@ -162,26 +163,7 @@ namespace C968_Inventory_Management
             }
             else return;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void txtModProductName_TextChanged(object sender, EventArgs e)
+        private void TxtModProductName_TextChanged(object sender, EventArgs e)
         {
             if (txtModProductName.Text.Length > 0)
             {
@@ -193,7 +175,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtModInventory_TextChanged(object sender, EventArgs e)
+        private void TxtModInventory_TextChanged(object sender, EventArgs e)
         {
             if (txtModInventory.Text.Length > 0)
             {
@@ -205,7 +187,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtModPriceOrCost_TextChanged(object sender, EventArgs e)
+        private void TxtModPriceOrCost_TextChanged(object sender, EventArgs e)
         {
             if (txtModPriceOrCost.Text.Length > 0)
             {
@@ -217,7 +199,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtModMin_TextChanged(object sender, EventArgs e)
+        private void TxtModMin_TextChanged(object sender, EventArgs e)
         {
             if (txtModMin.Text.Length > 0)
             {
@@ -229,7 +211,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtModMax_TextChanged(object sender, EventArgs e)
+        private void TxtModMax_TextChanged(object sender, EventArgs e)
         {
             if (txtModMax.Text.Length > 0)
             {
@@ -241,9 +223,7 @@ namespace C968_Inventory_Management
             }
         }
 
-
-
-        private void btnCancelModifyProduct_Click(object sender, EventArgs e)
+        private void BtnCancelModifyProduct_Click(object sender, EventArgs e)
         {
             Close();
         }

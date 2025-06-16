@@ -88,7 +88,7 @@
             btnModifyPartsSave.TabIndex = 18;
             btnModifyPartsSave.Text = "Save";
             btnModifyPartsSave.UseVisualStyleBackColor = false;
-            btnModifyPartsSave.Click += btnModifyPartsSave_Click;
+            btnModifyPartsSave.Click += BtnModifyPartsSave_Click;
             // 
             // lblMachOrComp
             // 
@@ -170,7 +170,7 @@
             btnModifyPartCancel.TabIndex = 10;
             btnModifyPartCancel.Text = "Cancel";
             btnModifyPartCancel.UseVisualStyleBackColor = false;
-            btnModifyPartCancel.Click += btnModifyPartCancel_Click;
+            btnModifyPartCancel.Click += BtnModifyPartCancel_Click;
             // 
             // txtModifyMachOrComp
             // 
@@ -179,7 +179,7 @@
             txtModifyMachOrComp.Name = "txtModifyMachOrComp";
             txtModifyMachOrComp.Size = new Size(155, 25);
             txtModifyMachOrComp.TabIndex = 9;
-            txtModifyMachOrComp.TextChanged += txtModifyMachOrComp_TextChanged;
+            txtModifyMachOrComp.TextChanged += TxtModifyMachOrComp_TextChanged;
             // 
             // txtModifyMax
             // 
@@ -188,7 +188,7 @@
             txtModifyMax.Name = "txtModifyMax";
             txtModifyMax.Size = new Size(102, 25);
             txtModifyMax.TabIndex = 8;
-            txtModifyMax.TextChanged += txtModifyMax_TextChanged;
+            txtModifyMax.TextChanged += TxtModifyMax_TextChanged;
             // 
             // txtModifyMin
             // 
@@ -197,7 +197,7 @@
             txtModifyMin.Name = "txtModifyMin";
             txtModifyMin.Size = new Size(102, 25);
             txtModifyMin.TabIndex = 7;
-            txtModifyMin.TextChanged += txtModifyMin_TextChanged;
+            txtModifyMin.TextChanged += TxtModifyMin_TextChanged;
             // 
             // txtModifyInventory
             // 
@@ -206,7 +206,7 @@
             txtModifyInventory.Name = "txtModifyInventory";
             txtModifyInventory.Size = new Size(155, 25);
             txtModifyInventory.TabIndex = 6;
-            txtModifyInventory.TextChanged += txtModifyInventory_TextChanged;
+            txtModifyInventory.TextChanged += TxtModifyInventory_TextChanged;
             // 
             // txtModifyPriceOrCost
             // 
@@ -215,7 +215,7 @@
             txtModifyPriceOrCost.Name = "txtModifyPriceOrCost";
             txtModifyPriceOrCost.Size = new Size(155, 25);
             txtModifyPriceOrCost.TabIndex = 5;
-            txtModifyPriceOrCost.TextChanged += txtModifyPriceOrCost_TextChanged;
+            txtModifyPriceOrCost.TextChanged += TxtModifyPriceOrCost_TextChanged;
             // 
             // txtModifyName
             // 
@@ -224,7 +224,7 @@
             txtModifyName.Name = "txtModifyName";
             txtModifyName.Size = new Size(155, 25);
             txtModifyName.TabIndex = 4;
-            txtModifyName.TextChanged += txtModifyName_TextChanged;
+            txtModifyName.TextChanged += TxtModifyName_TextChanged;
             // 
             // txtModifyID
             // 
@@ -247,7 +247,7 @@
             rdbtnOutsourced.TabStop = true;
             rdbtnOutsourced.Text = "Out Sourced";
             rdbtnOutsourced.UseVisualStyleBackColor = false;
-            rdbtnOutsourced.CheckedChanged += rdbtnOutsourced_CheckedChanged;
+            rdbtnOutsourced.CheckedChanged += RdbtnOutsourced_CheckedChanged;
             // 
             // rdbtnInHouse
             // 
@@ -260,7 +260,7 @@
             rdbtnInHouse.TabStop = true;
             rdbtnInHouse.Text = "In-House";
             rdbtnInHouse.UseVisualStyleBackColor = true;
-            rdbtnInHouse.CheckedChanged += rdbtnInHouse_CheckedChanged;
+            rdbtnInHouse.CheckedChanged += RdbtnInHouse_CheckedChanged;
             // 
             // lblModifyPartInHouse
             // 

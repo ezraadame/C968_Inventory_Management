@@ -18,7 +18,7 @@ namespace C968_Inventory_Management
     public partial class AddProduct : Form
     {
 
-        private BindingList<Part> AssociatedPartsQue = new BindingList<Part>();
+        private readonly BindingList<Part> AssociatedPartsQue = [];
         public AddProduct()
         {
             InitializeComponent();
@@ -37,19 +37,19 @@ namespace C968_Inventory_Management
 
         }
 
-        private void btnCancelAddProduct_Click(object sender, EventArgs e)
+        private void BtnCancelAddProduct_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
+            MainForm mainForm = new();
             mainForm.Show();
             this.Hide();
         }
 
-        private void dvgAllCandidateParts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void DvgAllCandidateParts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dvgAllCandidateParts.ClearSelection();
         }
 
-        private void btnAddCandidatePart_Click(object sender, EventArgs e)
+        private void BtnAddCandidatePart_Click(object sender, EventArgs e)
         {
             if (dvgAllCandidateParts.CurrentRow == null || !dvgAllCandidateParts.CurrentRow.Selected)
             {
@@ -57,11 +57,19 @@ namespace C968_Inventory_Management
                 return;
             }
 
-            Part partAssociatedWithProduct = (Part)dvgAllCandidateParts.CurrentRow.DataBoundItem;
-            AssociatedPartsQue.Add(partAssociatedWithProduct);
+
+            if (dvgAllCandidateParts.CurrentRow.DataBoundItem is Part partAssociatedWithProduct)
+            {
+                AssociatedPartsQue.Add(partAssociatedWithProduct);
+            }
+            else
+            {
+                MessageBox.Show("Error: Selected part is invalid or null.");
+                return;
+            }
         }
 
-        private void btnDeletePartAssociatedWithProduct_Click(object sender, EventArgs e)
+        private void BtnDeletePartAssociatedWithProduct_Click(object sender, EventArgs e)
         {
             if (dvgPartsAssociatedWithProduct.CurrentRow == null || !dvgPartsAssociatedWithProduct.CurrentRow.Selected)
             {
@@ -71,8 +79,7 @@ namespace C968_Inventory_Management
             DialogResult result = MessageBox.Show("Are you sure you want to delete the association of this part to the product?", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                Part? selectedPart = dvgPartsAssociatedWithProduct.CurrentRow.DataBoundItem as Part;
-                if (selectedPart != null)
+                if (dvgPartsAssociatedWithProduct.CurrentRow.DataBoundItem is Part selectedPart)
                 {
                     AssociatedPartsQue.Remove(selectedPart);
                 }
@@ -84,7 +91,7 @@ namespace C968_Inventory_Management
             else return;
         }
 
-        private void btnSavePartAssociatedWithProduct_Click(object sender, EventArgs e)
+        private void BtnSavePartAssociatedWithProduct_Click(object sender, EventArgs e)
         {
             int minStock;
             int maxStock;
@@ -125,7 +132,7 @@ namespace C968_Inventory_Management
                 return;
             }
 
-            Product productToAdd = new Product(
+            Product productToAdd = new(
                 (Inventory.Products.Count + 1), name, inventoryStock, price, minStock, maxStock);
 
             Inventory.AddProduct(productToAdd);
@@ -135,13 +142,13 @@ namespace C968_Inventory_Management
                 productToAdd.AddAssociatedPart(part);
             }
 
-            MainForm main = new MainForm();
+            MainForm main = new();
             main.Show();
             this.Hide();
 
         }
 
-        private void btnSearchAllCandidateParts_Click(object sender, EventArgs e)
+        private void BtnSearchAllCandidateParts_Click(object sender, EventArgs e)
         {
             dvgAllCandidateParts.ClearSelection();
             bool found = false;
@@ -149,7 +156,7 @@ namespace C968_Inventory_Management
             {
                 for (int i = 0; i < Inventory.AllParts.Count; i++)
                 {
-                    if (Inventory.AllParts[i].Name.ToLower().Contains(txtSearchAllCandidateParts.Text.ToLower()))
+                    if (Inventory.AllParts[i].Name?.ToLower().Contains(txtSearchAllCandidateParts.Text.ToLower())?? false)
                     {
                         dvgAllCandidateParts.Rows[i].Selected = true;
                         found = true;
@@ -162,7 +169,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtProductName_TextChanged(object sender, EventArgs e)
+        private void TxtProductName_TextChanged(object sender, EventArgs e)
         {
             if (txtProductName.Text.Length > 0)
             {
@@ -174,7 +181,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtProductInventory_TextChanged(object sender, EventArgs e)
+        private void TxtProductInventory_TextChanged(object sender, EventArgs e)
         {
             if (txtProductInventory.Text.Length > 0)
             {
@@ -186,7 +193,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtProductPriceOrCost_TextChanged(object sender, EventArgs e)
+        private void TxtProductPriceOrCost_TextChanged(object sender, EventArgs e)
         {
             if (txtProductPriceOrCost.Text.Length > 0)
             {
@@ -198,7 +205,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtProductMin_TextChanged(object sender, EventArgs e)
+        private void TxtProductMin_TextChanged(object sender, EventArgs e)
         {
             if (txtProductMin.Text.Length > 0)
             {
@@ -210,7 +217,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtProductMax_TextChanged(object sender, EventArgs e)
+        private void TxtProductMax_TextChanged(object sender, EventArgs e)
         {
             if (txtProductMax.Text.Length > 0)
             {

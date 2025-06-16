@@ -43,99 +43,22 @@ namespace C968_Inventory_Management
             rdbtnOutsourced.Checked = true;
         }
 
-
-
-
-
-        private void txtModifyName_TextChanged(object sender, EventArgs e)
-        {
-            if (txtModifyName.Text.Length > 0)
-            {
-                txtModifyName.BackColor = Color.White;
-            }
-            else
-            {
-                txtModifyName.BackColor = Color.Salmon;
-            }
-        }
-
-        private void txtModifyInventory_TextChanged(object sender, EventArgs e)
-        {
-            if (txtModifyInventory.Text.Length > 0)
-            {
-                txtModifyInventory.BackColor = Color.White;
-            }
-            else
-            {
-                txtModifyInventory.BackColor = Color.Salmon;
-            }
-        }
-
-        private void txtModifyPriceOrCost_TextChanged(object sender, EventArgs e)
-        {
-            if (txtModifyPriceOrCost.Text.Length > 0)
-            {
-                txtModifyPriceOrCost.BackColor = Color.White;
-            }
-            else
-            {
-                txtModifyPriceOrCost.BackColor = Color.Salmon;
-            }
-        }
-
-        private void txtModifyMin_TextChanged(object sender, EventArgs e)
-        {
-            if (txtModifyMin.Text.Length > 0)
-            {
-                txtModifyMin.BackColor = Color.White;
-            }
-            else
-            {
-                txtModifyMin.BackColor = Color.Salmon;
-            }
-        }
-
-        private void txtModifyMax_TextChanged(object sender, EventArgs e)
-        {
-            if (txtModifyMax.Text.Length > 0)
-            {
-                txtModifyMax.BackColor = Color.White;
-            }
-            else
-            {
-                txtModifyMax.BackColor = Color.Salmon;
-            }
-        }
-
-        private void txtModifyMachOrComp_TextChanged(object sender, EventArgs e)
-        {
-            if (txtModifyMachOrComp.Text.Length > 0)
-            {
-                txtModifyMachOrComp.BackColor = Color.White;
-            }
-            else
-            {
-                txtModifyMachOrComp.BackColor = Color.Salmon;
-            }
-        }
-
-        private void rdbtnInHouse_CheckedChanged(object sender, EventArgs e)
+        private void RdbtnInHouse_CheckedChanged(object sender, EventArgs e)
         {
             lblMachOrComp.Text = "Machine ID";
         }
 
-        private void rdbtnOutsourced_CheckedChanged(object sender, EventArgs e)
+        private void RdbtnOutsourced_CheckedChanged(object sender, EventArgs e)
         {
             lblMachOrComp.Text = "Company Name";
         }
 
-        private void btnModifyPartsSave_Click(object sender, EventArgs e)
+        private void BtnModifyPartsSave_Click(object sender, EventArgs e)
         {
             int minStock;
             int maxStock;
             int inventoryStock;
             decimal price;
-
 
             try
             {
@@ -186,14 +109,14 @@ namespace C968_Inventory_Management
 
             if (rdbtnInHouse.Checked)
             {
-                InHousePart inHousePart = new InHousePart(
+                InHousePart inHousePart = new(
                     partID, name, inventoryStock, price, minStock, maxStock, int.Parse(txtModifyMachOrComp.Text));
                 Inventory.UpdateParts(partID, inHousePart);
                 rdbtnInHouse.Checked = true;
             }
             else
             {
-                OutsourcedPart outsourcedPart = new OutsourcedPart(
+                OutsourcedPart outsourcedPart = new(
                     partID, name, inventoryStock, price, minStock, maxStock, txtModifyMachOrComp.Text);
                 Inventory.UpdateParts(partID, outsourcedPart);
                 rdbtnInHouse.Checked = true;
@@ -202,10 +125,82 @@ namespace C968_Inventory_Management
 
         }
 
-        private void btnModifyPartCancel_Click(object sender, EventArgs e)
+        private void BtnModifyPartCancel_Click(object sender, EventArgs e)
         {
             Close();
             
+        }
+
+        private void TxtModifyName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtModifyName.Text.Length > 0)
+            {
+                txtModifyName.BackColor = Color.White;
+            }
+            else
+            {
+                txtModifyName.BackColor = Color.Salmon;
+            }
+        }
+
+        private void TxtModifyInventory_TextChanged(object sender, EventArgs e)
+        {
+            if (txtModifyInventory.Text.Length > 0)
+            {
+                txtModifyInventory.BackColor = Color.White;
+            }
+            else
+            {
+                txtModifyInventory.BackColor = Color.Salmon;
+            }
+        }
+
+        private void TxtModifyPriceOrCost_TextChanged(object sender, EventArgs e)
+        {
+            if (txtModifyPriceOrCost.Text.Length > 0)
+            {
+                txtModifyPriceOrCost.BackColor = Color.White;
+            }
+            else
+            {
+                txtModifyPriceOrCost.BackColor = Color.Salmon;
+            }
+        }
+
+        private void TxtModifyMin_TextChanged(object sender, EventArgs e)
+        {
+            if (txtModifyMin.Text.Length > 0)
+            {
+                txtModifyMin.BackColor = Color.White;
+            }
+            else
+            {
+                txtModifyMin.BackColor = Color.Salmon;
+            }
+        }
+
+        private void TxtModifyMax_TextChanged(object sender, EventArgs e)
+        {
+            if (txtModifyMax.Text.Length > 0)
+            {
+                txtModifyMax.BackColor = Color.White;
+            }
+            else
+            {
+                txtModifyMax.BackColor = Color.Salmon;
+            }
+        }
+
+        private void TxtModifyMachOrComp_TextChanged(object sender, EventArgs e)
+        {
+            if (txtModifyMachOrComp.Text.Length > 0)
+            {
+                txtModifyMachOrComp.BackColor = Color.White;
+            }
+            else
+            {
+                txtModifyMachOrComp.BackColor = Color.Salmon;
+            }
         }
     }
 }

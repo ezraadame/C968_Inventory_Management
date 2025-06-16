@@ -88,7 +88,7 @@
             btnSaveInHousePart.TabIndex = 18;
             btnSaveInHousePart.Text = "Save";
             btnSaveInHousePart.UseVisualStyleBackColor = false;
-            btnSaveInHousePart.Click += btnSaveInHousePart_Click;
+            btnSaveInHousePart.Click += BtnSaveInHousePart_Click;
             // 
             // label8
             // 
@@ -179,7 +179,7 @@
             txtBox8.Name = "txtBox8";
             txtBox8.Size = new Size(155, 25);
             txtBox8.TabIndex = 9;
-            txtBox8.TextChanged += txtBox8_TextChanged;
+            txtBox8.TextChanged += TxtMachOrComp_TextChanged;
             // 
             // txtMax
             // 
@@ -188,7 +188,7 @@
             txtMax.Name = "txtMax";
             txtMax.Size = new Size(102, 25);
             txtMax.TabIndex = 8;
-            txtMax.TextChanged += txtMax_TextChanged;
+            txtMax.TextChanged += TxtMax_TextChanged;
             // 
             // txtMin
             // 
@@ -197,7 +197,7 @@
             txtMin.Name = "txtMin";
             txtMin.Size = new Size(102, 25);
             txtMin.TabIndex = 7;
-            txtMin.TextChanged += txtMin_TextChanged;
+            txtMin.TextChanged += TxtMin_TextChanged;
             // 
             // txtAddPartInventory
             // 
@@ -206,7 +206,7 @@
             txtAddPartInventory.Name = "txtAddPartInventory";
             txtAddPartInventory.Size = new Size(155, 25);
             txtAddPartInventory.TabIndex = 6;
-            txtAddPartInventory.TextChanged += txtAddPartInventory_TextChanged;
+            txtAddPartInventory.TextChanged += TxtAddPartInventory_TextChanged;
             // 
             // txtAddPartPriceOrCost
             // 
@@ -215,7 +215,7 @@
             txtAddPartPriceOrCost.Name = "txtAddPartPriceOrCost";
             txtAddPartPriceOrCost.Size = new Size(155, 25);
             txtAddPartPriceOrCost.TabIndex = 5;
-            txtAddPartPriceOrCost.TextChanged += txtAddPartPriceOrCost_TextChanged;
+            txtAddPartPriceOrCost.TextChanged += TxtAddPartPriceOrCost_TextChanged;
             // 
             // txtAddPartName
             // 
@@ -224,7 +224,7 @@
             txtAddPartName.Name = "txtAddPartName";
             txtAddPartName.Size = new Size(155, 25);
             txtAddPartName.TabIndex = 4;
-            txtAddPartName.TextChanged += txtAddPartName_TextChanged;
+            txtAddPartName.TextChanged += TxtAddPartName_TextChanged;
             // 
             // txtAddPartID
             // 
@@ -247,7 +247,7 @@
             rdbtnOutsourced.TabStop = true;
             rdbtnOutsourced.Text = "Out Sourced";
             rdbtnOutsourced.UseVisualStyleBackColor = false;
-            rdbtnOutsourced.CheckedChanged += rdbtnOutsourced_CheckedChanged;
+            rdbtnOutsourced.CheckedChanged += RdbtnOutsourced_CheckedChanged;
             // 
             // rdbtnInHouse
             // 
@@ -260,7 +260,7 @@
             rdbtnInHouse.TabStop = true;
             rdbtnInHouse.Text = "In-House";
             rdbtnInHouse.UseVisualStyleBackColor = true;
-            rdbtnInHouse.CheckedChanged += rdbtnInHouse_CheckedChanged;
+            rdbtnInHouse.CheckedChanged += RdbtnInHouse_CheckedChanged;
             // 
             // lblAddPartInHouse
             // 

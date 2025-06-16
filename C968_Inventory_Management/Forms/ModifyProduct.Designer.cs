@@ -64,7 +64,7 @@
             tbnCancelModifyProduct.TabIndex = 59;
             tbnCancelModifyProduct.Text = "Cancel";
             tbnCancelModifyProduct.UseVisualStyleBackColor = true;
-            tbnCancelModifyProduct.Click += btnCancelModifyProduct_Click;
+            tbnCancelModifyProduct.Click += BtnCancelModifyProduct_Click;
             // 
             // btnDeletePartAssociatedWithProduct
             // 
@@ -75,7 +75,7 @@
             btnDeletePartAssociatedWithProduct.TabIndex = 58;
             btnDeletePartAssociatedWithProduct.Text = "Delete";
             btnDeletePartAssociatedWithProduct.UseVisualStyleBackColor = true;
-            btnDeletePartAssociatedWithProduct.Click += btnDeletePartAssociatedWithProduct_Click;
+            btnDeletePartAssociatedWithProduct.Click += BtnDeletePartAssociatedWithProduct_Click;
             // 
             // btnSavePartAssociatedWithProduct
             // 
@@ -86,7 +86,7 @@
             btnSavePartAssociatedWithProduct.TabIndex = 57;
             btnSavePartAssociatedWithProduct.Text = "Save";
             btnSavePartAssociatedWithProduct.UseVisualStyleBackColor = true;
-            btnSavePartAssociatedWithProduct.Click += btnSavePartAssociatedWithProduct_Click;
+            btnSavePartAssociatedWithProduct.Click += BtnSavePartAssociatedWithProduct_Click;
             // 
             // btnAddCandidateParts
             // 
@@ -97,7 +97,7 @@
             btnAddCandidateParts.TabIndex = 56;
             btnAddCandidateParts.Text = "Add";
             btnAddCandidateParts.UseVisualStyleBackColor = true;
-            btnAddCandidateParts.Click += btnAddCandidateParts_Click;
+            btnAddCandidateParts.Click += BtnAddCandidateParts_Click;
             // 
             // lblModifyProduct
             // 
@@ -146,7 +146,7 @@
             txtModMax.Name = "txtModMax";
             txtModMax.Size = new Size(102, 23);
             txtModMax.TabIndex = 48;
-            txtModMax.TextChanged += txtModMax_TextChanged;
+            txtModMax.TextChanged += TxtModMax_TextChanged;
             // 
             // txtModMin
             // 
@@ -155,7 +155,7 @@
             txtModMin.Name = "txtModMin";
             txtModMin.Size = new Size(102, 23);
             txtModMin.TabIndex = 47;
-            txtModMin.TextChanged += txtModMin_TextChanged;
+            txtModMin.TextChanged += TxtModMin_TextChanged;
             // 
             // txtModInventory
             // 
@@ -164,7 +164,7 @@
             txtModInventory.Name = "txtModInventory";
             txtModInventory.Size = new Size(155, 23);
             txtModInventory.TabIndex = 46;
-            txtModInventory.TextChanged += txtModInventory_TextChanged;
+            txtModInventory.TextChanged += TxtModInventory_TextChanged;
             // 
             // txtModPriceOrCost
             // 
@@ -173,7 +173,7 @@
             txtModPriceOrCost.Name = "txtModPriceOrCost";
             txtModPriceOrCost.Size = new Size(155, 23);
             txtModPriceOrCost.TabIndex = 45;
-            txtModPriceOrCost.TextChanged += txtModPriceOrCost_TextChanged;
+            txtModPriceOrCost.TextChanged += TxtModPriceOrCost_TextChanged;
             // 
             // txtModProductName
             // 
@@ -182,7 +182,7 @@
             txtModProductName.Name = "txtModProductName";
             txtModProductName.Size = new Size(155, 23);
             txtModProductName.TabIndex = 44;
-            txtModProductName.TextChanged += txtModProductName_TextChanged;
+            txtModProductName.TextChanged += TxtModProductName_TextChanged;
             // 
             // txtModProductID
             // 
@@ -239,7 +239,7 @@
             btnSearchAllCandidateParts.TabIndex = 36;
             btnSearchAllCandidateParts.Text = "Search";
             btnSearchAllCandidateParts.UseVisualStyleBackColor = true;
-            btnSearchAllCandidateParts.Click += btnSearchAllCandidateParts_Click;
+            btnSearchAllCandidateParts.Click += BtnSearchAllCandidateParts_Click;
             // 
             // txtAllCandidateParts
             // 

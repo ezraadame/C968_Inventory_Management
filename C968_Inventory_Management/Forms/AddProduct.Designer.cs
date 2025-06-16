@@ -63,7 +63,7 @@
             dvgAllCandidateParts.RowHeadersVisible = false;
             dvgAllCandidateParts.Size = new Size(603, 247);
             dvgAllCandidateParts.TabIndex = 11;
-            dvgAllCandidateParts.DataBindingComplete += dvgAllCandidateParts_DataBindingComplete;
+            dvgAllCandidateParts.DataBindingComplete += DvgAllCandidateParts_DataBindingComplete;
             // 
             // lblCandidateParts
             // 
@@ -83,7 +83,7 @@
             btnSearchAllCandidateParts.TabIndex = 9;
             btnSearchAllCandidateParts.Text = "Search";
             btnSearchAllCandidateParts.UseVisualStyleBackColor = true;
-            btnSearchAllCandidateParts.Click += btnSearchAllCandidateParts_Click;
+            btnSearchAllCandidateParts.Click += BtnSearchAllCandidateParts_Click;
             // 
             // txtSearchAllCandidateParts
             // 
@@ -168,7 +168,7 @@
             txtProductMax.Name = "txtProductMax";
             txtProductMax.Size = new Size(102, 23);
             txtProductMax.TabIndex = 23;
-            txtProductMax.TextChanged += txtProductMax_TextChanged;
+            txtProductMax.TextChanged += TxtProductMax_TextChanged;
             // 
             // txtProductMin
             // 
@@ -177,7 +177,7 @@
             txtProductMin.Name = "txtProductMin";
             txtProductMin.Size = new Size(102, 23);
             txtProductMin.TabIndex = 22;
-            txtProductMin.TextChanged += txtProductMin_TextChanged;
+            txtProductMin.TextChanged += TxtProductMin_TextChanged;
             // 
             // txtProductInventory
             // 
@@ -186,7 +186,7 @@
             txtProductInventory.Name = "txtProductInventory";
             txtProductInventory.Size = new Size(155, 23);
             txtProductInventory.TabIndex = 21;
-            txtProductInventory.TextChanged += txtProductInventory_TextChanged;
+            txtProductInventory.TextChanged += TxtProductInventory_TextChanged;
             // 
             // txtProductPriceOrCost
             // 
@@ -195,7 +195,7 @@
             txtProductPriceOrCost.Name = "txtProductPriceOrCost";
             txtProductPriceOrCost.Size = new Size(155, 23);
             txtProductPriceOrCost.TabIndex = 20;
-            txtProductPriceOrCost.TextChanged += txtProductPriceOrCost_TextChanged;
+            txtProductPriceOrCost.TextChanged += TxtProductPriceOrCost_TextChanged;
             // 
             // txtProductID
             // 
@@ -224,7 +224,7 @@
             btnAddCandidatePart.TabIndex = 31;
             btnAddCandidatePart.Text = "Add";
             btnAddCandidatePart.UseVisualStyleBackColor = true;
-            btnAddCandidatePart.Click += btnAddCandidatePart_Click;
+            btnAddCandidatePart.Click += BtnAddCandidatePart_Click;
             // 
             // btnSavePartAssociatedWithProduct
             // 
@@ -235,7 +235,7 @@
             btnSavePartAssociatedWithProduct.TabIndex = 32;
             btnSavePartAssociatedWithProduct.Text = "Save";
             btnSavePartAssociatedWithProduct.UseVisualStyleBackColor = true;
-            btnSavePartAssociatedWithProduct.Click += btnSavePartAssociatedWithProduct_Click;
+            btnSavePartAssociatedWithProduct.Click += BtnSavePartAssociatedWithProduct_Click;
             // 
             // btnDeletePartAssociatedWithProduct
             // 
@@ -246,7 +246,7 @@
             btnDeletePartAssociatedWithProduct.TabIndex = 33;
             btnDeletePartAssociatedWithProduct.Text = "Delete";
             btnDeletePartAssociatedWithProduct.UseVisualStyleBackColor = true;
-            btnDeletePartAssociatedWithProduct.Click += btnDeletePartAssociatedWithProduct_Click;
+            btnDeletePartAssociatedWithProduct.Click += BtnDeletePartAssociatedWithProduct_Click;
             // 
             // btnCancelAddProduct
             // 
@@ -257,7 +257,7 @@
             btnCancelAddProduct.TabIndex = 34;
             btnCancelAddProduct.Text = "Cancel";
             btnCancelAddProduct.UseVisualStyleBackColor = true;
-            btnCancelAddProduct.Click += btnCancelAddProduct_Click;
+            btnCancelAddProduct.Click += BtnCancelAddProduct_Click;
             // 
             // txtProductName
             // 
@@ -266,7 +266,7 @@
             txtProductName.Name = "txtProductName";
             txtProductName.Size = new Size(155, 23);
             txtProductName.TabIndex = 35;
-            txtProductName.TextChanged += txtProductName_TextChanged;
+            txtProductName.TextChanged += TxtProductName_TextChanged;
             // 
             // label1
             // 

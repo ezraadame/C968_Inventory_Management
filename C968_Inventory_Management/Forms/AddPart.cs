@@ -23,31 +23,27 @@ namespace C968_Inventory_Management
 
         private void CancelInHouse_Click(object sender, EventArgs e)
         {
-            MainForm main = new MainForm();
+            MainForm main = new();
             main.Show();
             this.Hide();
         }
 
         private void CancelOutSourced_Click(object sender, EventArgs e)
         {
-            MainForm main = new MainForm();
+            MainForm main = new();
             main.Show();
             this.Hide();
         }
 
-        private void rdbtnInHouse_CheckedChanged(object sender, EventArgs e)
+        private void RdbtnInHouse_CheckedChanged(object sender, EventArgs e)
         {
             label8.Text = "Machine ID";
-
         }
-
-        private void rdbtnOutsourced_CheckedChanged(object sender, EventArgs e)
+        private void RdbtnOutsourced_CheckedChanged(object sender, EventArgs e)
         {
             label8.Text = "Company Name";
-
         }
-
-        private void btnSaveInHousePart_Click(object sender, EventArgs e)
+        private void BtnSaveInHousePart_Click(object sender, EventArgs e)
         {
 
             int minStock;
@@ -99,22 +95,22 @@ namespace C968_Inventory_Management
 
             if (rdbtnInHouse.Checked)
             {
-                InHousePart inHouse = new InHousePart(
+                InHousePart inHouse = new(
                     (Inventory.AllParts.Count + 1), name, inventoryStock, price, minStock, maxStock, int.Parse(txtBox8.Text));
 
                 Inventory.AllParts.Add(inHouse);
 
-                MainForm main = new MainForm();
+                MainForm main = new();
                 main.Show();
                 this.Hide();
             }
             else if (rdbtnOutsourced.Checked)
             {
-                OutsourcedPart outsourced = new OutsourcedPart(
+                OutsourcedPart outsourced = new(
                     (Inventory.AllParts.Count + 1), name, inventoryStock, price, minStock, maxStock, txtBox8.Text);
                 Inventory.AllParts.Add(outsourced);
 
-                MainForm main = new MainForm();
+                MainForm main = new();
                 main.Show();
                 this.Hide();
             }
@@ -125,7 +121,7 @@ namespace C968_Inventory_Management
 
 
         //Color change handling
-        private void txtAddPartName_TextChanged(object sender, EventArgs e)
+        private void TxtAddPartName_TextChanged(object sender, EventArgs e)
         {
             if (txtAddPartName.Text.Length > 0)
             {
@@ -137,7 +133,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtAddPartInventory_TextChanged(object sender, EventArgs e)
+        private void TxtAddPartInventory_TextChanged(object sender, EventArgs e)
         {
             if (txtAddPartInventory.Text.Length > 0)
             {
@@ -149,7 +145,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtAddPartPriceOrCost_TextChanged(object sender, EventArgs e)
+        private void TxtAddPartPriceOrCost_TextChanged(object sender, EventArgs e)
         {
             if (txtAddPartPriceOrCost.Text.Length > 0)
             {
@@ -161,7 +157,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtMin_TextChanged(object sender, EventArgs e)
+        private void TxtMin_TextChanged(object sender, EventArgs e)
         {
             if (txtMin.Text.Length > 0)
             {
@@ -173,7 +169,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtMax_TextChanged(object sender, EventArgs e)
+        private void TxtMax_TextChanged(object sender, EventArgs e)
         {
             if (txtMax.Text.Length > 0)
             {
@@ -185,7 +181,7 @@ namespace C968_Inventory_Management
             }
         }
 
-        private void txtBox8_TextChanged(object sender, EventArgs e)
+        private void TxtMachOrComp_TextChanged(object sender, EventArgs e)
         {
             if (txtBox8.Text.Length > 0)
             {

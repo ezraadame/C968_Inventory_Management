@@ -1,29 +1,16 @@
 ﻿using C968_Inventory_Management.Main.Parts;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace C968_Inventory_Management.Main.Products
 {
     public class Product 
     {
         public BindingList<Part> AssociatedParts = new BindingList<Part>();
-        
-        private int productID;
-        private string name;
-        private int inStock;
-        private decimal price;
-        private int min;
-        private int max;
-
         public int ProductID { get; set; }
         public string Name { get; set; }
         public int InStock { get; set; }
 
+        public decimal price;
         public string Price
         {
             get { return price.ToString("C"); }
@@ -39,7 +26,6 @@ namespace C968_Inventory_Management.Main.Products
                 }
             }
         }
-
         public int Min { get; set; }
         public int Max { get; set; }
 
@@ -53,9 +39,7 @@ namespace C968_Inventory_Management.Main.Products
             Max = max;
 
         }
-
         public void AddAssociatedPart(Part part) => AssociatedParts.Add(part);
-
         public bool RemoveAssociatedPart(int partID)
         {
             bool success = false;
@@ -64,7 +48,8 @@ namespace C968_Inventory_Management.Main.Products
                 if (part.PartID == partID)
                 {
                     AssociatedParts.Remove(part);
-                    return success = true;
+                    success = true;
+                    return success;
                 }
             }
             MessageBox.Show("Removal failure.");
@@ -77,7 +62,6 @@ namespace C968_Inventory_Management.Main.Products
             return associatedPart;
         }
 
-            
     }
 
 }

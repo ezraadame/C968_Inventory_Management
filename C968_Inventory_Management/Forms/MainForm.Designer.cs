@@ -120,7 +120,7 @@
             dvgParts.RowHeadersVisible = false;
             dvgParts.Size = new Size(603, 302);
             dvgParts.TabIndex = 7;
-            dvgParts.DataBindingComplete += dvgParts_DataBindingComplete;
+            dvgParts.DataBindingComplete += DvgParts_DataBindingComplete;
             // 
             // dvgProducts
             // 
@@ -130,7 +130,7 @@
             dvgProducts.RowHeadersVisible = false;
             dvgProducts.Size = new Size(603, 302);
             dvgProducts.TabIndex = 8;
-            dvgProducts.DataBindingComplete += dvgProducts_DataBindingComplete;
+            dvgProducts.DataBindingComplete += DvgProducts_DataBindingComplete;
             // 
             // btnAddParts
             // 
@@ -160,7 +160,7 @@
             btnDeleteParts.TabIndex = 11;
             btnDeleteParts.Text = "Delete";
             btnDeleteParts.UseVisualStyleBackColor = true;
-            btnDeleteParts.Click += btnDeleteParts_Click;
+            btnDeleteParts.Click += BtnDeleteParts_Click;
             // 
             // btnAddProducts
             // 
@@ -190,7 +190,7 @@
             btnDeleteProducts.TabIndex = 14;
             btnDeleteProducts.Text = "Delete";
             btnDeleteProducts.UseVisualStyleBackColor = true;
-            btnDeleteProducts.Click += btnDeleteProducts_Click;
+            btnDeleteProducts.Click += BtnDeleteProducts_Click;
             // 
             // btnExit
             // 

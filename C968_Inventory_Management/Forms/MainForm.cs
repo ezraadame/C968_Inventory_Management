@@ -10,12 +10,9 @@ namespace C968_Inventory_Management
 {
     public partial class MainForm : Form
     {
-
         public MainForm()
         {
             InitializeComponent();
-            Inventory.PopulateDummyLists();
-
 
             dvgParts.DataSource = Inventory.AllParts;
             dvgParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -34,8 +31,6 @@ namespace C968_Inventory_Management
         {
 
         }
-
-
         private void SearchPartButton_Click(object sender, EventArgs e)
         {
             dvgParts.ClearSelection();
@@ -44,7 +39,7 @@ namespace C968_Inventory_Management
             {
                 for (int i = 0; i < Inventory.AllParts.Count; i++)
                 {
-                    if (Inventory.AllParts[i].Name.ToLower().Contains(txtSearchParts.Text.ToLower()))
+                    if (Inventory.AllParts[i].Name?.ToLower().Contains(txtSearchParts.Text.ToLower()) ?? false)
                     {
                         dvgParts.Rows[i].Selected = true;
                         found = true;
@@ -55,21 +50,17 @@ namespace C968_Inventory_Management
             {
                 MessageBox.Show("Nothing found.");
             }
-            
-
-
         }
 
         private void AddPartsButton_Click(object sender, EventArgs e)
         {
-            AddPart addPart = new AddPart();
+            AddPart addPart = new();
             addPart.Show();
             this.Hide();
         }
 
-        private void btnDeleteParts_Click(object sender, EventArgs e)
+        private void BtnDeleteParts_Click(object sender, EventArgs e)
         {
-
             if (dvgParts.CurrentRow == null || !dvgParts.CurrentRow.Selected)
             {
                 MessageBox.Show("Nothing selected, please select something!");
@@ -79,13 +70,17 @@ namespace C968_Inventory_Management
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item forever?", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                Part selectedPart = dvgParts.CurrentRow.DataBoundItem as Part;
-                if (Inventory.DeletePart(selectedPart) == false)
+                if (dvgParts.CurrentRow.DataBoundItem is not Part selectedPart)
                 {
-                    MessageBox.Show($"Unable to delete. Ensure that the selected part is not associated with a current product before deletion!"
-                        , "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Unable to delete the selected part because it is null.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
+                if (Inventory.DeletePart(selectedPart) == false)
+                {
+                    MessageBox.Show($"Unable to delete. Ensure that the selected part is not associated with a current product before deletion!",
+                        "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -99,7 +94,7 @@ namespace C968_Inventory_Management
             }
 
             var part = dvgParts.CurrentRow.DataBoundItem;
-            Form modifyPartForm = null;
+            Form? modifyPartForm = null;
 
             if (part is InHousePart inHousePart)
             {
@@ -142,12 +137,12 @@ namespace C968_Inventory_Management
 
         private void AddProductsButton_Click(object sender, EventArgs e)
         {
-            AddProduct addProduct = new AddProduct();
+            AddProduct addProduct = new();
             addProduct.Show();
             this.Hide();
         }
 
-        private void btnDeleteProducts_Click(object sender, EventArgs e)
+        private void BtnDeleteProducts_Click(object sender, EventArgs e)
         {
             if (dvgProducts.CurrentRow == null || !dvgProducts.CurrentRow.Selected)
             {
@@ -158,8 +153,7 @@ namespace C968_Inventory_Management
             DialogResult result = MessageBox.Show("Are you sure you want to delete this item forever?", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                Product selectedProduct = dvgProducts.CurrentRow.DataBoundItem as Product;
-                if (selectedProduct != null)
+                if (dvgProducts.CurrentRow.DataBoundItem is Product selectedProduct)
                 {
                     Inventory.Products.Remove(selectedProduct);
                 }
@@ -181,7 +175,7 @@ namespace C968_Inventory_Management
             }
 
             var selectedProduct = dvgProducts.CurrentRow.DataBoundItem;
-            Form modifyProductForm = null;
+            Form? modifyProductForm = null;
 
             if (selectedProduct is Product product)
             {
@@ -201,13 +195,12 @@ namespace C968_Inventory_Management
             Application.Exit();
         }
 
-
-        private void dvgParts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void DvgParts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dvgParts.ClearSelection();
         }
 
-        private void dvgProducts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void DvgProducts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dvgProducts.ClearSelection();
         }
