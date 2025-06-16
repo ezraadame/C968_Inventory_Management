@@ -187,10 +187,20 @@ namespace C968_Inventory_Management
                 return;
             }
 
+            var selectedProduct = dvgProducts.CurrentRow.DataBoundItem;
+            Form modifyProductForm = null;
 
-            ModifyProduct modifyProduct = new ModifyProduct();
-            modifyProduct.Show();
-            this.Hide();
+            if (selectedProduct is Product product)
+            {
+                modifyProductForm = new ModifyProduct(product);
+            }
+
+            if (modifyProductForm != null)
+            {
+                this.Hide();
+                modifyProductForm.ShowDialog();
+                this.Show();
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

@@ -83,6 +83,7 @@
             btnSearchAllCandidateParts.TabIndex = 9;
             btnSearchAllCandidateParts.Text = "Search";
             btnSearchAllCandidateParts.UseVisualStyleBackColor = true;
+            btnSearchAllCandidateParts.Click += btnSearchAllCandidateParts_Click;
             // 
             // txtSearchAllCandidateParts
             // 

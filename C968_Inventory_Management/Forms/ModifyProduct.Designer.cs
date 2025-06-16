@@ -33,32 +33,32 @@
             btnSavePartAssociatedWithProduct = new Button();
             btnAddCandidateParts = new Button();
             lblModifyProduct = new Label();
-            txtModMax = new Label();
-            txtModMin = new Label();
-            txtModPriceOrCost = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            txtModMax = new TextBox();
+            txtModMin = new TextBox();
             txtModInventory = new TextBox();
-            textBox3 = new TextBox();
+            txtModPriceOrCost = new TextBox();
             txtModProductName = new TextBox();
             txtModProductID = new TextBox();
-            dvgPartAssociatedWithProduct = new DataGridView();
+            dvgPartsAssociatedWithProduct = new DataGridView();
             lblPartAssociatedWithProduct = new Label();
             dvgAllCandidateParts = new DataGridView();
             lblAllCandidateParts = new Label();
             btnSearchAllCandidateParts = new Button();
             txtAllCandidateParts = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dvgPartAssociatedWithProduct).BeginInit();
+            lblModPriceOrCost = new Label();
+            lblModMin = new Label();
+            lblModMax = new Label();
+            ((System.ComponentModel.ISupportInitialize)dvgPartsAssociatedWithProduct).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dvgAllCandidateParts).BeginInit();
             SuspendLayout();
             // 
             // tbnCancelModifyProduct
             // 
             tbnCancelModifyProduct.Font = new Font("Gadugi", 9F);
-            tbnCancelModifyProduct.Location = new Point(1099, 601);
+            tbnCancelModifyProduct.Location = new Point(1099, 587);
             tbnCancelModifyProduct.Name = "tbnCancelModifyProduct";
             tbnCancelModifyProduct.Size = new Size(61, 39);
             tbnCancelModifyProduct.TabIndex = 59;
@@ -69,22 +69,24 @@
             // btnDeletePartAssociatedWithProduct
             // 
             btnDeletePartAssociatedWithProduct.Font = new Font("Gadugi", 9F);
-            btnDeletePartAssociatedWithProduct.Location = new Point(464, 479);
+            btnDeletePartAssociatedWithProduct.Location = new Point(464, 465);
             btnDeletePartAssociatedWithProduct.Name = "btnDeletePartAssociatedWithProduct";
             btnDeletePartAssociatedWithProduct.Size = new Size(61, 39);
             btnDeletePartAssociatedWithProduct.TabIndex = 58;
             btnDeletePartAssociatedWithProduct.Text = "Delete";
             btnDeletePartAssociatedWithProduct.UseVisualStyleBackColor = true;
+            btnDeletePartAssociatedWithProduct.Click += btnDeletePartAssociatedWithProduct_Click;
             // 
             // btnSavePartAssociatedWithProduct
             // 
             btnSavePartAssociatedWithProduct.Font = new Font("Gadugi", 9F);
-            btnSavePartAssociatedWithProduct.Location = new Point(464, 420);
+            btnSavePartAssociatedWithProduct.Location = new Point(464, 406);
             btnSavePartAssociatedWithProduct.Name = "btnSavePartAssociatedWithProduct";
             btnSavePartAssociatedWithProduct.Size = new Size(61, 39);
             btnSavePartAssociatedWithProduct.TabIndex = 57;
             btnSavePartAssociatedWithProduct.Text = "Save";
             btnSavePartAssociatedWithProduct.UseVisualStyleBackColor = true;
+            btnSavePartAssociatedWithProduct.Click += btnSavePartAssociatedWithProduct_Click;
             // 
             // btnAddCandidateParts
             // 
@@ -95,6 +97,7 @@
             btnAddCandidateParts.TabIndex = 56;
             btnAddCandidateParts.Text = "Add";
             btnAddCandidateParts.UseVisualStyleBackColor = true;
+            btnAddCandidateParts.Click += btnAddCandidateParts_Click;
             // 
             // lblModifyProduct
             // 
@@ -105,36 +108,6 @@
             lblModifyProduct.Size = new Size(231, 35);
             lblModifyProduct.TabIndex = 55;
             lblModifyProduct.Text = "Modify Product";
-            // 
-            // txtModMax
-            // 
-            txtModMax.AutoSize = true;
-            txtModMax.Font = new Font("Gadugi", 9.75F);
-            txtModMax.Location = new Point(258, 403);
-            txtModMax.Name = "txtModMax";
-            txtModMax.Size = new Size(32, 16);
-            txtModMax.TabIndex = 54;
-            txtModMax.Text = "Max";
-            // 
-            // txtModMin
-            // 
-            txtModMin.AutoSize = true;
-            txtModMin.Font = new Font("Gadugi", 9.75F);
-            txtModMin.Location = new Point(103, 403);
-            txtModMin.Name = "txtModMin";
-            txtModMin.Size = new Size(29, 16);
-            txtModMin.TabIndex = 53;
-            txtModMin.Text = "Min";
-            // 
-            // txtModPriceOrCost
-            // 
-            txtModPriceOrCost.AutoSize = true;
-            txtModPriceOrCost.Font = new Font("Gadugi", 9.75F);
-            txtModPriceOrCost.Location = new Point(103, 351);
-            txtModPriceOrCost.Name = "txtModPriceOrCost";
-            txtModPriceOrCost.Size = new Size(66, 16);
-            txtModPriceOrCost.TabIndex = 52;
-            txtModPriceOrCost.Text = "Price/Cost";
             // 
             // label4
             // 
@@ -166,21 +139,23 @@
             label2.TabIndex = 49;
             label2.Text = "ID";
             // 
-            // textBox6
+            // txtModMax
             // 
-            textBox6.BackColor = Color.Salmon;
-            textBox6.Location = new Point(296, 400);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(102, 23);
-            textBox6.TabIndex = 48;
+            txtModMax.BackColor = Color.Salmon;
+            txtModMax.Location = new Point(296, 400);
+            txtModMax.Name = "txtModMax";
+            txtModMax.Size = new Size(102, 23);
+            txtModMax.TabIndex = 48;
+            txtModMax.TextChanged += txtModMax_TextChanged;
             // 
-            // textBox5
+            // txtModMin
             // 
-            textBox5.BackColor = Color.Salmon;
-            textBox5.Location = new Point(138, 400);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(102, 23);
-            textBox5.TabIndex = 47;
+            txtModMin.BackColor = Color.Salmon;
+            txtModMin.Location = new Point(138, 400);
+            txtModMin.Name = "txtModMin";
+            txtModMin.Size = new Size(102, 23);
+            txtModMin.TabIndex = 47;
+            txtModMin.TextChanged += txtModMin_TextChanged;
             // 
             // txtModInventory
             // 
@@ -189,14 +164,16 @@
             txtModInventory.Name = "txtModInventory";
             txtModInventory.Size = new Size(155, 23);
             txtModInventory.TabIndex = 46;
+            txtModInventory.TextChanged += txtModInventory_TextChanged;
             // 
-            // textBox3
+            // txtModPriceOrCost
             // 
-            textBox3.BackColor = Color.Salmon;
-            textBox3.Location = new Point(186, 344);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(155, 23);
-            textBox3.TabIndex = 45;
+            txtModPriceOrCost.BackColor = Color.Salmon;
+            txtModPriceOrCost.Location = new Point(186, 344);
+            txtModPriceOrCost.Name = "txtModPriceOrCost";
+            txtModPriceOrCost.Size = new Size(155, 23);
+            txtModPriceOrCost.TabIndex = 45;
+            txtModPriceOrCost.TextChanged += txtModPriceOrCost_TextChanged;
             // 
             // txtModProductName
             // 
@@ -205,29 +182,31 @@
             txtModProductName.Name = "txtModProductName";
             txtModProductName.Size = new Size(155, 23);
             txtModProductName.TabIndex = 44;
+            txtModProductName.TextChanged += txtModProductName_TextChanged;
             // 
             // txtModProductID
             // 
             txtModProductID.BackColor = SystemColors.InactiveCaption;
             txtModProductID.Location = new Point(186, 208);
             txtModProductID.Name = "txtModProductID";
+            txtModProductID.ReadOnly = true;
             txtModProductID.Size = new Size(155, 23);
             txtModProductID.TabIndex = 43;
             // 
-            // dvgPartAssociatedWithProduct
+            // dvgPartsAssociatedWithProduct
             // 
-            dvgPartAssociatedWithProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvgPartAssociatedWithProduct.Location = new Point(557, 347);
-            dvgPartAssociatedWithProduct.Name = "dvgPartAssociatedWithProduct";
-            dvgPartAssociatedWithProduct.RowHeadersVisible = false;
-            dvgPartAssociatedWithProduct.Size = new Size(603, 230);
-            dvgPartAssociatedWithProduct.TabIndex = 42;
+            dvgPartsAssociatedWithProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgPartsAssociatedWithProduct.Location = new Point(557, 333);
+            dvgPartsAssociatedWithProduct.Name = "dvgPartsAssociatedWithProduct";
+            dvgPartsAssociatedWithProduct.RowHeadersVisible = false;
+            dvgPartsAssociatedWithProduct.Size = new Size(603, 230);
+            dvgPartsAssociatedWithProduct.TabIndex = 42;
             // 
             // lblPartAssociatedWithProduct
             // 
             lblPartAssociatedWithProduct.AutoSize = true;
             lblPartAssociatedWithProduct.Font = new Font("Gadugi", 13.75F);
-            lblPartAssociatedWithProduct.Location = new Point(557, 311);
+            lblPartAssociatedWithProduct.Location = new Point(557, 297);
             lblPartAssociatedWithProduct.Name = "lblPartAssociatedWithProduct";
             lblPartAssociatedWithProduct.Size = new Size(263, 22);
             lblPartAssociatedWithProduct.TabIndex = 41;
@@ -260,6 +239,7 @@
             btnSearchAllCandidateParts.TabIndex = 36;
             btnSearchAllCandidateParts.Text = "Search";
             btnSearchAllCandidateParts.UseVisualStyleBackColor = true;
+            btnSearchAllCandidateParts.Click += btnSearchAllCandidateParts_Click;
             // 
             // txtAllCandidateParts
             // 
@@ -268,29 +248,59 @@
             txtAllCandidateParts.Size = new Size(160, 23);
             txtAllCandidateParts.TabIndex = 35;
             // 
+            // lblModPriceOrCost
+            // 
+            lblModPriceOrCost.AutoSize = true;
+            lblModPriceOrCost.Font = new Font("Gadugi", 9.75F);
+            lblModPriceOrCost.Location = new Point(103, 346);
+            lblModPriceOrCost.Name = "lblModPriceOrCost";
+            lblModPriceOrCost.Size = new Size(66, 16);
+            lblModPriceOrCost.TabIndex = 60;
+            lblModPriceOrCost.Text = "Price/Cost";
+            // 
+            // lblModMin
+            // 
+            lblModMin.AutoSize = true;
+            lblModMin.Font = new Font("Gadugi", 9.75F);
+            lblModMin.Location = new Point(90, 402);
+            lblModMin.Name = "lblModMin";
+            lblModMin.Size = new Size(29, 16);
+            lblModMin.TabIndex = 61;
+            lblModMin.Text = "Min";
+            // 
+            // lblModMax
+            // 
+            lblModMax.AutoSize = true;
+            lblModMax.Font = new Font("Gadugi", 9.75F);
+            lblModMax.Location = new Point(258, 402);
+            lblModMax.Name = "lblModMax";
+            lblModMax.Size = new Size(32, 16);
+            lblModMax.TabIndex = 62;
+            lblModMax.Text = "Max";
+            // 
             // ModifyProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1196, 668);
+            ClientSize = new Size(1196, 638);
+            Controls.Add(lblModMax);
+            Controls.Add(lblModMin);
+            Controls.Add(lblModPriceOrCost);
             Controls.Add(tbnCancelModifyProduct);
             Controls.Add(btnDeletePartAssociatedWithProduct);
             Controls.Add(btnSavePartAssociatedWithProduct);
             Controls.Add(btnAddCandidateParts);
             Controls.Add(lblModifyProduct);
-            Controls.Add(txtModMax);
-            Controls.Add(txtModMin);
-            Controls.Add(txtModPriceOrCost);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
+            Controls.Add(txtModMax);
+            Controls.Add(txtModMin);
             Controls.Add(txtModInventory);
-            Controls.Add(textBox3);
+            Controls.Add(txtModPriceOrCost);
             Controls.Add(txtModProductName);
             Controls.Add(txtModProductID);
-            Controls.Add(dvgPartAssociatedWithProduct);
+            Controls.Add(dvgPartsAssociatedWithProduct);
             Controls.Add(lblPartAssociatedWithProduct);
             Controls.Add(dvgAllCandidateParts);
             Controls.Add(lblAllCandidateParts);
@@ -298,7 +308,7 @@
             Controls.Add(txtAllCandidateParts);
             Name = "ModifyProduct";
             Text = "ModifyProduct";
-            ((System.ComponentModel.ISupportInitialize)dvgPartAssociatedWithProduct).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dvgPartsAssociatedWithProduct).EndInit();
             ((System.ComponentModel.ISupportInitialize)dvgAllCandidateParts).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -311,23 +321,23 @@
         private Button btnSavePartAssociatedWithProduct;
         private Button btnAddCandidateParts;
         private Label lblModifyProduct;
-        private Label txtModMax;
-        private Label txtModMin;
-        private Label txtModPriceOrCost;
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox txtModMax;
+        private TextBox txtModMin;
         private TextBox txtModInventory;
-        private TextBox textBox3;
+        private TextBox txtModPriceOrCost;
         private TextBox txtModProductName;
         private TextBox txtModProductID;
-        private DataGridView dvgPartAssociatedWithProduct;
+        private DataGridView dvgPartsAssociatedWithProduct;
         private Label lblPartAssociatedWithProduct;
         private DataGridView dvgAllCandidateParts;
         private Label lblAllCandidateParts;
         private Button btnSearchAllCandidateParts;
         private TextBox txtAllCandidateParts;
+        private Label lblModPriceOrCost;
+        private Label lblModMin;
+        private Label lblModMax;
     }
 }

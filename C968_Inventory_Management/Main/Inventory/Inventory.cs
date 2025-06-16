@@ -19,39 +19,32 @@ namespace C968_Inventory_Management.Main.Inventory
 
         public static void AddProduct(Product product) => Products.Add(product);
 
-        public bool RemoveProduct(int productID)
+        public static bool RemoveProduct(int productID)
         {
-            bool success = false;
-            foreach (Product product in Products)
+            
+            Product productToDelete = LookupProduct(productID);
+
+            if (productToDelete == null)
             {
-                if (product.ProductID == productID)
-                {
-                    Products.Remove(product);
-                    return success = true;
-                }
-                else
-                {
-                    MessageBox.Show("Removal failure.");
-                    return false;
-
-                }
-
+                return false;
             }
-            return success;
+            else
+            {
+                Products.Remove(productToDelete);
+                return true;
+            }
         }
 
-        public Product? LookupProduct(int productID)
+        public static Product? LookupProduct(int productID)
         {
             return Products.FirstOrDefault(product => product.ProductID == productID);
         }
 
-        public void UpdateProduct(int productID, Product product)
+        public static void UpdateProduct(int productID, Product product)
         {
             RemoveProduct(productID);
             AddProduct(product);
         }
-
-
 
         public static void AddPart(Part part) => AllParts.Add(part);
 

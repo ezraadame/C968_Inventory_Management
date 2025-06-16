@@ -49,7 +49,7 @@ namespace C968_Inventory_Management
 
         private void btnAddCandidatePart_Click(object sender, EventArgs e)
         {
-            if (dvgAllCandidateParts.CurrentRow == null || dvgAllCandidateParts.CurrentRow.DataBoundItem == null)
+            if (dvgAllCandidateParts.CurrentRow == null || !dvgAllCandidateParts.CurrentRow.Selected)
             {
                 MessageBox.Show("No part selected. Please select a part to add.");
                 return;
@@ -72,7 +72,7 @@ namespace C968_Inventory_Management
                 Part? selectedPart = dvgPartsAssociatedWithProduct.CurrentRow.DataBoundItem as Part;
                 if (selectedPart != null)
                 {
-                    Product.AssociatedParts.Remove(selectedPart);
+                    AssociatedPartsQue.Remove(selectedPart);
                 }
                 else
                 {
@@ -117,7 +117,7 @@ namespace C968_Inventory_Management
 
             Inventory.AddProduct(productToAdd);
 
-            foreach(Part part in AssociatedPartsQue)
+            foreach (Part part in AssociatedPartsQue)
             {
                 productToAdd.AddAssociatedPart(part);
             }
@@ -128,9 +128,26 @@ namespace C968_Inventory_Management
 
         }
 
-
-
-
+        private void btnSearchAllCandidateParts_Click(object sender, EventArgs e)
+        {
+            dvgAllCandidateParts.ClearSelection();
+            bool found = false;
+            if (txtSearchAllCandidateParts.Text != "")
+            {
+                for (int i = 0; i < Inventory.AllParts.Count; i++)
+                {
+                    if (Inventory.AllParts[i].Name.ToLower().Contains(txtSearchAllCandidateParts.Text.ToLower()))
+                    {
+                        dvgAllCandidateParts.Rows[i].Selected = true;
+                        found = true;
+                    }
+                }
+            }
+            if (!found)
+            {
+                MessageBox.Show("Nothing found.");
+            }
+        }
 
         private void txtProductName_TextChanged(object sender, EventArgs e)
         {
@@ -191,7 +208,6 @@ namespace C968_Inventory_Management
                 txtProductMax.BackColor = Color.Salmon;
             }
         }
-
 
     }
 }
