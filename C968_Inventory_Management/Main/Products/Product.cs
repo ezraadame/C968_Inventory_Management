@@ -11,7 +11,7 @@ namespace C968_Inventory_Management.Main.Products
 {
     public class Product 
     {
-        public static BindingList<Part> AssociatedParts = new BindingList<Part>();
+        public BindingList<Part> AssociatedParts = new BindingList<Part>();
         
         private int productID;
         private string name;

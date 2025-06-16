@@ -29,6 +29,14 @@ namespace C968_Inventory_Management
             dvgAllCandidateParts.MultiSelect = false;
             dvgAllCandidateParts.AllowUserToAddRows = false;
 
+
+
+
+            foreach (Part part in product.AssociatedParts)
+            {
+                AssociatedPartsQue.Add(part);
+            }
+
             dvgPartsAssociatedWithProduct.DataSource = AssociatedPartsQue;
             dvgPartsAssociatedWithProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dvgPartsAssociatedWithProduct.ReadOnly = true;
@@ -109,22 +117,38 @@ namespace C968_Inventory_Management
             }
 
 
-            Product updatedProduct = new Product(
-                productID, name, inventoryStock, price, minStock, maxStock);
-
+            Product updatedProduct = new Product(productID, name, inventoryStock, price, minStock, maxStock);
+            foreach (Part newPart in AssociatedPartsQue)
+            {
+                updatedProduct.AddAssociatedPart(newPart);
+            }
             Inventory.UpdateProduct(productID, updatedProduct);
 
-            foreach (Part part in AssociatedPartsQue)
-            {
-                updatedProduct.AddAssociatedPart(part);
-            }
             Close();
 
         }
 
         private void btnDeletePartAssociatedWithProduct_Click(object sender, EventArgs e)
         {
-
+            if (dvgPartsAssociatedWithProduct.CurrentRow == null || !dvgPartsAssociatedWithProduct.CurrentRow.Selected)
+            {
+                MessageBox.Show("Nothing selected, please select something!");
+                return;
+            }
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete the association of this part to the product?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Part? selectedPart = dvgPartsAssociatedWithProduct.CurrentRow.DataBoundItem as Part;
+                if (selectedPart != null)
+                {
+                    AssociatedPartsQue.Remove(selectedPart);
+                }
+                else
+                {
+                    MessageBox.Show("Unable to delete the selected part.");
+                }
+            }
+            else return;
         }
 
 

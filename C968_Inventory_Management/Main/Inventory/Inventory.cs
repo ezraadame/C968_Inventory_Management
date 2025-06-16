@@ -42,8 +42,19 @@ namespace C968_Inventory_Management.Main.Inventory
 
         public static void UpdateProduct(int productID, Product product)
         {
-            RemoveProduct(productID);
-            AddProduct(product);
+            foreach (Product currentProduct in Products)
+            {
+                if (currentProduct.ProductID == productID)
+                {
+                    currentProduct.Name = product.Name;
+                    currentProduct.InStock = product.InStock;
+                    currentProduct.Price = product.Price;
+                    currentProduct.Min = product.Min;
+                    currentProduct.Max = product.Max;
+                    currentProduct.AssociatedParts = product.AssociatedParts;
+                    return;
+                }
+            }
         }
 
         public static void AddPart(Part part) => AllParts.Add(part);
