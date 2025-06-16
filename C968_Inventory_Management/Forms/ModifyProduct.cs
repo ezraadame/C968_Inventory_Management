@@ -31,11 +31,12 @@ namespace C968_Inventory_Management
 
 
 
-
             foreach (Part part in product.AssociatedParts)
             {
                 AssociatedPartsQue.Add(part);
             }
+
+
 
             dvgPartsAssociatedWithProduct.DataSource = AssociatedPartsQue;
             dvgPartsAssociatedWithProduct.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -116,6 +117,17 @@ namespace C968_Inventory_Management
                 return;
             }
 
+            if (inventoryStock > maxStock || inventoryStock < minStock)
+            {
+                MessageBox.Show($"Error: Inventory must be between your min: {minStock} and your max: {maxStock}!");
+                return;
+            }
+
+            if (AssociatedPartsQue.Count == 0)
+            {
+                MessageBox.Show("You must have at least ONE part associated before saving.", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Product updatedProduct = new Product(productID, name, inventoryStock, price, minStock, maxStock);
             foreach (Part newPart in AssociatedPartsQue)
@@ -172,11 +184,11 @@ namespace C968_Inventory_Management
         private void txtModProductName_TextChanged(object sender, EventArgs e)
         {
             if (txtModProductName.Text.Length > 0)
-            {         
+            {
                 txtModProductName.BackColor = Color.White;
-            }         
-            else      
-            {         
+            }
+            else
+            {
                 txtModProductName.BackColor = Color.Salmon;
             }
         }

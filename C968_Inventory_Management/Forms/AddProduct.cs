@@ -7,9 +7,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace C968_Inventory_Management
 {
@@ -111,6 +113,17 @@ namespace C968_Inventory_Management
                 return;
             }
 
+            if (inventoryStock > maxStock || inventoryStock < minStock)
+            {
+                MessageBox.Show($"Error: Inventory must be between your min: {minStock}  and your max: {maxStock}!");
+                return;
+            }
+
+            if (AssociatedPartsQue.Count == 0)
+            {
+                MessageBox.Show("You must have at least ONE part associated before saving.", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Product productToAdd = new Product(
                 (Inventory.Products.Count + 1), name, inventoryStock, price, minStock, maxStock);

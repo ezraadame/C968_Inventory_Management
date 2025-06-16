@@ -59,19 +59,17 @@ namespace C968_Inventory_Management.Main.Inventory
 
         public static void AddPart(Part part) => AllParts.Add(part);
 
-        public static bool DeletePart(int part)
+        public static bool DeletePart(Part part)
         {
-            Part partToDelete = LookupPart(part);
-
-            if (partToDelete == null)
+            foreach (var product in Products)
             {
-                return false;
+                if (product.LookupAssociatedPart(part.PartID) != null)
+                {
+                    return false;
+                }
             }
-            else
-            {
-                AllParts.Remove(partToDelete);
-                return true;
-            }
+            AllParts.Remove(part);
+            return true;
         }
 
         public static Part? LookupPart(int partID)

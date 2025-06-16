@@ -177,6 +177,12 @@ namespace C968_Inventory_Management
                 return;
             }
 
+            if (inventoryStock > maxStock || inventoryStock < minStock)
+            {
+                MessageBox.Show($"Error: Inventory must be between your min: {minStock} and your max: {maxStock}!");
+                return;
+            }
+
 
             if (rdbtnInHouse.Checked)
             {

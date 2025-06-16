@@ -83,6 +83,7 @@ namespace C968_Inventory_Management
                 if (selectedPart != null)
                 {
                     Inventory.AllParts.Remove(selectedPart);
+                    
                 }
                 else
                 {

@@ -73,15 +73,11 @@ namespace C968_Inventory_Management.Main.Products
 
         public Part? LookupAssociatedPart(int partID)
         {
-            foreach (Part part in AssociatedParts)
-            {
-                if (part.PartID == partID)
-                {
-                    return part;
-                }
-            }
-            return null;
+            var associatedPart = AssociatedParts.FirstOrDefault(part => part.PartID == partID);
+            return associatedPart;
         }
+
+            
     }
 
 }
