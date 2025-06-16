@@ -80,21 +80,13 @@ namespace C968_Inventory_Management
             if (result == DialogResult.Yes)
             {
                 Part selectedPart = dvgParts.CurrentRow.DataBoundItem as Part;
-                if (selectedPart != null)
+                if (Inventory.DeletePart(selectedPart) == false)
                 {
-                    Inventory.AllParts.Remove(selectedPart);
-                    
+                    MessageBox.Show($"Unable to delete. Ensure that the selected part is not associated with a current product before deletion!"
+                        , "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
-                {
-                    MessageBox.Show("Unable to delete the selected part.");
-                }
+
             }
-            else
-            {
-                return;
-            }
-            
         }
 
         private void ModifyPartsButton_Click(object sender, EventArgs e)

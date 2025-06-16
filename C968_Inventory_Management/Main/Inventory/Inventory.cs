@@ -79,7 +79,11 @@ namespace C968_Inventory_Management.Main.Inventory
 
         public static void UpdateParts(int partID, Part part)
         {
-            DeletePart(partID);
+            Part? existingPart = LookupPart(partID);
+            if (existingPart != null)
+            {
+                AllParts.Remove(existingPart);
+            }
             AddPart(part);
         }
 
