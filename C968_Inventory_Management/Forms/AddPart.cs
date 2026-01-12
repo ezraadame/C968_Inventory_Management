@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// AddPart form for adding new parts to the inventory
+
 namespace C968_Inventory_Management
 {
     public partial class AddPart : Form
